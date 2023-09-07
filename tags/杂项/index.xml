@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>杂项 on My New Hugo Site</title>
-    <link>https://example.org/tags/%E6%9D%82%E9%A1%B9/</link>
-    <description>Recent content in 杂项 on My New Hugo Site</description>
+    <title>杂项 on My Blog</title>
+    <link>https://myeeye.github,io/tags/%E6%9D%82%E9%A1%B9/</link>
+    <description>Recent content in 杂项 on My Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 07 Sep 2023 17:00:00 +0800</lastBuildDate><atom:link href="https://example.org/tags/%E6%9D%82%E9%A1%B9/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 07 Sep 2023 17:00:00 +0800</lastBuildDate><atom:link href="https://myeeye.github,io/tags/%E6%9D%82%E9%A1%B9/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hello World</title>
-      <link>https://example.org/post/hello-world/</link>
+      <link>https://myeeye.github,io/post/hello-world/</link>
       <pubDate>Thu, 07 Sep 2023 17:00:00 +0800</pubDate>
       
-      <guid>https://example.org/post/hello-world/</guid>
+      <guid>https://myeeye.github,io/post/hello-world/</guid>
       <description>&lt;p&gt;Hello World！&lt;/p&gt;
 &lt;p&gt;你好！&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>关于我</title>
-      <link>https://example.org/about.html</link>
+      <link>https://myeeye.github,io/about.html</link>
       <pubDate>Thu, 07 Sep 2023 17:00:00 +0800</pubDate>
       
-      <guid>https://example.org/about.html</guid>
+      <guid>https://myeeye.github,io/about.html</guid>
       <description>你好。我是 myee。
 我的高中就读于杭州学军中学教育集团文渊中学。现在（2023 年下半年）高三。
 在使用 GitHub Pages 搭建博客前，我用过很长时间洛谷博客，也用过大约两年左右的 cnblogs（博客园）。
@@ -35,10 +35,10 @@
     
     <item>
       <title>友情链接</title>
-      <link>https://example.org/friend-link.html</link>
+      <link>https://myeeye.github,io/friend-link.html</link>
       <pubDate>Thu, 07 Sep 2023 17:00:00 +0800</pubDate>
       
-      <guid>https://example.org/friend-link.html</guid>
+      <guid>https://myeeye.github,io/friend-link.html</guid>
       <description>由于博客评论我还不会弄，如果有需要挂友链的同学可以联系我，我会视情况加入。</description>
     </item>
     
