@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>Hello World</title><url>/post/hello-world/</url><categories><category>杂项</category></categories><tags><tag>杂项</tag></tags><content type="html"><![CDATA[  Hello World！
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>Hello World</title><url>/post/hello-world/</url><categories><category>杂项</category></categories><tags><tag>杂项</tag></tags><content type="html"><![CDATA[  MathJax3 不支持行内公式，自闭了。
+Hello World！
 你好！
 When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are:
 $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$
-1Hello World！ 2 3你好！ 4 5When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are: 6 7$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$ 一二三四五六1 2 2.1 2.2 3 1#include &lt;stdio.h&gt; 2 3int main() 4{ 5 puts(&#34;Hello World!&#34;) 6 return 0; 7} MathJax3 不支持行内公式，自闭了。
-  ]]></content></entry><entry><title>关于我</title><url>/about.html</url><categories><category>杂项</category></categories><tags><tag>杂项</tag></tags><content type="html"> 你好。我是 myee。
+1Hello World！ 2 3你好！ 4 5When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are: 6 7$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$ 一二三四五六1 2 2.1 2.2 3 1#include &lt;stdio.h&gt; 2 3int main() 4{ 5 puts(&#34;Hello World!&#34;) 6 return 0; 7}   ]]></content></entry><entry><title>关于我</title><url>/about.html</url><categories><category>杂项</category></categories><tags><tag>杂项</tag></tags><content type="html"> 你好。我是 myee。
 我的高中就读于杭州学军中学教育集团文渊中学。现在（2023 年下半年）高三。
 我的 OI 获奖：
 APIO2022 线上金牌。 WC2023 金牌。 NOI2023 金牌。 在使用 GitHub Pages 搭建博客前，我用过很长时间洛谷博客，也用过两年左右的 cnblogs（博客园）。
@@ -11,7 +11,8 @@ APIO2022 线上金牌。 WC2023 金牌。 NOI2023 金牌。 在使用 GitHub Pag
 然而很不幸，cnblogs 运营困难，摇摇欲坠，有可能即将倒闭。因此我不得不防患于未然，搭建起这个博客。
 该博客采用了 Hugo NexT 主题，故而非常美观。
 由于我不是很会在 GitHub 上加密文章，所以我并不会轻易把所有文章传上来。
-现在之前所有文章都还在鸽，到时候会传的。</content></entry><entry><title>友情链接</title><url>/friend-link.html</url><categories><category>杂项</category></categories><tags><tag>杂项</tag></tags><content type="html"> 由于博客评论我还不会弄，如果有需要挂友链的同学可以联系我，我会视情况加入。
+现在之前的文章都还在鸽，到时候会传的。</content></entry><entry><title>友情链接</title><url>/friend-link.html</url><categories><category>杂项</category></categories><tags><tag>杂项</tag></tags><content type="html"> 由于博客评论我还不会弄，如果有需要挂友链的同学可以联系我，我会视情况加入。
 Rainbow_sjy 的 cnblogs 博客
 cmll02 的 GitHub 博客
-zhoukangyang 的 cnblogs 博客</content></entry></search>
+zhoukangyang 的 cnblogs 博客
+dead_X 的 cnblogs 博客</content></entry></search>
