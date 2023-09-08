@@ -1,4 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>Hello World</title><url>/post/hello-world/</url><categories><category>杂项</category></categories><tags><tag>杂项</tag></tags><content type="html"><![CDATA[  MathJax3 不支持行内公式，自闭了。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>404 Not Found</title><url>/post/404/</url><categories/><tags/><content type="html"> 想不到吧，/post/404/ 居然是一个单独的页面！
+你是怎么发现这个页面的呢？
+是在 GitHub 上翻源码吗？还是自己改 url 改进来的？
+抑或通过搜索功能？</content></entry><entry><title>Hello World</title><url>/post/hello-world/</url><categories><category>杂项</category></categories><tags><tag>杂项</tag></tags><content type="html"><![CDATA[  MathJax3 不支持行内公式，自闭了。
 换用 MathJax2.7 后好多了。
 Hello World！
 你好！
@@ -6,7 +9,7 @@ When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are:
 $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$
 1Hello World！ 2 3你好！ 4 5When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are: 6 7$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$ 一二三四五六1 2 2.1 2.2 3 1#include &lt;stdio.h&gt; 2 3int main() 4{ 5 puts(&#34;Hello World!&#34;) 6 return 0; 7} （密码：123456）
   ]]></content></entry><entry><title>关于我</title><url>/about.html</url><categories><category>杂项</category></categories><tags><tag>杂项</tag></tags><content type="html"> 你好。我是 myee。
-我的高中就读于杭州学军中学教育集团文渊中学。现在（2023 年下半年）高三。
+我的高中就读于杭州学军中学教育集团文渊中学。现在（$2023$ 年下半年）高三。
 我的 OI 获奖：
 APIO2022 线上金牌。 WC2023 金牌。 NOI2023 金牌。 在使用 GitHub Pages 搭建博客前，我用过很长时间洛谷博客，也用过两年左右的 cnblogs（博客园）。
 当初使用洛谷博客主要是为了方便（以及洛谷题解需要用博客提交），而后来使用 cnblogs 则是因其高度的自定义以及设置加密文章很令人舒适。
@@ -18,7 +21,58 @@ Rainbow_sjy 的 cnblogs 博客
 cmll02 的 GitHub 博客
 zhoukangyang 的 cnblogs 博客
 dead_X 的 cnblogs 博客
-RedreamMer 的 cnblogs 博客</content></entry><entry><title>HDU 多校 2022 游记</title><url>/post/hdu2022/</url><categories><category>游记</category></categories><tags><tag>游记</tag></tags><content type="html"> 在 XJ 501 机房打。
+RedreamMer 的 cnblogs 博客
+Mophie 的 Luogu 博客
+zaozao_zmx 的 cnblogs 博客</content></entry><entry><title>WC2023 游记</title><url>/post/wc2023/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>图片挂了</tag></tags><content type="html"><![CDATA[  不是很会写游记，随便写写吧。
+博客园内链导致大量图片挂了警告。
+一些附件讲课资料合集（压缩后 $\rm 31MB$）太大了，可以去 U 群下载。
+由于后面很多乐子，我把相关内容打包成 zip 上传上来了。
+乐子合集下载链接。（这个包挺小方便下载）
+前言：WC2022 测试怎么说呢，糟糕的回忆。
+T2 我码了个压位 Trie 莫队，按理是应该过了的，但是我快写写挂了。
+场上写法：
+1inline voi write(uint v) 2{ 3	static chr c[18];uint cnt=0; 4 do c[cnt++]=v%10,v/=10;while(v); 5	while(cnt--)putchar(c[cnt]); 6	putchar(&amp;#39;\n&amp;#39;); 7} 正确写法：
+1inline voi write(ullt v) 2{ 3	static chr c[18];uint cnt=0; 4 do c[cnt++]=v%10+&amp;#39;0&amp;#39;,v/=10;while(v); 5	while(cnt--)putchar(c[cnt]); 6	putchar(&amp;#39;\n&amp;#39;); 7} 于是直接挂没了。
+T3 没加头文件，也爆蛋了。
+总之就是，出场 $25+100+65$，实际 $10+0+0$。（众所周知 T1 部分分数据挂了）
+但是我帮几个同学拿了 Ag。
+以下开始 WC2023 正番。
+前几天主要记录乐子，课件回头会发上来。
+Day 0开幕式。分蛋糕。/se
+乐子 dzd 没关麦/摄像头，被截图了。 图就不放上来了。
+——孩子几岁了？ ——一岁半，两岁不到。
+Day 1上午没啥意思，没听。
+下午听了 hhz 的题目选讲，罚坐。
+晚上员交，直接爆炸。
+然后是一些乐子。
+乐子 嗯，暴戾语言复现。
+草，别让他们放PV了，把题目留着就行了。 警告一次，教室再出现不文明用语，全部踢出去，你们代表的是自己学校的形象。 PV 是咋样的呢？ CCF，以推动计算技术领域学术，技术，教育，应用和产业的发展，助力计算技术领域专业人士能力提升为使命，目前拥有超过10万名付费个人会员。 CCF，下设城市会员活动中心，学生分会，YOCSEF城市论坛，以及大数据，自然语言处理，和高性能计算等专业委员会。共近两百个会员服务机构，每年举办近千场专业活 …  ]]></content></entry><entry><title>CSP2022 游记</title><url>/post/csp2022/</url><categories><category>游记</category></categories><tags><tag>游记</tag></tags><content type="html"><![CDATA[  我还是写一下吧……
+Day -1模拟赛。
+成为机房垫底人。
+Day 0上午补昨天模拟赛 T4。
+下午补昨天模拟赛 T4。
+晚上补昨天模拟赛 T4。
+补完了后把昨天胡了没写的 APIO2014 连珠线写了。挺有意思的反悔贪心树形 dp 技巧。
+然后回家了。
+Day 1上午因为只去提高组，所以在家里 VP 了 CSP-S2021 的 T1-3。
+为了适应考场没有代码补全、语法高亮之类的东西，赶紧把插件关了写。（flag）
+T1，T3 半小时写完，T2 花了大概 1h 就写掉了。
+11:00 起身去文渊，好坐校车去考点。
+遇到了好多同学。/se
+下午12:30 校车出发。
+大约 13:30 的样子抵达杭师大。
+在里面面到了 djwj233。/se
+devin 没来。/kel
+14:00 左右进了机房。
+那边的工作人员说话声好大啊。/yun
+14:25 解压密码发下来，给的是 Belief2022，结果实际上是 belief2022？？？
+我想，这实在是无法可想了。
+开题。
+先看 T1T2.
+T1 大概先 bfs 一轮找到每个点距离那些点不超过 $k$？然后枚举似乎可以 meet in the middle？
+T2 似乎随便分类讨论一下 rmq 就完了。
+14:30 能开写了，先敲一个码头。以 T2 为例。（原来考场 VS Code 是有代码补全和语法高亮哒？）
+1// with code highlight and code completion, I&amp;#39;d fly. 2 3#include &amp;lt;algorithm&amp;gt; 4#include &amp;lt;stdio.h&amp;gt; 5#include &amp;lt;vector&amp;gt; 6typedef unsigned uint; 7typedef unsigned long long ullt;typedef long long llt; 8typedef bool bol;typedef char chr;typedef void voi; 9typedef double dbl; 10template&amp;lt;typename T&amp;gt;bol _min(T&amp;amp;a,T b){return b&amp;lt;a?(a=b,true):false;} 11template&amp;lt;typename …  ]]></content></entry><entry><title>HDU 多校 2022 游记</title><url>/post/hdu2022/</url><categories><category>游记</category></categories><tags><tag>游记</tag></tags><content type="html"> 在 XJ 501 机房打。
 队伍：
 team1093 学军中学二队
 为什么有二队而没有一队，这是一个问题。
