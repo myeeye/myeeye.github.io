@@ -3,7 +3,8 @@ Hello World！
 你好！
 When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are:
 $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$
-1Hello World！ 2 3你好！ 4 5When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are: 6 7$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$ 一二三四五六1 2 2.1 2.2 3 1#include &lt;stdio.h&gt; 2 3int main() 4{ 5 puts(&#34;Hello World!&#34;) 6 return 0; 7}   ]]></content></entry><entry><title>关于我</title><url>/about.html</url><categories><category>杂项</category></categories><tags><tag>杂项</tag></tags><content type="html"> 你好。我是 myee。
+1Hello World！ 2 3你好！ 4 5When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are: 6 7$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$ 一二三四五六1 2 2.1 2.2 3 1#include &lt;stdio.h&gt; 2 3int main() 4{ 5 puts(&#34;Hello World!&#34;) 6 return 0; 7} （密码：123456）
+  ]]></content></entry><entry><title>关于我</title><url>/about.html</url><categories><category>杂项</category></categories><tags><tag>杂项</tag></tags><content type="html"> 你好。我是 myee。
 我的高中就读于杭州学军中学教育集团文渊中学。现在（2023 年下半年）高三。
 我的 OI 获奖：
 APIO2022 线上金牌。 WC2023 金牌。 NOI2023 金牌。 在使用 GitHub Pages 搭建博客前，我用过很长时间洛谷博客，也用过两年左右的 cnblogs（博客园）。
