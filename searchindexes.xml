@@ -8,9 +8,8 @@ Hello World！
 When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are:
 $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$
 1Hello World！ 2 3你好！ 4 5When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are: 6 7$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$ 一二三四五六1 2 2.1 2.2 3 1#include &lt;stdio.h&gt; 2 3int main() 4{ 5 puts(&#34;Hello World!&#34;) 6 return 0; 7} （密码：123456）
-  ]]></content></entry><entry><title>Music</title><url>/music.html</url><categories/><tags/><content type="html"> APlayer 加载乐曲和曲绘实在太卡了，所以迁移到单独一个页面。
-由于 GitHub 拿来上传音乐实在太占空间了，所以这里只有前两首是上传的，其他都直接挂外链了。
-曲绘实在太大，直接全挂外链了。</content></entry><entry><title>关于我</title><url>/about.html</url><categories><category>杂项</category></categories><tags><tag>杂项</tag></tags><content type="html"> 你好。我是 myee。
+  ]]></content></entry><entry><title>Music</title><url>/music.html</url><categories/><tags/><content type="html"> APlayer 加载 GitHub 上的乐曲和曲绘实在太卡了，所以特意迁移到单独一个页面。
+因为 GitHub 加载音乐实在太卡也太占空间，所以改用了外链加载。</content></entry><entry><title>关于我</title><url>/about.html</url><categories><category>杂项</category></categories><tags><tag>杂项</tag></tags><content type="html"> 你好。我是 myee。
 我的高中就读于杭州学军中学教育集团文渊中学。现在（$2023$ 年下半年）高三。
 我的 OI 获奖：
 APIO2022 线上金牌。 WC2023 金牌。 NOI2023 金牌。 在使用 GitHub Pages 搭建博客前，我用过很长时间洛谷博客，也用过两年左右的 cnblogs（博客园）。
@@ -25,7 +24,152 @@ zhoukangyang 的 cnblogs 博客
 dead_X 的 cnblogs 博客
 RedreamMer 的 cnblogs 博客
 Mophie 的 Luogu 博客
-zaozao_zmx 的 cnblogs 博客</content></entry><entry><title>WC2023 游记</title><url>/post/wc2023/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>图片挂了</tag></tags><content type="html"><![CDATA[  不是很会写游记，随便写写吧。
+zaozao_zmx 的 cnblogs 博客</content></entry><entry><title>NOI2023 游记</title><url>/post/noi2023/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>图片挂了</tag></tags><content type="html"> Day $0$ 是 7.23，Day $1$ 是 7.24，Day $2$ 是 7.26。
+Day $-6$
+从华师一飞回杭州。
+打 qoj 板子赛。
+Day $-5$
+模拟赛。
+$44+32+0$。
+T1 正解没调出来。破大防。
+打 qoj 板子赛。
+下午不小心撞电风扇上了，受伤了，比较寄。
+Day $-4$
+模拟赛。
+$100+0+100$。
+最后一个小时写了 T3 对拍。出题人不给大样例是这样的。
+打 qoj 板子赛。
+Day $-3$
+模拟赛。XJOI。
+$90+25+0$。
+T1 被卡常了。
+打 qoj 板子赛。
+Day $-2$
+模拟赛。XJOI。
+$0+0+0$。
+hhz 素质很高。
+NOI 考前最后一场模拟赛搬三个题，前两题题意还能假的，第三题不可做。
+喜提爆零。
+打 qoj 板子赛。
+Day $-1$
+早上赶飞机，飞去成都。
+$10:55\sim13:35$ 的飞机。CA4520。和绍一同一班。
+抵达成都双流机场。
+徐老师带路。成功带迷路了。
+后来工作人员来了，但是徐老师不知道去哪了。于是我们等了很久。
+大约 15:00 左右坐上大巴。
+很快进了学校。签名墙上签名！
+领物资，领到了胸牌、秩序册、两件 T 恤、一个 NOI 徽章等等。还有一大张餐券。
+入住寝室。这个寝室看上去很不错啊！室友是 zak sjy dx。
+领到了 $10$ 个我的徽章。自己留了一个，剩下的都拿去换了。
+qyc 火大了，觉得我应该多订几个。/fendou
+吃晚饭。食堂是自助取餐，很舒服！
+背笔试。
+打 qoj 板子赛。
+晚上发了密码条。
+Day $0$
+背笔试。
+上午开幕式。
+前来的工作人员名单揭幕了。怎么有 EI？怎么有 EI？怎么有 EI？
+畏惧了。
+《红旗颂》把耳朵震聋了。哈人。
+机器人表演之类的保留节目还在。
+背笔试。
+下午去试机。试机题目是 NOIp2021。奶一口今年没有交互题。
+yyl 说下发了一个 selfEval，来给选手测样例，避免 MLE 之类的傻逼错误。测了下很好用。
+笔试题目很轻松满分了。今年怎么又有碰键盘题和丢密码条扣分题啊！
+NOIp 花了 1h 切了前 $3$ 题，测试了一下 selfEval 发现很好用。
+打 qoj 板子赛。
+晚上发了密码条。
+Day $1$
+半夜里惊醒，一看时间 $2:22$。
+去考场前突然想上厕所，问了下工作人员给指了 …</content></entry><entry><title>THUPC2023 游记</title><url>/post/thupc2023/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>图片挂了</tag></tags><content type="html"> 2023.2
+THUPC 报名！
+和 unputdownable，猫猬兽组队，队名 XJ 五队。
+devin 让我们填毕业年份 2028。
+收货地址填了 重庆市第114514中学冯阳阳纪念谷学校。
+upd 性别填 其他 被拒了。
+2023.3.4
+THUPC 2023 初赛测试赛！
+$3$ 月 $4$ 日 $13$ 点联络群消息：
+1## OJ网址 2 3thupc2023.thusaac.com 4 5## 环境测试 (https://thupc2023.thusaac.com/contest/4/home) 6 7- 时间：2023/3/4 13:00 ~ 2023/3/5 10:00 8- 语言及编译选项与正式初赛相同 9- 所有参加环境测试的选手**共用**如下账号，因此您的提交能够被其他人看见 10 密码条： 11 username: thupc_test 12 password: ec76d8 13- 正式比赛使用的用户名和密码条将在报名截止（2023/3/5 10:30）后生成并通过报名网站 (https://signup.thupc2023.thusaac.com/)发放 然后发现公用号可以发提问！
+1已解决 提问 THUPC测试 03-04 13:14:07 解决 THUPC测试 03-04 13:14:22 2我， 03-04 13:14:07： 3膜拜国际特级大师周康阳大佬 乐。
+然后此时由于 NOI 春测刚结束，没管，去口胡了春测，感觉梦回普及组！不过被最后一道 Itst 题拉回现实了。
+然后开摆。
+大概下午 $3$ 点半左右开始做题。
+题面下载
+。
+然后去提问区问了一句：
+1我， 03-04 15:34:54： 2测试赛题解赛后会公开吗 回复是
+1管理员， 03-04 16:54:54： 2这三道题是「CodePlus 8 × HWS第五期 - 决赛」复刻，已经帮您联系出题人，希望他们不鸽🙏 发现没人过 B，开题看了眼。
+感觉是憨憨数位 dp，枚举取模后结果即做完。
+然后开始写，第一次交 MLE 了（开了 map），第二次交 TLE 了（递归大常数），最后卡了卡常才过。
+代码：
+1// 膜拜国际特级大师周康阳大佬，今天在 THUPC 测试赛首页称您为大夏尊贵的大名，一股敬佩之油生然而，您在 THUPC 测试赛为国争光，扬我华威名，向您献上最 …</content></entry><entry><title>ZJOI2023 游记</title><url>/post/zjoi2023/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>图片挂了</tag></tags><content type="html"><![CDATA[  正赛在 2023.4.1 - 2023.4.2。
+愚人节省选。挨创。
+前情提要：$\rm NOIP$ $\rm297pts$ 苟上 ZJ 队线。
+其实前面一长串（Day $-25\sim-5$）是纪中集训游记，不过比较早的内容可能记不太起来了。
+Day $-26$THUPC 初赛，打拉垮了。只过了 C。
+Day $-25$飞去中山纪中集训。住的女生宿舍。
+Day $-24$清澄模拟赛。hhz &amp;amp; lk Round。
+打了 Rank $2$，上去介绍了 T1 的神秘做法。
+T2 是什么 SAM 题，看不懂题，开摆。
+Day $-23$清澄模拟赛。asdfz &amp;amp; zsjz Round。
+垫大底，破大防。
+Day $-22$清澄模拟赛。tyy &amp;amp; lh Round。
+前两题 tyy 题，一开始的数据甚至只有样例。
+用随机撒点树分块冲过去了 T1。
+lh 出了神秘高精度题。于是联考风行九雷唱。
+Day $-21$听 hsy xxy讲题。开摆。
+Day $-20\sim-19$GDKOI，被打爆了！
+游记可以自己去看。
+Day $-18$清澄模拟赛。liqingyang Round。
+给 T1 整了一个非常好写的 $O(kn^{1.34})$ 做法，其中 $k=10$。
+Day $-17$清澄模拟赛。xcyle Round。
+两道结论题 + 一道神秘高消题。自闭。
+Day $-16$清澄模拟赛。zsjz Round。
+T1 大分类讨论题没开，急了。
+T2 神秘构造题，急了。
+T3 赛时重造数据却没有重测，急了。
+下午听 zxy讲题。开摆。
+qsnkj来通知，ZJOI 改强制 Linux 了。开始用虚拟机。
+Day $-15$听 bnds 讲题。开摆。
+Day $-14$清澄模拟赛。asdfz Round。
+切了 $2$ 题，拿了 Rank $6$。
+T1 转化成求 $n$ 个低次有理分式之和的连续点值，随便写了个点值平移秒了。听说 std 写了多点求值，绷。不过也许有趣的地方应该在于乘 $e^z$ 来对 $f\leftarrow z(f&amp;rsquo;&amp;rsquo;+2f&amp;rsquo;+f)$ 进行变换的过程？
+T2 转化后是大施罗德数（OEIS A006318），随便推了个 ODE 秒了。其实之前模拟赛里有过这种东西。 …  ]]></content></entry><entry><title>GDKOI2023 游记</title><url>/post/gdkoi2023/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>图片挂了</tag></tags><content type="html"> 因为在广东集训，我们都要参加 GDKOI2023 来试手。
+正赛在 3.11，3.12 两天。
+Day 0
+上午是照常的讲题，感觉很有意思。
+下午纪中教练给我们发了 GDKOI 2021 题面。
+口胡到了 Day 2 的 T3，T4 还没胡。
+Day 1
+我是预言家！
+三题四小时，$8:30\sim12:30$。
+没有大样例，稍微大一点的样例也很小。
+T1 一看，这不是憨憨题，码了个 modint。
+T2 一看，推了个容斥，推出通项式，推出递推式，发现不会啥正经做法。分块 FFT 也没写，预估 $40\sim60$。
+T3 一看，容斥 + 异或卷积 + 集合幂级数随便做，写了个 $O(n^23^n+2^n\log v)$ 的东西，光荣没过样例二，挂成 $10$ 分。
+怎么三道 $998244353$ 的啊？alpha 快乐场。
+听说 alpha $100 + 100 + 80$，zak $100 + 100 + 100$，感觉很厉害。
+alpha T2 用 ODE 自动机理论爆标了，做到了根号甚至 $\log^2$。/bx
+原来是 wxw 场啊，咋三道原啊。
+然后听说 alpha T3 挂成 $20\rm pts$ 了。
+T3 std 咋是 $O^*(4^n)$ 的啊。
+LA 群内多头：
+「待会大家都知道 wxw 搬自己作业到模拟赛里了」
+「一定不能让大家知道 wxw 搬自己作业到模拟赛里了」
+「你们不要再强调 wxw 搬自己作业到模拟赛里了啊」
+听说 T1 2.7e8 读入，没用 fread 的都 gg 了。
+晚上把 GDKOI 2021 口胡到了 Day 3 T3，最后一题没看。
+Day 2
+进场前听说 zak Day 1 $299\rm pts$。
+神的怜悯.jpg。
+开场一看，一个 ds，一个 $998244353$，一个 ds。
+T1 一眼偏序，一个树剖，一个换根，一个扫描线，一个 BIT 拍上去就完了。
+T2 没思路，推出了子集 dp，FMT 优化一下是 $O(nk2^n)$ 的，矩乘是 $O(8^n\log k)$，稍微卡卡常，大概是 $20\sim60$。
+T3 感觉很 In a Trap
+啊！感觉不会啥 polylog 做法，猛的一个根号分治 + 根号平衡冲上去，复杂度 $O((n+q)\sqrt n)$，也没拼暴力，预估 $20\sim100$。 …</content></entry><entry><title>WC2023 游记</title><url>/post/wc2023/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>图片挂了</tag></tags><content type="html"><![CDATA[  不是很会写游记，随便写写吧。
 博客园内链导致大量图片挂了警告。
 一些附件讲课资料合集（压缩后 $\rm 31MB$）太大了，可以去 U 群下载。
 由于后面很多乐子，我把相关内容打包成 zip 上传上来了。
