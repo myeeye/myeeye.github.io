@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>404 Not Found</title><url>/post/404/</url><categories/><tags/><content type="html"> 想不到吧，/post/404/ 居然是一个单独的页面！
 你是怎么发现这个页面的呢？
 是在 GitHub 上翻源码吗？还是自己改 url 改进来的？
-抑或通过搜索功能？</content></entry><entry><title>Hello World</title><url>/post/hello-world/</url><categories><category>杂项</category></categories><tags><tag>杂项</tag></tags><content type="html"><![CDATA[  MathJax3 不支持行内公式，自闭了。
+抑或通过搜索功能？或是随机页面？
+来评论回答一下吧！</content></entry><entry><title>Hello World</title><url>/post/hello-world/</url><categories><category>杂项</category></categories><tags><tag>杂项</tag></tags><content type="html"><![CDATA[  MathJax3 不支持行内公式，自闭了。
 换用 MathJax2.7 后好多了。
 Hello World！
 你好！
@@ -17,14 +18,15 @@ APIO2022 线上金牌。 WC2023 金牌。 NOI2023 金牌。 在使用 GitHub Pag
 然而很不幸，cnblogs 运营困难，摇摇欲坠，有可能即将倒闭。因此我不得不防患于未然，搭建起这个博客。
 该博客采用了 Hugo NexT 主题，故而非常美观。
 由于我不是很会在 GitHub 上加密文章，所以我并不会轻易把所有文章传上来。
-现在之前的文章都还在鸽，到时候会传的。</content></entry><entry><title>友情链接</title><url>/flinks.html</url><categories><category>杂项</category></categories><tags><tag>杂项</tag></tags><content type="html"> 由于博客评论我还不会弄，如果有需要挂友链的同学可以联系我，我会视情况加入。
-Rainbow_sjy 的 cnblogs 博客
+现在之前的文章都还在鸽，到时候会传的。</content></entry><entry><title>友情链接</title><url>/flinks.html</url><categories><category>杂项</category></categories><tags><tag>杂项</tag></tags><content type="html"> Rainbow_sjy 的 cnblogs 博客
 cmll02 的 GitHub 博客
 zhoukangyang 的 cnblogs 博客
 dead_X 的 cnblogs 博客
 RedreamMer 的 cnblogs 博客
 Mophie 的 Luogu 博客
-zaozao_zmx 的 cnblogs 博客</content></entry><entry><title>NOI2023 游记</title><url>/post/noi2023/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>图片挂了</tag></tags><content type="html"> Day $0$ 是 7.23，Day $1$ 是 7.24，Day $2$ 是 7.26。
+zaozao_zmx 的 cnblogs 博客
+由于博客评论我还不会弄，如果有需要挂友链的同学可以联系我，我会视情况加入。
+评论功能弄好了！有想挂友链的同学在下面发一下就好了，我会视情况加入。</content></entry><entry><title>NOI2023 游记</title><url>/post/NOI2023/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>图片挂了</tag></tags><content type="html"> Day $0$ 是 7.23，Day $1$ 是 7.24，Day $2$ 是 7.26。
 Day $-6$
 从华师一飞回杭州。
 打 qoj 板子赛。
@@ -83,7 +85,7 @@ NOIp 花了 1h 切了前 $3$ 题，测试了一下 selfEval 发现很好用。
 晚上发了密码条。
 Day $1$
 半夜里惊醒，一看时间 $2:22$。
-去考场前突然想上厕所，问了下工作人员给指了 …</content></entry><entry><title>THUPC2023 游记</title><url>/post/thupc2023/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>图片挂了</tag></tags><content type="html"> 2023.2
+去考场前突然想上厕所，问了下工作人员给指了 …</content></entry><entry><title>THUPC2023 游记</title><url>/post/THUPC2023/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>图片挂了</tag></tags><content type="html"> 2023.2
 THUPC 报名！
 和 unputdownable，猫猬兽组队，队名 XJ 五队。
 devin 让我们填毕业年份 2028。
@@ -105,7 +107,7 @@ $3$ 月 $4$ 日 $13$ 点联络群消息：
 感觉是憨憨数位 dp，枚举取模后结果即做完。
 然后开始写，第一次交 MLE 了（开了 map），第二次交 TLE 了（递归大常数），最后卡了卡常才过。
 代码：
-1// 膜拜国际特级大师周康阳大佬，今天在 THUPC 测试赛首页称您为大夏尊贵的大名，一股敬佩之油生然而，您在 THUPC 测试赛为国争光，扬我华威名，向您献上最 …</content></entry><entry><title>ZJOI2023 游记</title><url>/post/zjoi2023/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>图片挂了</tag></tags><content type="html"><![CDATA[  正赛在 2023.4.1 - 2023.4.2。
+1// 膜拜国际特级大师周康阳大佬，今天在 THUPC 测试赛首页称您为大夏尊贵的大名，一股敬佩之油生然而，您在 THUPC 测试赛为国争光，扬我华威名，向您献上最 …</content></entry><entry><title>ZJOI2023 游记</title><url>/post/ZJOI2023/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>图片挂了</tag></tags><content type="html"><![CDATA[  正赛在 2023.4.1 - 2023.4.2。
 愚人节省选。挨创。
 前情提要：$\rm NOIP$ $\rm297pts$ 苟上 ZJ 队线。
 其实前面一长串（Day $-25\sim-5$）是纪中集训游记，不过比较早的内容可能记不太起来了。
@@ -137,7 +139,7 @@ Day $-15$听 bnds 讲题。开摆。
 Day $-14$清澄模拟赛。asdfz Round。
 切了 $2$ 题，拿了 Rank $6$。
 T1 转化成求 $n$ 个低次有理分式之和的连续点值，随便写了个点值平移秒了。听说 std 写了多点求值，绷。不过也许有趣的地方应该在于乘 $e^z$ 来对 $f\leftarrow z(f&amp;rsquo;&amp;rsquo;+2f&amp;rsquo;+f)$ 进行变换的过程？
-T2 转化后是大施罗德数（OEIS A006318），随便推了个 ODE 秒了。其实之前模拟赛里有过这种东西。 …  ]]></content></entry><entry><title>GDKOI2023 游记</title><url>/post/gdkoi2023/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>图片挂了</tag></tags><content type="html"> 因为在广东集训，我们都要参加 GDKOI2023 来试手。
+T2 转化后是大施罗德数（OEIS A006318），随便推了个 ODE 秒了。其实之前模拟赛里有过这种东西。 …  ]]></content></entry><entry><title>GDKOI2023 游记</title><url>/post/GDKOI2023/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>图片挂了</tag></tags><content type="html"> 因为在广东集训，我们都要参加 GDKOI2023 来试手。
 正赛在 3.11，3.12 两天。
 Day 0
 上午是照常的讲题，感觉很有意思。
@@ -169,7 +171,7 @@ Day 2
 T1 一眼偏序，一个树剖，一个换根，一个扫描线，一个 BIT 拍上去就完了。
 T2 没思路，推出了子集 dp，FMT 优化一下是 $O(nk2^n)$ 的，矩乘是 $O(8^n\log k)$，稍微卡卡常，大概是 $20\sim60$。
 T3 感觉很 In a Trap
-啊！感觉不会啥 polylog 做法，猛的一个根号分治 + 根号平衡冲上去，复杂度 $O((n+q)\sqrt n)$，也没拼暴力，预估 $20\sim100$。 …</content></entry><entry><title>WC2023 游记</title><url>/post/wc2023/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>图片挂了</tag></tags><content type="html"><![CDATA[  不是很会写游记，随便写写吧。
+啊！感觉不会啥 polylog 做法，猛的一个根号分治 + 根号平衡冲上去，复杂度 $O((n+q)\sqrt n)$，也没拼暴力，预估 $20\sim100$。 …</content></entry><entry><title>WC2023 游记</title><url>/post/WC2023/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>图片挂了</tag></tags><content type="html"><![CDATA[  不是很会写游记，随便写写吧。
 博客园内链导致大量图片挂了警告。
 一些附件讲课资料合集（压缩后 $\rm 31MB$）太大了，可以去 U 群下载。
 由于后面很多乐子，我把相关内容打包成 zip 上传上来了。
@@ -192,7 +194,7 @@ Day 1上午没啥意思，没听。
 晚上员交，直接爆炸。
 然后是一些乐子。
 乐子 嗯，暴戾语言复现。
-草，别让他们放PV了，把题目留着就行了。 警告一次，教室再出现不文明用语，全部踢出去，你们代表的是自己学校的形象。 PV 是咋样的呢？ CCF，以推动计算技术领域学术，技术，教育，应用和产业的发展，助力计算技术领域专业人士能力提升为使命，目前拥有超过10万名付费个人会员。 CCF，下设城市会员活动中心，学生分会，YOCSEF城市论坛，以及大数据，自然语言处理，和高性能计算等专业委员会。共近两百个会员服务机构，每年举办近千场专业活 …  ]]></content></entry><entry><title>CSP2022 游记</title><url>/post/csp2022/</url><categories><category>游记</category></categories><tags><tag>游记</tag></tags><content type="html"><![CDATA[  我还是写一下吧……
+草，别让他们放PV了，把题目留着就行了。 警告一次，教室再出现不文明用语，全部踢出去，你们代表的是自己学校的形象。 PV 是咋样的呢？ CCF，以推动计算技术领域学术，技术，教育，应用和产业的发展，助力计算技术领域专业人士能力提升为使命，目前拥有超过10万名付费个人会员。 CCF，下设城市会员活动中心，学生分会，YOCSEF城市论坛，以及大数据，自然语言处理，和高性能计算等专业委员会。共近两百个会员服务机构，每年举办近千场专业活 …  ]]></content></entry><entry><title>CSP2022 游记</title><url>/post/CSP2022/</url><categories><category>游记</category></categories><tags><tag>游记</tag></tags><content type="html"><![CDATA[  我还是写一下吧……
 Day -1模拟赛。
 成为机房垫底人。
 Day 0上午补昨天模拟赛 T4。
@@ -218,7 +220,7 @@ devin 没来。/kel
 T1 大概先 bfs 一轮找到每个点距离那些点不超过 $k$？然后枚举似乎可以 meet in the middle？
 T2 似乎随便分类讨论一下 rmq 就完了。
 14:30 能开写了，先敲一个码头。以 T2 为例。（原来考场 VS Code 是有代码补全和语法高亮哒？）
-1// with code highlight and code completion, I&amp;#39;d fly. 2 3#include &amp;lt;algorithm&amp;gt; 4#include &amp;lt;stdio.h&amp;gt; 5#include &amp;lt;vector&amp;gt; 6typedef unsigned uint; 7typedef unsigned long long ullt;typedef long long llt; 8typedef bool bol;typedef char chr;typedef void voi; 9typedef double dbl; 10template&amp;lt;typename T&amp;gt;bol _min(T&amp;amp;a,T b){return b&amp;lt;a?(a=b,true):false;} 11template&amp;lt;typename …  ]]></content></entry><entry><title>HDU 多校 2022 游记</title><url>/post/hdu2022/</url><categories><category>游记</category></categories><tags><tag>游记</tag></tags><content type="html"> 在 XJ 501 机房打。
+1// with code highlight and code completion, I&amp;#39;d fly. 2 3#include &amp;lt;algorithm&amp;gt; 4#include &amp;lt;stdio.h&amp;gt; 5#include &amp;lt;vector&amp;gt; 6typedef unsigned uint; 7typedef unsigned long long ullt;typedef long long llt; 8typedef bool bol;typedef char chr;typedef void voi; 9typedef double dbl; 10template&amp;lt;typename T&amp;gt;bol _min(T&amp;amp;a,T b){return b&amp;lt;a?(a=b,true):false;} 11template&amp;lt;typename …  ]]></content></entry><entry><title>HDU 多校 2022 游记</title><url>/post/HDU2022/</url><categories><category>游记</category></categories><tags><tag>游记</tag></tags><content type="html"> 在 XJ 501 机房打。
 队伍：
 team1093 学军中学二队
 为什么有二队而没有一队，这是一个问题。
