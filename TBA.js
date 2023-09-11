@@ -1,4 +1,3 @@
-document.writeln("<!DOCTYPE html>");
 document.writeln("<html lang=\'{{ .Site.Language.Lang }}\' dir=\'{{ $.Param \'contentdir\' | default \'zh\' }}\'>");
 document.writeln("");
 document.writeln("<head>");
