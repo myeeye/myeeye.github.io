@@ -1,9 +1,46 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>404 Not Found</title><url>/post/404/</url><categories/><tags/><content type="html"> 想不到吧，/post/404/ 居然是一个单独的页面！
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>uoj514</title><url>/post/uoj514/</url><categories><category>题解</category></categories><tags><tag>题解</tag><tag>uoj</tag></tags><content type="html"><![CDATA[  二维整式递推差不多得咧。
+规定 $\Xi:\operatorname{EGF}\rightarrow\operatorname{OGF}$。
+考虑令填满后的格子还能继续填，显然答案不变。
+那么每步选每个元素的概率均为 $\frac1n$。
+我们考虑钦定第一个格子被填满，再枚举最后一步的格子，计算概率，容易发现即为
+$$(\Xi(n-1)\frac{z^{b-1}/n^b}{(b-1)!}(\sum_{i\ge a}\frac{(z/n)^i}{i!})(\sum_{i\ge b}\frac{(z/n)^i}{i!})^{n-2})(1)$$
+设 $t=z/n$，$u=\exp t$，那么即为
+$$(\Xi_z(n-1)\frac{t^{b-1}/n}{(b-1)!}(u-\sum_{i&lt;a}\frac{t^i}{i!})(u-\sum_{i&lt;b}\frac{t^i}{i!})^{n-2})_z(1)$$
+从而枚举每个被填满的格子，答案即为
+$$(\Xi_z(n-1)\frac{t^{b-1}}{(b-1)!}(u-\sum_{i&lt;a}\frac{t^i}{i!})(u-\sum_{i&lt;b}\frac{t^i}{i!})^{n-2})_z(1)$$
+容易知道
+$$\Xi_zu^it^j=\frac{j!(z/n)^j}{(1-iz/n)^{j+1}}$$
+所以我们只用考虑如何快速计算
+$$\frac{t^{b-1}}{(b-1)!}(u-\sum_{i&lt;a}\frac{t^i}{i!})(u-\sum_{i&lt;b}\frac{t^i}{i!})^{n-2}$$
+我们不妨设要计算
+$$f(u,t)=(u-\sum_{i&lt;m}\frac{t^i}{i!})^n$$
+则
+$$\frac{\partial f}{\partial u}=n(u-\sum_{i&lt;m}\frac{t^i}{i!})^{n-1}$$
+$$\frac{\partial f}{\partial t}=n(-\sum_{i&lt;m-1}\frac{t^i}{i!})(u-\sum_{i&lt;m}\frac{t^i}{i!})^{n-1}$$
+从而
+$$nf=\frac{\partial f}{\partial t}+(u-\frac{t^{m-1}}{(m-1)!})\frac{\partial f}{\partial u}$$
+也即
+$$nf_{i,j}=(j+1)f_{i,j+1}+if_{i,j}-[m-1\le j]\frac{i+1}{(m-1)!}f_{i+1,j-m+1}$$
+从而 $j&gt;0$ 时，我们有
+$$f_{i,j}=\frac{(n-i)f_{i,j-1}+[j\ge m] (i+1)f_{i+1,j-m}/(m-1)!}j$$
+而 $j=0$ 时显然有
+$$f_{i,0}=(-1)^{n-i}\binom ni$$
+然后我们考虑计算
+$$g=(\sum_{i&lt;a}\frac{t^i}{i!})(u-\sum_{i&lt;m}\frac{t^i}{i!})^n$$
+此时有
+$$\frac{\partial g}{\partial u}=n(\sum_{i&lt;a}\frac{t^i}{i!})(u-\sum_{i&lt;m}\frac{t^i}{i!})^{n-1}$$
+$$\frac{\partial g}{\partial t}=n(\sum_{i&lt;a}\frac{t^i}{i!})(-\sum_{i&lt;m-1}\frac{t^i}{i!})(u-\sum_{i&lt;m}\frac{t^i}{i!})^{n-1}+g-\frac{t^{a-1}}{(a-1)!}f$$
+$$(u-\frac{t^{m-1}}{(m-1)!})\frac{\partial g}{\partial u}+(\frac{\partial g}{\partial t}-g+\frac{t^{a-1}}{(a-1)!}f)=ng$$
+$$\frac{\partial g}{\partial t}=(n+1)g-(u-\frac{t^{m-1}}{(m-1)!})\frac{\partial g}{\partial u}-\frac{t^{a-1}}{(a-1)!}f$$
+$$g_{i,j}=\frac{(n-i+1)g_{i,j-1}+[j\ge m] (i+1)g_{i+1,j-m}/(m-1)!-[j\ge a]f_{i,j-a}/(a-1)!}{j}$$
+而 $j=0$ 时 $g_{i,j}=f_{i,j}$。
+这样直接做就好了。
+  ]]></content></entry><entry><title>404 Not Found</title><url>/post/404/</url><categories/><tags/><content type="html"> 想不到吧，/post/404/ 居然是一个单独的页面！
 你是怎么发现这个页面的呢？
 是在 GitHub 上翻源码吗？还是自己改 url 改进来的？
 抑或通过搜索功能？或是随机页面？
 来评论回答一下吧！</content></entry><entry><title>Hello World</title><url>/post/hello-world/</url><categories><category>杂项</category></categories><tags><tag>杂项</tag></tags><content type="html"><![CDATA[  MathJax3 不支持行内公式，自闭了。
-换用 MathJax2.7 后好多了。
+换用 MathJax2.7 脚本后好多了。
 Hello World！
 你好！
 When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are:
@@ -11,7 +48,10 @@ $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$
 1Hello World！ 2 3你好！ 4 5When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are: 6 7$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$ 一二三四五六1 2 2.1 2.2 3 1#include &lt;stdio.h&gt; 2 3int main() 4{ 5 puts(&#34;Hello World!&#34;) 6 return 0; 7} （密码：123456）
   ]]></content></entry><entry><title>Music</title><url>/music.html</url><categories/><tags/><content type="html"> APlayer 加载 GitHub 上的乐曲和曲绘实在太卡了，所以特意迁移到单独一个页面。
 因为 GitHub 加载音乐实在太卡也太占空间，所以改用了外链加载。
-音乐来自网易云 Arcaea 电台，而曲绘来自中文维基。</content></entry><entry><title>关于我</title><url>/about.html</url><categories><category>杂项</category></categories><tags><tag>杂项</tag></tags><content type="html"> 你好。我是 myee。
+音乐来自
+网易云 Arcaea 电台
+，而曲绘来自 Arcaea 中文维基。
+玩源神玩的。</content></entry><entry><title>关于我</title><url>/about.html</url><categories><category>杂项</category></categories><tags><tag>杂项</tag></tags><content type="html"> 你好。我是 myee。
 我的高中就读于杭州学军中学教育集团文渊中学。现在（$2023$ 年下半年）高三。
 我的 OI 获奖：
 APIO2022 线上金牌。 WC2023 金牌。 NOI2023 金牌。 在使用 GitHub Pages 搭建博客前，我用过很长时间洛谷博客，也用过两年左右的 cnblogs（博客园）。
@@ -28,7 +68,44 @@ Mophie 的 Luogu 博客
 zaozao_zmx 的 cnblogs 博客
 由于博客评论我还不会弄，如果有需要挂友链的同学可以联系我，我会视情况加入。
 评论功能弄好了！有想挂友链的同学在下面发一下就好了，我会视情况加入。
-国内用不太了 waline，我也不太会配，急了。有意愿的同学还是联系我吧。</content></entry><entry><title>NOI2023 游记</title><url>/post/NOI2023/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>图片挂了</tag></tags><content type="html"> Day $0$ 是 7.23，Day $1$ 是 7.24，Day $2$ 是 7.26。
+国内用不太了 waline，我也不太会配，急了。有意愿的同学还是联系我吧。</content></entry><entry><title>loj3362</title><url>/post/loj3362/</url><categories><category>题解</category></categories><tags><tag>题解</tag><tag>loj</tag></tags><content type="html"> 因为某 hhz 曾经往 XJOI 模拟赛搬了这题，然后现在我要给模拟赛讲题，所以滚回来补题了。
+观察 $1$：对于一个形如 WWBB 的子图，如果当前匹配是 $(1,4)(2,3)$，我们换成 $(1,3)(2,4)$ 总更优。
+观察 $2$：满足观察 $1$ 的情况，可以被描述为，假设某个 B 和 W 相连，那么当前 B 的后一个 B 一定连着当前 W 的下一个 W。
+观察 $3$：在观察 $2$ 的基础上，假设一条线段的两个点在环上的距离为 $d$，那么该线段一定和 $d-1$ 条线段相交。
+观察 $4$：在观察 $3$ 的基础上，考虑把白点全部对称到环上对称的位置，然后再计算距离 $d$，那么即为 $n-d-1$ 的贡献。
+因此我们的目标转为最小化 $\sum d$。
+容易发现，我们假设每个黑点权值是 $+1$，每个白点权值是 $-1$，那么当前问题就转化为了经典的
+糖果传递
+，直接套结论即可。
+总复杂度可以做到 $O(n)$。</content></entry><entry><title>超现实数学习笔记</title><url>/post/surreal-number/</url><categories><category>学术</category></categories><tags><tag>学术</tag><tag>图片挂了</tag></tags><content type="html"><![CDATA[  由于不打算学得太深，决定只记几个简单的内容。全文基本不会有证明。
+p.s. 这个数学公式渲染方案太难受了，咋还和 Markdown 不兼容的，导致我不得不重新修改一遍源码。
+定义博弈的形式化定义：设所有博弈 $x$ 构成博弈全集 $S$，则每个 $x$ 可以唯一表示为 $\{x^L|x^R\}$ 的形式，其中 $x^L,x^R\subseteq S$。注意 $x^L,x^R$ 是博弈的一个集合，且讨论范围内 $x^L,x^R$ 均为有限集，采取的定义不会出现环。
+超现实数的形式化定义：设所有超现实数 $x$ 构成超现实数全集 $S$，则每个 $x$ 可以唯一表示为 $\{x^L|x^R\}$ 的形式，其中 $x^L,x^R\subseteq S$ 且 $\forall a\in x^L,b\in x^R,b\nleq a$。注意 $x^L,x^R$ 是超现实数的一个集合，且讨论范围内 $x^L,x^R$ 均为有限集，采取的定义不会出现环；比较运算会在随后定义。
+容易发现这两个定义是类似的，只不过超现实数的定义中还要求所有左部元素均不大于右部元素。习惯上，如果假设 $x^L=\{a,b,c,\dots\}$，$x^R=\{d,e,f,\dots\}$，那么我们会简记
+$$x=\{a,b,c,\dots|d,e,f,\dots\}$$
+接下来对超现实数定义比较运算符。
+$$y\le x\Leftrightarrow x\ge y\Leftrightarrow\nexists t\in x^R,t\le y\land\nexists t\in y^L,x\le t$$
+$$x=y\Leftrightarrow x\ge y\land y\ge x$$
+$$y&amp;gt;x\Leftrightarrow x&amp;gt;y\Leftrightarrow x\ge y\land y\ngeq x$$
+可以证明，对于超现实数来说，这个比较运算为全序的。人话就是和我们平常所看到的比较运算符没啥区别。
+对博弈我们有类似的定义，但不再是全序；即可能出现 $x\nleq y\land y\nleq x$ 的情况。我们称无法比较的情况为 $x||y$；而称 $x=y$ 为值相等。$&amp;lt; &amp;gt; = \ge \le$ 这几个运算符本身仍是具有传递性的。
+对于超现实数来说，值相等即为相等；对于 …  ]]></content></entry><entry><title>AGC019D O(n log n) sol (English ver.)</title><url>/post/AT_agc019_d/</url><categories><category>题解</category></categories><tags><tag>题解</tag><tag>AtCoder</tag></tags><content type="html"><![CDATA[  Download Chinese ver.Translated by DeepLwith my manual modification.
+Firstly, there is no solution if and only if $B_i\equiv0$ and there exists $A_i=1$.
+It can always be found that any one of the optimal routes takes the form of a total of $l$ steps to the left and $r$ steps to the right, with the end point $p$ to the left/right of the starting point.
+This is easily proved by tweaking, and the answer is $2r+2l-p+\text{number of unmatched pairs at the endpoints}$, where &ldquo;unmatched pairs&rdquo; is defined as either $0$ and $1$ at the same subscript, or $1$ and $0$ at the same subscript.
+We might as well enumerate the endpoints and minimize $l+r$.
+Then a scheme is legal if and only if any of the $A_i=1$ numbers have ever been at $B_i=1$ (including the endpoints).
+This translates into no more than $n$ restrictions, each of the form $l\ge l_j\lor r\ge r_j$, where $l_j/r_j$ denotes how far to at least $1$ in $B$ it would be if it were only to go left/right; $l\ge p$ for a restriction to the left, and $r\ge p$ for a restriction to the right; and finally, $l\ge0$ and $r\ge0$. and $r\ge0$.
+In this way we are planning as follows:
+$$\min z=x+y$$
+$$s.t.\begin{cases}A_1=0\lor x\ge l_1\lor y\ge r_1\newline A_2=0\lor x\ge l_2\lor y\ge r_2\newline\vdots\newline A_n=0\lor x\ge l_n\lor y\ge r_n\newline x\ge[\text{end to left}]p\newline y\ge[\text{end to right}]p\end{cases}$$
+Consider solving the plan by graphing.
+We draw these restrictions through to the 2D plane, which is a number of $3/4$ planes taking intersections with two half-planes to find the minimum $x+y$ on them.
+Noting that $z=x+y$ is a diagonal line when $z$ is constant, we consider just finding the minimum legal point on the contour line.
+This can be handled directly by bucket rows and then monotonic stacks. Total complexity $O(n^2)$.
+If you notice that the previous constraints are always the same, this problem can actually be done with a scan line to achieve a better complexity!
+The total complexity will be $O(n\log n)$ due to the FFT acceleration of the previous &ldquo;number of unmatched pairs&rdquo; contribution.
+  ]]></content></entry><entry><title>NOI2023 游记</title><url>/post/NOI2023/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>图片挂了</tag></tags><content type="html"> Day $0$ 是 7.23，Day $1$ 是 7.24，Day $2$ 是 7.26。
 Day $-6$
 从华师一飞回杭州。
 打 qoj 板子赛。
