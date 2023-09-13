@@ -46,6 +46,7 @@ Hello World！
 When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are:
 $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$
 1Hello World！ 2 3你好！ 4 5When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are: 6 7$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$ 一二三四五六1 2 2.1 2.2 3 1#include &lt;stdio.h&gt; 2 3int main() 4{ 5 puts(&#34;Hello World!&#34;) 6 return 0; 7} （密码：123456）
+qwqqwq
   ]]></content></entry><entry><title>Music</title><url>/music.html</url><categories/><tags/><content type="html"> APlayer 加载 GitHub 上的乐曲和曲绘实在太卡了，所以特意迁移到单独一个页面。
 因为 GitHub 加载音乐实在太卡也太占空间，所以改用了外链加载。
 音乐来自
@@ -89,10 +90,12 @@ $$x=y\Leftrightarrow x\ge y\land y\ge x$$
 $$y&amp;gt;x\Leftrightarrow x&amp;gt;y\Leftrightarrow x\ge y\land y\ngeq x$$
 可以证明，对于超现实数来说，这个比较运算为全序的。人话就是和我们平常所看到的比较运算符没啥区别。
 对博弈我们有类似的定义，但不再是全序；即可能出现 $x\nleq y\land y\nleq x$ 的情况。我们称无法比较的情况为 $x||y$；而称 $x=y$ 为值相等。$&amp;lt; &amp;gt; = \ge \le$ 这几个运算符本身仍是具有传递性的。
-对于超现实数来说，值相等即为相等；对于 …  ]]></content></entry><entry><title>AGC019D O(n log n) sol (English ver.)</title><url>/post/AT_agc019_d/</url><categories><category>题解</category></categories><tags><tag>题解</tag><tag>AtCoder</tag></tags><content type="html"><![CDATA[  Download Chinese ver.Translated by DeepLwith my manual modification.
+对于超现实数来说，值相等即为相等；对于 …  ]]></content></entry><entry><title>AGC019D O(n log n) sol (English ver.)</title><url>/post/agc019d/</url><categories><category>题解</category></categories><tags><tag>题解</tag><tag>AtCoder</tag></tags><content type="html"><![CDATA[  Download Chinese ver.Translated by DeepLwith my manual modification.
 Firstly, there is no solution if and only if $B_i\equiv0$ and there exists $A_i=1$.
 It can always be found that any one of the optimal routes takes the form of a total of $l$ steps to the left and $r$ steps to the right, with the end point $p$ to the left/right of the starting point.
-This is easily proved by tweaking, and the answer is $2r+2l-p+\text{number of unmatched pairs at the endpoints}$, where &ldquo;unmatched pairs&rdquo; is defined as either $0$ and $1$ at the same subscript, or $1$ and $0$ at the same subscript.
+This is easily proved by tweaking, and the answer is
+$$2r+2l-p+\text{number of unmatched pairs at the endpoints}$$
+where &ldquo;unmatched pairs&rdquo; is defined as either $0$ and $1$ at the same subscript, or $1$ and $0$ at the same subscript.
 We might as well enumerate the endpoints and minimize $l+r$.
 Then a scheme is legal if and only if any of the $A_i=1$ numbers have ever been at $B_i=1$ (including the endpoints).
 This translates into no more than $n$ restrictions, each of the form $l\ge l_j\lor r\ge r_j$, where $l_j/r_j$ denotes how far to at least $1$ in $B$ it would be if it were only to go left/right; $l\ge p$ for a restriction to the left, and $r\ge p$ for a restriction to the right; and finally, $l\ge0$ and $r\ge0$. and $r\ge0$.
@@ -105,7 +108,7 @@ Noting that $z=x+y$ is a diagonal line when $z$ is constant, we consider just fi
 This can be handled directly by bucket rows and then monotonic stacks. Total complexity $O(n^2)$.
 If you notice that the previous constraints are always the same, this problem can actually be done with a scan line to achieve a better complexity!
 The total complexity will be $O(n\log n)$ due to the FFT acceleration of the previous &ldquo;number of unmatched pairs&rdquo; contribution.
-  ]]></content></entry><entry><title>NOI2023 游记</title><url>/post/NOI2023/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>图片挂了</tag></tags><content type="html"> Day $0$ 是 7.23，Day $1$ 是 7.24，Day $2$ 是 7.26。
+  ]]></content></entry><entry><title>NOI2023 游记</title><url>/post/noi2023/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>图片挂了</tag></tags><content type="html"> Day $0$ 是 7.23，Day $1$ 是 7.24，Day $2$ 是 7.26。
 Day $-6$
 从华师一飞回杭州。
 打 qoj 板子赛。
@@ -164,7 +167,7 @@ NOIp 花了 1h 切了前 $3$ 题，测试了一下 selfEval 发现很好用。
 晚上发了密码条。
 Day $1$
 半夜里惊醒，一看时间 $2:22$。
-去考场前突然想上厕所，问了下工作人员给指了 …</content></entry><entry><title>THUPC2023 游记</title><url>/post/THUPC2023/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>图片挂了</tag></tags><content type="html"> 2023.2
+去考场前突然想上厕所，问了下工作人员给指了 …</content></entry><entry><title>THUPC2023 游记</title><url>/post/thupc2023/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>图片挂了</tag></tags><content type="html"> 2023.2
 THUPC 报名！
 和 unputdownable，猫猬兽组队，队名 XJ 五队。
 devin 让我们填毕业年份 2028。
@@ -186,7 +189,7 @@ $3$ 月 $4$ 日 $13$ 点联络群消息：
 感觉是憨憨数位 dp，枚举取模后结果即做完。
 然后开始写，第一次交 MLE 了（开了 map），第二次交 TLE 了（递归大常数），最后卡了卡常才过。
 代码：
-1// 膜拜国际特级大师周康阳大佬，今天在 THUPC 测试赛首页称您为大夏尊贵的大名，一股敬佩之油生然而，您在 THUPC 测试赛为国争光，扬我华威名，向您献上最 …</content></entry><entry><title>ZJOI2023 游记</title><url>/post/ZJOI2023/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>图片挂了</tag></tags><content type="html"><![CDATA[  正赛在 2023.4.1 - 2023.4.2。
+1// 膜拜国际特级大师周康阳大佬，今天在 THUPC 测试赛首页称您为大夏尊贵的大名，一股敬佩之油生然而，您在 THUPC 测试赛为国争光，扬我华威名，向您献上最 …</content></entry><entry><title>ZJOI2023 游记</title><url>/post/zjoi2023/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>图片挂了</tag></tags><content type="html"><![CDATA[  正赛在 2023.4.1 - 2023.4.2。
 愚人节省选。挨创。
 前情提要：$\rm NOIP$ $\rm297pts$ 苟上 ZJ 队线。
 其实前面一长串（Day $-25\sim-5$）是纪中集训游记，不过比较早的内容可能记不太起来了。
@@ -218,7 +221,7 @@ Day $-15$听 bnds 讲题。开摆。
 Day $-14$清澄模拟赛。asdfz Round。
 切了 $2$ 题，拿了 Rank $6$。
 T1 转化成求 $n$ 个低次有理分式之和的连续点值，随便写了个点值平移秒了。听说 std 写了多点求值，绷。不过也许有趣的地方应该在于乘 $e^z$ 来对 $f\leftarrow z(f&amp;rsquo;&amp;rsquo;+2f&amp;rsquo;+f)$ 进行变换的过程？
-T2 转化后是大施罗德数（OEIS A006318），随便推了个 ODE 秒了。其实之前模拟赛里有过这种东西。 …  ]]></content></entry><entry><title>GDKOI2023 游记</title><url>/post/GDKOI2023/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>图片挂了</tag></tags><content type="html"> 因为在广东集训，我们都要参加 GDKOI2023 来试手。
+T2 转化后是大施罗德数（OEIS A006318），随便推了个 ODE 秒了。其实之前模拟赛里有过这种东西。 …  ]]></content></entry><entry><title>GDKOI2023 游记</title><url>/post/gdkoi2023/</url><categories><category>游记</category></categories><tags><tag>游记</tag></tags><content type="html"> 因为在广东集训，我们都要参加 GDKOI2023 来试手。
 正赛在 3.11，3.12 两天。
 Day 0
 上午是照常的讲题，感觉很有意思。
@@ -250,7 +253,7 @@ Day 2
 T1 一眼偏序，一个树剖，一个换根，一个扫描线，一个 BIT 拍上去就完了。
 T2 没思路，推出了子集 dp，FMT 优化一下是 $O(nk2^n)$ 的，矩乘是 $O(8^n\log k)$，稍微卡卡常，大概是 $20\sim60$。
 T3 感觉很 In a Trap
-啊！感觉不会啥 polylog 做法，猛的一个根号分治 + 根号平衡冲上去，复杂度 $O((n+q)\sqrt n)$，也没拼暴力，预估 $20\sim100$。 …</content></entry><entry><title>GDKOI2021 口胡</title><url>/post/GDKOI2021/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>题解</tag><tag>做题记录</tag><tag>图片挂了</tag></tags><content type="html"> 因为在广东集训，我们都要参加 GDKOI2023 来试手。
+啊！感觉不会啥 polylog 做法，猛的一个根号分治 + 根号平衡冲上去，复杂度 $O((n+q)\sqrt n)$，也没拼暴力，预估 $20\sim100$。 …</content></entry><entry><title>GDKOI2021 口胡</title><url>/post/gdkoi2021/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>题解</tag><tag>做题记录</tag></tags><content type="html"> 因为在广东集训，我们都要参加 GDKOI2023 来试手。
 听说 GDKOI2021 是三天，每天 $4$ 小时 $4$ 题，省选难度，并且没有大样例。（p.s. GDKOI2022 未举办）而且评测机似乎还是 g++ 4.8.4。
 然后由于是非正式选手，我们会在纪中机房打，用的机子会统一是只有 g++ 4.9.2 的 Windows 神秘机。不过听说评测环境会是 NOI Linux 2.0。
 反正是，纪中教练（Update: 由 Alpha 从教练那边讨来的）给了我们 GDKOI2021 三天的题面，然后手上也没有可以自己交的地方（没有 gmoj
@@ -273,7 +276,7 @@ $1\le L\le R\le n(n+1)/2$，$R-L+1\le3\times10^5$。
 这个，是不是，可以加进 XJCS，作为单调栈基础练习题啊！@devinwang
 写个单调栈，建出笛卡尔树，我们就可以知道对于每个 $\min a$，其向左、向右扩展的距离。
 然后我们考虑二分答案，对每个值 $w$ 查询有多少对 $l,r$ 满足 $f_{l,r}&amp;amp;lt;w$；答案显然不超过 $O(nv)$ 级别，因此只用 $O(\log(nv))$ 轮二分即可解出第 $L$ 大的数对应的权值，以及有多少数小于之。
-然后我们考虑下一个数怎么求：我们先把相同的 $w$ 尽可能取空，这样我们下一个只用考虑 $&amp;amp;gt;w$ 的数。然后我们对每个 $\min a$ 开一个对应了元素的 …</content></entry><entry><title>USACO2023Feb 游记</title><url>/post/USACO2023Feb/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>题解</tag><tag>做题记录</tag></tags><content type="html"><![CDATA[  由于学校要求，过来打 USACO。
+然后我们考虑下一个数怎么求：我们先把相同的 $w$ 尽可能取空，这样我们下一个只用考虑 $&amp;amp;gt;w$ 的数。然后我们对每个 $\min a$ 开一个对应了元素的 …</content></entry><entry><title>USACO2023Feb 游记</title><url>/post/usaco2023feb/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>题解</tag><tag>做题记录</tag></tags><content type="html"><![CDATA[  由于学校要求，过来打 USACO。
 由于上次已经打到白金了，所以继续。
 然后还是 AK 了。
 感觉题意很迷惑，所以都翻译一下。
@@ -289,7 +292,7 @@ $1\le q\le10^5$，$1\le x\le10^{14}$，$0\le y\le10^9$。
 当填满左儿子空位时，就不用向左递归；否则，只用向左递归，右儿子结果和 $c=0$ 时的右儿子结果一致。
 总复杂度 $O(q\log^2v)$。
 核心代码：
-1const ullt Mod=1e9+7,inv2=5e8+4; 2typedef ConstMod::mod_ullt&amp;lt;Mod&amp;gt;modint; 3typedef std::vector&amp;lt;modint&amp;gt;modvec; 4inline modint sum(ullt l,ullt r){return modint(r-l)*(l+r-1)*inv2;} 5struct Seg{ 6 Seg*L,*R;ullt id,len,cnt,more;modint ans; 7 Seg(ullt l,ullt r):L(NULL),R(NULL),id(l),len(r-l),cnt(0),more(0),ans(){} 8 voi chg(ullt p,ullt v){ 9 if(len==1){ 10 if(v)cnt=1,more=v-1,ans=id;else cnt=more=0,ans=0; 11 return; 12 } 13 if(p&amp;lt;(len&amp;gt;&amp;gt;1)){ 14 …  ]]></content></entry><entry><title>ABC268 VP记</title><url>/post/ABC268/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>题解</tag><tag>做题记录</tag></tags><content type="html"><![CDATA[  引言几天没比赛，手痒了，决定尝试 VP 一场 ABC，作为第一次 VP AT（
+1const ullt Mod=1e9+7,inv2=5e8+4; 2typedef ConstMod::mod_ullt&amp;lt;Mod&amp;gt;modint; 3typedef std::vector&amp;lt;modint&amp;gt;modvec; 4inline modint sum(ullt l,ullt r){return modint(r-l)*(l+r-1)*inv2;} 5struct Seg{ 6 Seg*L,*R;ullt id,len,cnt,more;modint ans; 7 Seg(ullt l,ullt r):L(NULL),R(NULL),id(l),len(r-l),cnt(0),more(0),ans(){} 8 voi chg(ullt p,ullt v){ 9 if(len==1){ 10 if(v)cnt=1,more=v-1,ans=id;else cnt=more=0,ans=0; 11 return; 12 } 13 if(p&amp;lt;(len&amp;gt;&amp;gt;1)){ 14 …  ]]></content></entry><entry><title>ABC268 VP记</title><url>/post/abc268/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>题解</tag><tag>做题记录</tag></tags><content type="html"><![CDATA[  引言几天没比赛，手痒了，决定尝试 VP 一场 ABC，作为第一次 VP AT（
 下次可能就不挑这么简单的场了（
 VP 登顶留念。
 比赛从 19:30 开始。我一路正开，也没啥罚时。
@@ -311,12 +314,12 @@ $s_i$ 为 $s_j$ 前缀，则 $i$ 必然在 $j$ 前。 $s_j$ 为 $s_i$ 前缀，�
 1const ullt Mod=998244353; 2typedef ConstMod::mod_ullt&lt;Mod&gt;modint; 3struct node{node*son[26];uint v1,v2;}N[2000005],*rot=N,*cnt=N+1; 4node*NewNode(){return cnt++;} 5#define Id(p) ((uint)((p)-N)) 6#define Turn(c) ((c)-&#39;a&#39;) 7node*insert(chr*C){ 8 node*p=N; 9 while(*C){ 10 p-&gt;v1++;auto&amp;s=p-&gt;son[Turn(*(C++))]; 11 if(!s)s=NewNode(); 12 p=s; 13 } 14 p-&gt;v2++; 15 return p; 16} 17chr C[500005]; 18node*At[500005]; 19int main() 20{ 21#ifdef MYEE 22 freopen(&#34;QAQ.in&#34;,&#34;r&#34;,stdin); 23 // freopen(&#34;QAQ.out&#34;,&#34;w&#34;,stdout); 24#endif 25 uint n;scanf(&#34;%u&#34;,&amp;n); 26 for(uint i=0;i&lt;n;i++)scanf(&#34;%s&#34;,C),At[i]=insert(C); 27 for(node*p=rot;p!=cnt;p++)for(auto s:p-&gt;son)if(s)s-&gt;v2+=p-&gt;v2; 28 for(uint i=0;i&lt;n;i++){ 29 (modint(n-At[i]-&gt;v1+At[i]-&gt;v2)/2).println(); 30 } 31 return 0; 32} H考虑对文本串每个前缀，计算出其最短的存在于模板串中的后缀。
 这个拿个 ACAM 即可搞定。
 然后就是每个这样的区间都得删掉一个点，直接贪心 / 差分约束即可。
-1const uint sigma=26; 2struct node{node*son[sigma],*fail;uint kill;node():kill(-1u){}}N[2000005],*rot=N,*cnt=N+1; 3node*NewNode(){return cnt++;} 4#define Id(p) ((uint)((p)-N)) 5#define Turn(c) ((c)-&#39;a&#39;) 6voi insert(chr*C){ 7 node*p=N;uint len=0; 8 while(*C){ 9 auto&amp;s=p-&gt;son[Turn(*(C++))]; 10 if(!s)s=NewNode(); 11 p=s,len++; 12 } 13 _min(p-&gt;kill,len); 14} 15voi build(){ 16 std::queue&lt;node*&gt;Q;rot-&gt;fail=rot; 17 for(uint i=0;i&lt;sigma;i++)(rot-&gt;son[i]?(Q.push(rot-&gt;son[i]),rot-&gt;son[i]-&gt;fail):rot-&gt;son[i])=rot; 18 while(!Q.empty()){ 19 node*p=Q.front();Q.pop(),_min(p-&gt;kill,p-&gt;fail-&gt;kill); 20 for(uint i=0;i&lt;sigma;i++) 21 (p-&gt;son[i]?(Q.push(p-&gt;son[i]),p-&gt;son[i]-&gt;fail):p-&gt;son[i])=p-&gt;fail-&gt;son[i]; 22 } 23} 24chr S[500005],C[500005]; 25int main() 26{ 27#ifdef MYEE 28 freopen(&#34;QAQ.in&#34;,&#34;r&#34;,stdin); 29 // freopen(&#34;QAQ.out&#34;,&#34;w&#34;,stdout); 30#endif 31 scanf(&#34;%s&#34;,S); 32 uint n;scanf(&#34;%u&#34;,&amp;n); 33 while(n--){ 34 scanf(&#34;%s&#34;,C); 35 insert(C); 36 } 37 build(); 38 uint ans=0,last=1e9; 39 node*p=rot; 40 for(auto c:S)if(c){ 41 last++,p=p-&gt;son[Turn(c)]; 42 if(last&gt;=p-&gt;kill) 43 last=0,ans++; 44 }else break; 45 printf(&#34;%u\n&#34;,ans); 46 return 0; 47}   ]]></content></entry><entry><title>USACO2023Jan 游记</title><url>/post/USACO2023Jan/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>题解</tag><tag>做题记录</tag></tags><content type="html"><![CDATA[  由于学校要求，过来打 USACO。
+1const uint sigma=26; 2struct node{node*son[sigma],*fail;uint kill;node():kill(-1u){}}N[2000005],*rot=N,*cnt=N+1; 3node*NewNode(){return cnt++;} 4#define Id(p) ((uint)((p)-N)) 5#define Turn(c) ((c)-&#39;a&#39;) 6voi insert(chr*C){ 7 node*p=N;uint len=0; 8 while(*C){ 9 auto&amp;s=p-&gt;son[Turn(*(C++))]; 10 if(!s)s=NewNode(); 11 p=s,len++; 12 } 13 _min(p-&gt;kill,len); 14} 15voi build(){ 16 std::queue&lt;node*&gt;Q;rot-&gt;fail=rot; 17 for(uint i=0;i&lt;sigma;i++)(rot-&gt;son[i]?(Q.push(rot-&gt;son[i]),rot-&gt;son[i]-&gt;fail):rot-&gt;son[i])=rot; 18 while(!Q.empty()){ 19 node*p=Q.front();Q.pop(),_min(p-&gt;kill,p-&gt;fail-&gt;kill); 20 for(uint i=0;i&lt;sigma;i++) 21 (p-&gt;son[i]?(Q.push(p-&gt;son[i]),p-&gt;son[i]-&gt;fail):p-&gt;son[i])=p-&gt;fail-&gt;son[i]; 22 } 23} 24chr S[500005],C[500005]; 25int main() 26{ 27#ifdef MYEE 28 freopen(&#34;QAQ.in&#34;,&#34;r&#34;,stdin); 29 // freopen(&#34;QAQ.out&#34;,&#34;w&#34;,stdout); 30#endif 31 scanf(&#34;%s&#34;,S); 32 uint n;scanf(&#34;%u&#34;,&amp;n); 33 while(n--){ 34 scanf(&#34;%s&#34;,C); 35 insert(C); 36 } 37 build(); 38 uint ans=0,last=1e9; 39 node*p=rot; 40 for(auto c:S)if(c){ 41 last++,p=p-&gt;son[Turn(c)]; 42 if(last&gt;=p-&gt;kill) 43 last=0,ans++; 44 }else break; 45 printf(&#34;%u\n&#34;,ans); 46 return 0; 47}   ]]></content></entry><entry><title>USACO2023Jan 游记</title><url>/post/usaco2023jan/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>题解</tag><tag>做题记录</tag></tags><content type="html"><![CDATA[  由于学校要求，过来打 USACO。
 似乎要求起码升到白金？
 由于是第一次打，只有从铜组开始了。
 Brouze简单题，就给核心代码。
 30min AK。
-Leadershttp://usaco.org/current/index.php?page=viewproblem2&amp;cpid=12751chr C[100005];uint R[100005]; 2int main() 3{ 4#ifdef MYEE 5 freopen(&amp;#34;QAQ.in&amp;#34;,&amp;#34;r&amp;#34;,stdin); 6 // freopen(&amp;#34;QAQ.out&amp;#34;,&amp;#34;w&amp;#34;,stdout); 7#endif 8 uint n;scanf(&amp;#34;%u%s&amp;#34;,&amp;amp;n,C);for(uint i=0;i&amp;lt;n;i++)scanf(&amp;#34;%u&amp;#34;,R+i); 9 chr c=*C;uint p=0;while(C[p]==c)p++; 10 uint ans=0;for(uint i=0;i&amp;lt;p;i++)ans+=R[i]&amp;gt;p; 11 bol ok=R[0]==p;for(uint i=p;i&amp;lt;n;i++)ok&amp;amp;=C[i]!=c; 12 ans+=ok; 13 printf(&amp;#34;%u\n&amp;#34;,ans); 14 return 0; 15} Air Cownditioning IIhttp://usaco.org/current/index.php?page=viewproblem2&amp;cpid=12761uint L[25],R[25],C[25],A[25],B[25],P[25],M[25],Cnt[105]; 2int main() 3{ 4#ifdef MYEE 5 freopen(&amp;#34;QAQ.in&amp;#34;,&amp;#34;r&amp;#34;,stdin); 6 // freopen(&amp;#34;QAQ.out&amp;#34;,&amp;#34;w&amp;#34;,stdout); 7#endif 8 uint n,m;scanf(&amp;#34;%u%u&amp;#34;,&amp;amp;n,&amp;amp;m); 9 for(uint …  ]]></content></entry><entry><title>WC2023 游记</title><url>/post/WC2023/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>图片挂了</tag></tags><content type="html"><![CDATA[  不是很会写游记，随便写写吧。
+Leadershttp://usaco.org/current/index.php?page=viewproblem2&amp;cpid=12751chr C[100005];uint R[100005]; 2int main() 3{ 4#ifdef MYEE 5 freopen(&amp;#34;QAQ.in&amp;#34;,&amp;#34;r&amp;#34;,stdin); 6 // freopen(&amp;#34;QAQ.out&amp;#34;,&amp;#34;w&amp;#34;,stdout); 7#endif 8 uint n;scanf(&amp;#34;%u%s&amp;#34;,&amp;amp;n,C);for(uint i=0;i&amp;lt;n;i++)scanf(&amp;#34;%u&amp;#34;,R+i); 9 chr c=*C;uint p=0;while(C[p]==c)p++; 10 uint ans=0;for(uint i=0;i&amp;lt;p;i++)ans+=R[i]&amp;gt;p; 11 bol ok=R[0]==p;for(uint i=p;i&amp;lt;n;i++)ok&amp;amp;=C[i]!=c; 12 ans+=ok; 13 printf(&amp;#34;%u\n&amp;#34;,ans); 14 return 0; 15} Air Cownditioning IIhttp://usaco.org/current/index.php?page=viewproblem2&amp;cpid=12761uint L[25],R[25],C[25],A[25],B[25],P[25],M[25],Cnt[105]; 2int main() 3{ 4#ifdef MYEE 5 freopen(&amp;#34;QAQ.in&amp;#34;,&amp;#34;r&amp;#34;,stdin); 6 // freopen(&amp;#34;QAQ.out&amp;#34;,&amp;#34;w&amp;#34;,stdout); 7#endif 8 uint n,m;scanf(&amp;#34;%u%u&amp;#34;,&amp;amp;n,&amp;amp;m); 9 for(uint …  ]]></content></entry><entry><title>WC2023 游记</title><url>/post/wc2023/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>图片挂了</tag></tags><content type="html"><![CDATA[  不是很会写游记，随便写写吧。
 博客园内链导致大量图片挂了警告。
 一些附件讲课资料合集（压缩后 $\rm 31MB$）太大了，可以去 U 群下载。
 由于后面很多乐子，我把相关内容打包成 zip 上传上来了。
@@ -339,7 +342,7 @@ Day 1上午没啥意思，没听。
 晚上员交，直接爆炸。
 然后是一些乐子。
 乐子 嗯，暴戾语言复现。
-草，别让他们放PV了，把题目留着就行了。 警告一次，教室再出现不文明用语，全部踢出去，你们代表的是自己学校的形象。 PV 是咋样的呢？ CCF，以推动计算技术领域学术，技术，教育，应用和产业的发展，助力计算技术领域专业人士能力提升为使命，目前拥有超过10万名付费个人会员。 CCF，下设城市会员活动中心，学生分会，YOCSEF城市论坛，以及大数据，自然语言处理，和高性能计算等专业委员会。共近两百个会员服务机构，每年举办近千场专业活 …  ]]></content></entry><entry><title>CSP2022 游记</title><url>/post/CSP2022/</url><categories><category>游记</category></categories><tags><tag>游记</tag></tags><content type="html"><![CDATA[  我还是写一下吧……
+草，别让他们放PV了，把题目留着就行了。 警告一次，教室再出现不文明用语，全部踢出去，你们代表的是自己学校的形象。 PV 是咋样的呢？ CCF，以推动计算技术领域学术，技术，教育，应用和产业的发展，助力计算技术领域专业人士能力提升为使命，目前拥有超过10万名付费个人会员。 CCF，下设城市会员活动中心，学生分会，YOCSEF城市论坛，以及大数据，自然语言处理，和高性能计算等专业委员会。共近两百个会员服务机构，每年举办近千场专业活 …  ]]></content></entry><entry><title>CSP2022 游记</title><url>/post/csp2022/</url><categories><category>游记</category></categories><tags><tag>游记</tag></tags><content type="html"><![CDATA[  我还是写一下吧……
 Day -1模拟赛。
 成为机房垫底人。
 Day 0上午补昨天模拟赛 T4。
@@ -365,7 +368,7 @@ devin 没来。/kel
 T1 大概先 bfs 一轮找到每个点距离那些点不超过 $k$？然后枚举似乎可以 meet in the middle？
 T2 似乎随便分类讨论一下 rmq 就完了。
 14:30 能开写了，先敲一个码头。以 T2 为例。（原来考场 VS Code 是有代码补全和语法高亮哒？）
-1// with code highlight and code completion, I&amp;#39;d fly. 2 3#include &amp;lt;algorithm&amp;gt; 4#include &amp;lt;stdio.h&amp;gt; 5#include &amp;lt;vector&amp;gt; 6typedef unsigned uint; 7typedef unsigned long long ullt;typedef long long llt; 8typedef bool bol;typedef char chr;typedef void voi; 9typedef double dbl; 10template&amp;lt;typename T&amp;gt;bol _min(T&amp;amp;a,T b){return b&amp;lt;a?(a=b,true):false;} 11template&amp;lt;typename …  ]]></content></entry><entry><title>HDU 多校 2022 游记</title><url>/post/HDU2022/</url><categories><category>游记</category></categories><tags><tag>游记</tag></tags><content type="html"> 在 XJ 501 机房打。
+1// with code highlight and code completion, I&amp;#39;d fly. 2 3#include &amp;lt;algorithm&amp;gt; 4#include &amp;lt;stdio.h&amp;gt; 5#include &amp;lt;vector&amp;gt; 6typedef unsigned uint; 7typedef unsigned long long ullt;typedef long long llt; 8typedef bool bol;typedef char chr;typedef void voi; 9typedef double dbl; 10template&amp;lt;typename T&amp;gt;bol _min(T&amp;amp;a,T b){return b&amp;lt;a?(a=b,true):false;} 11template&amp;lt;typename …  ]]></content></entry><entry><title>HDU 多校 2022 游记</title><url>/post/hdu2022/</url><categories><category>游记</category></categories><tags><tag>游记</tag></tags><content type="html"> 在 XJ 501 机房打。
 队伍：
 team1093 学军中学二队
 为什么有二队而没有一队，这是一个问题。
