@@ -1,11 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>修缮日志</title><url>/post/update-record/</url><categories/><tags/><content type="html"> 由于 GitHub 博客实在太用起来太复杂了，记录一个修缮日志。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>修缮日志</title><url>/post/update-record/</url><categories><category>杂项</category></categories><tags><tag>杂项</tag></tags><content type="html"> 由于 GitHub 博客实在太用起来太复杂了，记录一个修缮日志。
 更新日志想来 GitHub 是会有留存的，不必多说。
-2023.9.7
+2023.9.7 - 9.18
 拉了份脚手架搭建起了破烂的博客。
+2023.10.10
+修了一下文末分割线的锅。
 2023.12.12
 修了一下博客的结构，把不必要的文件删除了。
-并把不蒜子统计换成了 https://npm.elemecdn.com/penndu@1.0.0/bsz.js
-来加速加载。</content></entry><entry><title>uoj514</title><url>/post/uoj514/</url><categories><category>题解</category></categories><tags><tag>题解</tag><tag>uoj</tag></tags><content type="html"><![CDATA[  二维整式递推差不多得咧。
+手动修改网页源码，把 Font Awesome 更新到了 6.4.0。自带的方法不会用（
+把不蒜子统计换成了 https://npm.elemecdn.com/penndu@1.0.0/bsz.js
+来加速加载。（来自 https://dusays.com/476/
+）</content></entry><entry><title>uoj514</title><url>/post/uoj514/</url><categories><category>题解</category></categories><tags><tag>题解</tag><tag>uoj</tag></tags><content type="html"><![CDATA[  二维整式递推差不多得咧。
 规定 $\Xi:\operatorname{EGF}\rightarrow\operatorname{OGF}$。
 考虑令填满后的格子还能继续填，显然答案不变。
 那么每步选每个元素的概率均为 $\frac1n$。
@@ -67,15 +71,7 @@ APIO2022 线上金牌。 WC2023 金牌。 NOI2023 金牌。 在使用 GitHub Pag
 然而很不幸，cnblogs 运营困难，摇摇欲坠，有可能即将倒闭。因此我不得不防患于未然，搭建起这个博客。
 该博客采用了 Hugo NexT 主题，故而非常美观。
 由于我不是很会在 GitHub 上加密文章，所以我并不会轻易把所有文章传上来。
-现在之前的文章都还在鸽，到时候会传的。</content></entry><entry><title>友情链接</title><url>/flinks.html</url><categories><category>杂项</category></categories><tags><tag>杂项</tag></tags><content type="html"> Rainbow_sjy 的 cnblogs 博客
-cmll02 的 GitHub 博客
-zhoukangyang 的 cnblogs 博客
-dead_X 的 cnblogs 博客
-RedreamMer 的 cnblogs 博客
-Mophie 的 Luogu 博客
-zaozao_zmx 的 cnblogs 博客
-unputdownable 的 Luogu 博客
-由于博客评论我还不会弄，如果有需要挂友链的同学可以联系我，我会视情况加入。
+现在之前的文章都还在鸽，到时候会传的。</content></entry><entry><title>友情链接</title><url>/flinks.html</url><categories><category>杂项</category></categories><tags><tag>杂项</tag></tags><content type="html"> 由于博客评论我还不会弄，如果有需要挂友链的同学可以联系我，我会视情况加入。
 评论功能弄好了！有想挂友链的同学在下面发一下就好了，我会视情况加入。
 国内用不太了 waline，我也不太会配，急了。有意愿的同学还是联系我吧。
 评论系统已换用 giscus，使用 GitHub 账号登录即可评论。
