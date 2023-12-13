@@ -13,7 +13,7 @@
 ）
 2023.12.13
 把 MathJax 又换回了 3（渲染速度快太多了）并重新修了一下渲染方式。
-将可能发生问题的数学公式部分使用 &amp;lt;div&amp;gt; 标签包裹。
+将可能发生问题的行间数学公式部分使用 &amp;lt;div&amp;gt; 标签包裹，行内则采用代码块的方式。
 关掉了文首 header 渲染的评论数目（太卡了，完全加载不出来）。</content></entry><entry><title>uoj514</title><url>/post/uoj514/</url><categories><category>题解</category></categories><tags><tag>题解</tag><tag>uoj</tag></tags><content type="html"><![CDATA[  二维整式递推差不多得咧。
 规定 $\Xi:\operatorname{EGF}\rightarrow\operatorname{OGF}$。
 考虑令填满后的格子还能继续填，显然答案不变。
@@ -65,7 +65,8 @@ When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are:
 $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$
 $$\begin{matrix}a&amp;b\\c&amp;d\end{matrix}$$
 $$\begin{matrix}a&b\\c&d\end{matrix}$$ $$w^{(l)}_{ij} = w^{(l)}_{ij} - \eta\frac{\partial E(W, b)}{\partial w^{(l)}_{ij}}$$ （sample from https://adaning.github.io/posts/33457.htmlby AnNing）
-1Hello World！ 2 3你好！ 4 5When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are: 6 7$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$ 8 9$$\begin{matrix}a&amp;b\\\\c&amp;d\end{matrix}$$ 10 11&lt;div&gt; 12$$\begin{matrix}a&amp;b\\c&amp;d\end{matrix}$$ 13&lt;/div&gt; 14 15&lt;div&gt; 16$$w^{(l)}_{ij} = w^{(l)}_{ij} - \eta\frac{\partial E(W, b)}{\partial w^{(l)}_{ij}}$$ 17&lt;/div&gt; 18 19（sample from &lt;https://adaning.github.io/posts/33457.html&gt; by AnNing） 一二三四五六1 2 2.1 2.2 3 1#include &lt;stdio.h&gt; 2 3int main() 4{ 5 puts(&#34;Hello World!&#34;) 6 return 0; 7} qwqqwq
+我说，$\{x^L|x^R\}$。
+1Hello World！ 2 3你好！ 4 5When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are: 6 7$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$ 8 9$$\begin{matrix}a&amp;b\\\\c&amp;d\end{matrix}$$ 10 11&lt;div&gt; 12$$\begin{matrix}a&amp;b\\c&amp;d\end{matrix}$$ 13&lt;/div&gt; 14 15&lt;div&gt; 16$$w^{(l)}_{ij} = w^{(l)}_{ij} - \eta\frac{\partial E(W, b)}{\partial w^{(l)}_{ij}}$$ 17&lt;/div&gt; 18 19（sample from &lt;https://adaning.github.io/posts/33457.html&gt; by AnNing） 20 21我说，`$\{x^L|x^R\}$`。 一二三四五六1 2 2.1 2.2 3 1#include &lt;stdio.h&gt; 2 3int main() 4{ 5 puts(&#34;Hello World!&#34;) 6 return 0; 7} qwqqwq
   ]]></content></entry><entry><title>Music</title><url>/music.html</url><categories/><tags/><content type="html"> APlayer 加载 GitHub 上的乐曲和曲绘实在太卡了，所以特意迁移到单独一个页面。
 因为 GitHub 加载音乐实在太卡也太占空间，所以改用了外链加载。
 音乐来自
@@ -94,19 +95,15 @@ APIO2022 线上金牌。 WC2023 金牌。 NOI2023 金牌。 在使用 GitHub Pag
 容易发现，我们假设每个黑点权值是 $+1$，每个白点权值是 $-1$，那么当前问题就转化为了经典的
 糖果传递
 ，直接套结论即可。
-总复杂度可以做到 $O(n)$。</content></entry><entry><title>超现实数学习笔记</title><url>/post/surreal-number/</url><categories><category>学术</category></categories><tags><tag>学术</tag><tag>图片挂了</tag></tags><content type="html"><![CDATA[  由于不打算学得太深，决定只记几个简单的内容。全文基本不会有证明。
-p.s. 这个数学公式渲染方案太难受了，咋还和 Markdown 不兼容的，导致我不得不重新修改一遍源码。
+总复杂度可以做到 $O(n)$。</content></entry><entry><title>超现实数学习笔记</title><url>/post/surreal-number/</url><categories><category>学术</category></categories><tags><tag>学术</tag></tags><content type="html"><![CDATA[  由于不打算学得太深，决定只记几个简单的内容。全文基本不会有证明。
 定义博弈的形式化定义：设所有博弈 $x$ 构成博弈全集 $S$，则每个 $x$ 可以唯一表示为 $\{x^L|x^R\}$ 的形式，其中 $x^L,x^R\subseteq S$。注意 $x^L,x^R$ 是博弈的一个集合，且讨论范围内 $x^L,x^R$ 均为有限集，采取的定义不会出现环。
 超现实数的形式化定义：设所有超现实数 $x$ 构成超现实数全集 $S$，则每个 $x$ 可以唯一表示为 $\{x^L|x^R\}$ 的形式，其中 $x^L,x^R\subseteq S$ 且 $\forall a\in x^L,b\in x^R,b\nleq a$。注意 $x^L,x^R$ 是超现实数的一个集合，且讨论范围内 $x^L,x^R$ 均为有限集，采取的定义不会出现环；比较运算会在随后定义。
-容易发现这两个定义是类似的，只不过超现实数的定义中还要求所有左部元素均不大于右部元素。习惯上，如果假设 $x^L=\{a,b,c,\dots\}$，$x^R=\{d,e,f,\dots\}$，那么我们会简记
-$$x=\{a,b,c,\dots|d,e,f,\dots\}$$
+容易发现这两个定义是类似的，只不过超现实数的定义中还要求所有左部元素均不大于右部元素。习惯上，假设 $x^L=\{a,b,c,\dots\}$，$x^R=\{d,e,f,\dots\}$，我们会简记 $x=\{a,b,c,\dots|d,e,f,\dots\}$。
 接下来对超现实数定义比较运算符。
-$$y\le x\Leftrightarrow x\ge y\Leftrightarrow\nexists t\in x^R,t\le y\land\nexists t\in y^L,x\le t$$
-$$x=y\Leftrightarrow x\ge y\land y\ge x$$
-$$y&amp;gt;x\Leftrightarrow x&amp;gt;y\Leftrightarrow x\ge y\land y\ngeq x$$
-可以证明，对于超现实数来说，这个比较运算为全序的。人话就是和我们平常所看到的比较运算符没啥区别。
-对博弈我们有类似的定义，但不再是全序；即可能出现 $x\nleq y\land y\nleq x$ 的情况。我们称无法比较的情况为 $x||y$；而称 $x=y$ 为值相等。$&amp;lt; &amp;gt; = \ge \le$ 这几个运算符本身仍是具有传递性的。
-对于超现实数来说，值相等即为相等；对于 …  ]]></content></entry><entry><title>AGC019D O(n log n) sol (English ver.)</title><url>/post/agc019d/</url><categories><category>题解</category></categories><tags><tag>题解</tag><tag>AtCoder</tag></tags><content type="html"><![CDATA[  Download Chinese ver.Translated by DeepLwith my manual modification.
+$$y\le x\Leftrightarrow x\ge y\Leftrightarrow\nexists t\in x^R,t\le y\land\nexists t\in y^L,x\le t$$ $$x=y\Leftrightarrow x\ge y\land y\ge x$$ $$y&gt;x\Leftrightarrow x&gt;y\Leftrightarrow x\ge y\land y\ngeq x$$ 可以证明，对于超现实数来说，这个比较运算为全序的。人话就是和我们平常所看到的比较运算符没啥区别。
+对博弈我们有类似的定义，但不再是全序；即可能出现 $x\nleq y\land y\nleq x$ 的情况。我们称无法比较的情况为 $x\|y$；而称 $x=y$ 为值相等。$&amp;lt; &amp;gt; = \ge \le$ 这几个运算符本身仍是具有传递性的。
+对于超现实数来说，值相等即为相等；对于博弈来说，值相等则不能说明相等。
+再定义其余几种运算。其中关于集合的运算表示这集合内部的元素均做该运算后得到的新的集合。 …  ]]></content></entry><entry><title>AGC019D O(n log n) sol (English ver.)</title><url>/post/agc019d/</url><categories><category>题解</category></categories><tags><tag>题解</tag><tag>AtCoder</tag></tags><content type="html"><![CDATA[  Download Chinese ver.Translated by DeepLwith my manual modification.
 Firstly, there is no solution if and only if $B_i\equiv0$ and there exists $A_i=1$.
 It can always be found that any one of the optimal routes takes the form of a total of $l$ steps to the left and $r$ steps to the right, with the end point $p$ to the left/right of the starting point.
 This is easily proved by tweaking, and the answer is
