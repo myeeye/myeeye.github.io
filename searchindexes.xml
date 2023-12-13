@@ -65,8 +65,7 @@ When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are:
 $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$
 $$\begin{matrix}a&amp;b\\c&amp;d\end{matrix}$$
 $$\begin{matrix}a&b\\c&d\end{matrix}$$ $$w^{(l)}_{ij} = w^{(l)}_{ij} - \eta\frac{\partial E(W, b)}{\partial w^{(l)}_{ij}}$$ （sample from https://adaning.github.io/posts/33457.htmlby AnNing）
-1Hello World！ 2 3你好！ 4 5When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are: 6 7$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$ 8 9$$\begin{matrix}a&amp;b\\\\c&amp;d\end{matrix}$$ 10 11&lt;div&gt; 12$$\begin{matrix}a&amp;b\\c&amp;d\end{matrix}$$ 13&lt;/div&gt; 14 15&lt;div&gt; 16$$w^{(l)}_{ij} = w^{(l)}_{ij} - \eta\frac{\partial E(W, b)}{\partial w^{(l)}_{ij}}$$ 17&lt;/div&gt; 18 19（sample from &lt;https://adaning.github.io/posts/33457.html&gt; by AnNing） 一二三四五六1 2 2.1 2.2 3 1#include &lt;stdio.h&gt; 2 3int main() 4{ 5 puts(&#34;Hello World!&#34;) 6 return 0; 7} （密码：123456）
-qwqqwq
+1Hello World！ 2 3你好！ 4 5When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are: 6 7$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$ 8 9$$\begin{matrix}a&amp;b\\\\c&amp;d\end{matrix}$$ 10 11&lt;div&gt; 12$$\begin{matrix}a&amp;b\\c&amp;d\end{matrix}$$ 13&lt;/div&gt; 14 15&lt;div&gt; 16$$w^{(l)}_{ij} = w^{(l)}_{ij} - \eta\frac{\partial E(W, b)}{\partial w^{(l)}_{ij}}$$ 17&lt;/div&gt; 18 19（sample from &lt;https://adaning.github.io/posts/33457.html&gt; by AnNing） 一二三四五六1 2 2.1 2.2 3 1#include &lt;stdio.h&gt; 2 3int main() 4{ 5 puts(&#34;Hello World!&#34;) 6 return 0; 7} qwqqwq
   ]]></content></entry><entry><title>Music</title><url>/music.html</url><categories/><tags/><content type="html"> APlayer 加载 GitHub 上的乐曲和曲绘实在太卡了，所以特意迁移到单独一个页面。
 因为 GitHub 加载音乐实在太卡也太占空间，所以改用了外链加载。
 音乐来自
