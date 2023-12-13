@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>修缮日志</title><url>/post/update-record/</url><categories><category>杂项</category></categories><tags><tag>杂项</tag></tags><content type="html"> 由于 GitHub 博客实在太用起来太复杂了，记录一个修缮日志。
+（或者说是踩坑记录）
 更新日志想来 GitHub 是会有留存的，不必多说。
 2023.9.7 - 9.18
 拉了份脚手架搭建起了破烂的博客。
@@ -9,7 +10,11 @@
 手动修改网页源码，把 Font Awesome 更新到了 6.4.0。自带的方法不会用（
 把不蒜子统计换成了 https://npm.elemecdn.com/penndu@1.0.0/bsz.js
 来加速加载。（来自 https://dusays.com/476/
-）</content></entry><entry><title>uoj514</title><url>/post/uoj514/</url><categories><category>题解</category></categories><tags><tag>题解</tag><tag>uoj</tag></tags><content type="html"><![CDATA[  二维整式递推差不多得咧。
+）
+2023.12.13
+把 MathJax 又换回了 3（渲染速度快太多了）并重新修了一下渲染方式。
+将可能发生问题的数学公式部分使用 &amp;lt;div&amp;gt; 标签包裹。
+关掉了文首 header 渲染的评论数目（太卡了，完全加载不出来）。</content></entry><entry><title>uoj514</title><url>/post/uoj514/</url><categories><category>题解</category></categories><tags><tag>题解</tag><tag>uoj</tag></tags><content type="html"><![CDATA[  二维整式递推差不多得咧。
 规定 $\Xi:\operatorname{EGF}\rightarrow\operatorname{OGF}$。
 考虑令填满后的格子还能继续填，显然答案不变。
 那么每步选每个元素的概率均为 $\frac1n$。
@@ -52,11 +57,15 @@ $$g_{i,j}=\frac{(n-i+1)g_{i,j-1}+[j\ge m] (i+1)g_{i+1,j-m}/(m-1)!-[j\ge a]f_{i,j
 抑或通过搜索功能？或是随机页面？
 来评论回答一下吧！</content></entry><entry><title>Hello World</title><url>/post/hello-world/</url><categories><category>杂项</category></categories><tags><tag>杂项</tag></tags><content type="html"><![CDATA[  MathJax3 不支持行内公式，自闭了。
 换用 MathJax2.7 脚本后好多了。
+操作了一下，又换回 MathJax3 了。
+反斜杠的渲染还是一如既往的玄学，因此现在我采用了 html 的 &lt;div&gt; 来包裹会出现这种问题的情况。这下一劳永逸了。
 Hello World！
 你好！
 When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are:
 $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$
-1Hello World！ 2 3你好！ 4 5When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are: 6 7$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$ 一二三四五六1 2 2.1 2.2 3 1#include &lt;stdio.h&gt; 2 3int main() 4{ 5 puts(&#34;Hello World!&#34;) 6 return 0; 7} （密码：123456）
+$$\begin{matrix}a&amp;b\\c&amp;d\end{matrix}$$
+$$\begin{matrix}a&b\\c&d\end{matrix}$$ $$w^{(l)}_{ij} = w^{(l)}_{ij} - \eta\frac{\partial E(W, b)}{\partial w^{(l)}_{ij}}$$ （sample from https://adaning.github.io/posts/33457.htmlby AnNing）
+1Hello World！ 2 3你好！ 4 5When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are: 6 7$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$ 8 9$$\begin{matrix}a&amp;b\\\\c&amp;d\end{matrix}$$ 10 11&lt;div&gt; 12$$\begin{matrix}a&amp;b\\c&amp;d\end{matrix}$$ 13&lt;/div&gt; 14 15&lt;div&gt; 16$$w^{(l)}_{ij} = w^{(l)}_{ij} - \eta\frac{\partial E(W, b)}{\partial w^{(l)}_{ij}}$$ 17&lt;/div&gt; 18 19（sample from &lt;https://adaning.github.io/posts/33457.html&gt; by AnNing） 一二三四五六1 2 2.1 2.2 3 1#include &lt;stdio.h&gt; 2 3int main() 4{ 5 puts(&#34;Hello World!&#34;) 6 return 0; 7} （密码：123456）
 qwqqwq
   ]]></content></entry><entry><title>Music</title><url>/music.html</url><categories/><tags/><content type="html"> APlayer 加载 GitHub 上的乐曲和曲绘实在太卡了，所以特意迁移到单独一个页面。
 因为 GitHub 加载音乐实在太卡也太占空间，所以改用了外链加载。
