@@ -263,7 +263,34 @@ $3$ 月 $4$ 日 $13$ 点联络群消息：
 感觉是憨憨数位 dp，枚举取模后结果即做完。
 然后开始写，第一次交 MLE 了（开了 map），第二次交 TLE 了（递归大常数），最后卡了卡常才过。
 代码：
-1// 膜拜国际特级大师周康阳大佬，今天在 THUPC 测试赛首页称您为大夏尊贵的大名，一股敬佩之油生然而，您在 THUPC 测试赛为国争光，扬我华威名，向您献上最 …</content></entry><entry><title>ZJOI2023 游记</title><url>/post/zjoi2023/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>图片挂了</tag></tags><content type="html"><![CDATA[  正赛在 2023.4.1 - 2023.4.2。
+1// 膜拜国际特级大师周康阳大佬，今天在 THUPC 测试赛首页称您为大夏尊贵的大名，一股敬佩之油生然而，您在 THUPC 测试赛为国争光，扬我华威名，向您献上最 …</content></entry><entry><title>UOJ随做</title><url>/post/uoj-record/</url><categories><category>题解</category></categories><tags><tag>题解</tag><tag>做题记录</tag></tags><content type="html"><![CDATA[  怎么都做过 uoj Round。
+只收录 UOJ 自己的题目，一些官方比赛题就算了。部分 bzoj 等处收录的题目也放上来。
+没写题解不意味着没做，有的忘了写或者太草率了就算了。
+部分前言删了。
+【UER #1】DZY Loves Graph题解 操作树一定形如一个毛毛虫。
+考虑可撤销并查集维护联通块。
+对于操作树上主干边暴力进行修改操作。
+对于非主干边，可以只计算出答案。
+加一条边可以使用并查集查询，删若干边的答案可以直接调之前某个版本的答案。
+总复杂度 $O(n+q\log n)$。
+【UR #1】缩进优化题解 考虑枚举每个 $x$ 计算答案。
+假设值域为 $v$，我们只用知道若干区间内的总和及带权和即可。
+使用前缀和即可维护。
+总复杂度 $O(n+v\log v)$。
+【UR #1】外星人题解 先排序，然后考虑有效的数一定单调减，我们在这些位置决策。
+假设 $a_1\ge a_2\ge a_3\ge\dots\ge a_n$。
+假设 $f_{i,v}$ 表示考虑到第 $i$ 项，模后值为 $v$ 的方案数。
+特别的，$f_{0,v}=[v=x]$。
+显然
+$$f_{j,v\bmod a_j}\leftarrow\frac{(n-i-1)!}{(n-j)!}f_{i,v}\quad(i&amp;lt;j)$$
+于是直接前缀和优化 dp 就是 $O(nv)$ 的了。
+【UR #2】跳蚤公路题解 upd：这个做法假了。
+注意到发财等价于路径上存在负权环。
+只用计算每个源点可能到达的点往自己在 $x$ 在什么范围时可能有负权环，最后把其所能到达的点更新一下即可。
+我们可以把每个 SCC 拆开来考虑。对每个 SCC 设其中一个点 $s$ 作为源点即可，容易发现此时不存在负环等价于不存在经过 $s$ 的负环。
+设 $f(p,j)$ 为从 $s$ 点到 $p$ 点经过 $j$ 个 $x$ 的情况下剩余部分的最小代价。
+如果 $f(s,0)=-\infty$，显然始终存在负环。
+否则如果 $f(s,0)=0$，假设 $f(s,a)$ 与 $f(s,b)$ 两项将导致 $\mathbb R$ 上 $x$ 解集为空（$a&amp;lt;0&amp;lt;b$），则有 $\min{f(s,a)+ax,f(s,b)+bx}&amp;lt;0,\forall x\in\mathbb R$， …  ]]></content></entry><entry><title>ZJOI2023 游记</title><url>/post/zjoi2023/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>图片挂了</tag></tags><content type="html"><![CDATA[  正赛在 2023.4.1 - 2023.4.2。
 愚人节省选。挨创。
 前情提要：$\rm NOIP$ $\rm297pts$ 苟上 ZJ 队线。
 其实前面一长串（Day $-25\sim-5$）是纪中集训游记，不过比较早的内容可能记不太起来了。
