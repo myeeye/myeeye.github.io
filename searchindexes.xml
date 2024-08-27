@@ -1,4 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>修缮日志</title><url>/post/update-record/</url><categories><category>杂项</category></categories><tags><tag>杂项</tag></tags><content type="html"> 由于 GitHub 博客实在太用起来太复杂了，记录一个修缮日志。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>APIO 2024 试机赛 T1 题解</title><url>/post/apio2024-pre-t1-sol/</url><categories><category>题解</category></categories><tags><tag>题解</tag></tags><content type="html"> 反正是试机赛，早点发出来也不要紧，所以就先发出来了。
+容易观察到，我们每步总是向右走到可达的最远点。
+然而，由于可能单步最优的解在区间外，因此不能直接倍增。
+观察到区间最值一定要被选，因此考虑由其分段，变为两个存在一个端点处为最值的子问题。
+容易发现这样从最大值开始，下一步必定跳到最小值，再往后必定跳到最大值……以此类推。
+考虑如果离线，我们可以对区间的右端点推进扫描线，并维护出当前后缀最大值和最小值位置的单调栈。
+这样，我们如果可以快速维护出这些后缀最值之间的树状关系，从而计算出当前节点的深度，即可得到答案。
+假设计算时用到的是最大值，则我们只用知道最大值栈到根节点的距离。
+考虑最大值栈上相邻两个点。
+如果其之间存在数值在前缀最小值上，则答案相差 $2$：需要先转去最小值，再转回最大值；如没有，且两者均在栈顶下面，那么其必定转到同一个最小值上，故答案相同。
+可以发现，由于单次操作只会对相邻位置的差值造成贡献，可以用线段树维护。
+使用主席树即可在线。
+总复杂度 $O(n\log n)$。</content></entry><entry><title>修缮日志</title><url>/post/update-record/</url><categories><category>杂项</category></categories><tags><tag>杂项</tag></tags><content type="html"> 由于 GitHub 博客实在太用起来太复杂了，记录一个修缮日志。
 （或者说是踩坑记录）
 更新日志想来 GitHub 是会有留存的，不必多说。
 2023.9.7 - 9.18
@@ -14,7 +26,56 @@
 2023.12.13
 把 MathJax 又换回了 3（渲染速度快太多了）并重新修了一下渲染方式。
 将可能发生问题的行间数学公式部分使用 &amp;lt;div&amp;gt; 标签包裹，行内则采用代码块的方式。
-关掉了文首 header 渲染的评论数目（太卡了，完全加载不出来）。</content></entry><entry><title>uoj514</title><url>/post/uoj514/</url><categories><category>题解</category></categories><tags><tag>题解</tag><tag>uoj</tag></tags><content type="html"><![CDATA[  二维整式递推差不多得咧。
+关掉了文首 header 渲染的评论数目（太卡了，完全加载不出来）。</content></entry><entry><title>集训队胡策2023-2024补题记录</title><url>/post/huce2023-record/</url><categories><category>题解</category></categories><tags><tag>题解</tag><tag>做题记录</tag></tags><content type="html"> CTT 结束后发现自己胡策题都没咋补，这下尴尬了。主要原本胡策就打着玩的（
+怎么 CTT 平均难度比胡策还要简单啊.jpg。
+还是随便写几篇题解吧。
+先来个补全进度表，根据胡策 OJ 或 qoj 通过情况来评判：
+Problem List 测试赛（10.22） A + B Problem 奥林匹克五子棋 元旦激光炮 Day 1（10.23） 优惠购物 树哈希 网格图最大流计数 Day 2（10.29） 序列 没有创意的题目名称 傅里叶与交通规划 Day 3（11.04） Permutation Counting 2 化学实验 物理实验 Day 4（11.05） 数据库 左蓝右红 世界沉睡童话 Day 5（11.07） Xor Master 栞 数据结构 Day 6（11.09） Grievous Lady Axium Crisis 落日珊瑚 Day 7（11.11） 不是这一道据数构结题 意念力 重排 Day 8（11.12） 基础寄术练习题 【模板】矩阵快速幂 超现实树 Day 9（11.14） 最短路求和 通道建设 Passage Construction Tree Topological Order Counting Day 10（11.16） 雷同 水果茶 茧 Day 11（11.19） 挑战积和式 往日之影 虹 Day 12（11.21） 这不是一道数据结构题 不跳棋 goods Day 13（11.23） 天空度假山庄 建设终末树 童话 Day 14（11.25） 命运 崩坏天际线 Since A Light Day 15（11.26） 括号 染色 coneyisland Day 16（11.28） 最后的晚餐 彩虹航线 积性函数 Day 17（11.30） 棋盘 区间切割 连连看 题解会补的，你先别急。
+待更新题解：
+Day 1 优惠购物 Day 7 重排 Day 10 雷同 Day 12 这不是一道数据结构题 Day 16 积性函数 Day 7 意念力
+题解 考虑链的情况。
+容易想到容斥，变成共有 $m$ 种颜色然后给某个节点染色。
+我们按链的顺序依次染，每个节点和前若干个不相同，且前若干个也互不相同，容易发现就是形如 $\prod(m-a_j)$，可以直接多点求值或者点值平移。
+对于树的情况，我们考虑如何变成和链一样的问题。
+结论：我们按照深度顺序 …</content></entry><entry><title>CTT2023游记</title><url>/post/ctt2023/</url><categories><category>游记</category></categories><tags><tag>游记</tag></tags><content type="html"> NOI2023 之后状态一直不咋地，原本要写的 CSP/NOIP 阿克游记也都咕掉了。看看老年退役选手能不能苟进 CTS！
+12.1
+启程。
+9:28 启动的火车，原本我们是 $6$ 个人的：徐老师，zak，sjy，我，cmll，dx。结果徐老师记错日期了没来。
+然后就打车去了酒店签到，一到就是先发参赛证书（落款日期还是 12.5）、胸牌和衣服，然后就是登记入住。
+今年看上去不是完全随机分寝了，和 sjy 一间。午餐酒店不提供，所以我们去大润发肯德基吃了。
+然后后来就是坐大巴去试机，题目还是经典组合（A+B、奥林匹克五子棋、元旦激光炮），前两题直接秒了，T3 又重新推了一遍那个做法。
+外接键盘很阴间，又是那款 L 大回车键盘。笔记本 Thinkpad 就是我以前用的款式，用起来还算舒适，所以我就直接抛开外接鼠标、键盘不管了。
+晚饭是通常盒饭。
+回寝后 sjy 在卷扑克比大小，我直接开摆。
+12.2
+早起吃早饭，早饭非常丰盛。
+然后坐大巴去考场。
+开场一看 T1 T2 感觉可以写暴力，T3 题面太长没看。
+调了半天 T1 B 性质只有 $\rm0pts$，直到十点多听说数据输出格式有误（行末空格）后绷不住了。
+去写 T2，发现自己好像会平方做法。然后敢写敢过。然后赛后一看这就是正解？
+回来写 T1，发现稍微改改就是正解，调到 13:00 左右才过。
+看 T3，写完 $\rm20pts$ 暴力后发现套个线段树合并好像就可以过了，CTT 就这？不过来不及写所以摆了。
+出场后听说 zak 又 $\rm2.5h$ AK 了，总共 AK 了 $13$ 人。有点太猛了。
+午饭。
+三题出题人分别是左老师、ix35 和注意开。
+下午开摆。
+晚饭。
+晚上开摆。
+然后开始毒奶明天考题。
+12.3
+早起看到 EI 赞了，就感觉不对劲。
+拍合照。摄影师：原神！大家：启动！
+原神竞赛集训队。
+进考场。开题。
+？T1 咋还真是构造？
+？T2 这是啥？算了先跳过不管。
+？T3 咋还真是多项式？还是模 $2^{64}$ 的。
+T3 感觉很有头绪！先开 T3！
+唰的一下就写了个 $o=1$ 的预处理快速幂上去。
+然后看 $o=2$。咋感觉可以转化成 $\bmod2^{63}$，然后迭代成子问题。
+写一发。咋被卡常了？松松松。
+啪的一下就过了。$\rm440ms$，很快啊！
+此时已经是 11:30 了。 …</content></entry><entry><title>uoj514</title><url>/post/uoj514/</url><categories><category>题解</category></categories><tags><tag>题解</tag><tag>uoj</tag></tags><content type="html"><![CDATA[  二维整式递推差不多得咧。
 规定 $\Xi:\operatorname{EGF}\rightarrow\operatorname{OGF}$。
 考虑令填满后的格子还能继续填，显然答案不变。
 那么每步选每个元素的概率均为 $\frac1n$。
