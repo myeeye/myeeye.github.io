@@ -128,12 +128,7 @@ $$\begin{matrix}a&amp;b\\c&amp;d\end{matrix}$$
 $$\begin{matrix}a&b\\c&d\end{matrix}$$ $$w^{(l)}_{ij} = w^{(l)}_{ij} - \eta\frac{\partial E(W, b)}{\partial w^{(l)}_{ij}}$$ （sample from https://adaning.github.io/posts/33457.htmlby AnNing）
 我说，$\{x^L|x^R\}$。
 1Hello World！ 2 3你好！ 4 5When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are: 6 7$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$ 8 9$$\begin{matrix}a&amp;b\\\\c&amp;d\end{matrix}$$ 10 11&lt;div&gt; 12$$\begin{matrix}a&amp;b\\c&amp;d\end{matrix}$$ 13&lt;/div&gt; 14 15&lt;div&gt; 16$$w^{(l)}_{ij} = w^{(l)}_{ij} - \eta\frac{\partial E(W, b)}{\partial w^{(l)}_{ij}}$$ 17&lt;/div&gt; 18 19（sample from &lt;https://adaning.github.io/posts/33457.html&gt; by AnNing） 20 21我说，`$\{x^L|x^R\}$`。 一二三四五六1 2 2.1 2.2 3 1#include &lt;stdio.h&gt; 2 3int main() 4{ 5 puts(&#34;Hello World!&#34;) 6 return 0; 7} qwqqwq
-  ]]></content></entry><entry><title>Music</title><url>/music.html</url><categories/><tags/><content type="html"> APlayer 加载 GitHub 上的乐曲和曲绘实在太卡了，所以特意迁移到单独一个页面。
-因为 GitHub 加载音乐实在太卡也太占空间，所以改用了外链加载。
-音乐来自
-网易云 Arcaea 电台
-，而曲绘来自 Arcaea 中文维基。
-玩源神玩的。</content></entry><entry><title>关于我</title><url>/about.html</url><categories><category>杂项</category></categories><tags><tag>杂项</tag></tags><content type="html"> 你好。我是 myee。
+  ]]></content></entry><entry><title>Music</title><url>/music.html</url><categories/><tags/><content type="html"> 原本这里是有内容的，但是鸽子了。</content></entry><entry><title>关于我</title><url>/about.html</url><categories><category>杂项</category></categories><tags><tag>杂项</tag></tags><content type="html"> 你好。我是 myee。
 我的高中就读于杭州学军中学教育集团文渊中学。现在（$2023$ 年下半年）高三。
 我的 OI 获奖：
 APIO2022 线上金牌。 WC2023 金牌。 NOI2023 金牌。 在使用 GitHub Pages 搭建博客前，我用过很长时间洛谷博客，也用过两年左右的 cnblogs（博客园）。
@@ -241,7 +236,30 @@ NOIp 花了 1h 切了前 $3$ 题，测试了一下 selfEval 发现很好用。
 晚上发了密码条。
 Day $1$
 半夜里惊醒，一看时间 $2:22$。
-去考场前突然想上厕所，问了下工作人员给指了 …</content></entry><entry><title>THUPC2023 游记</title><url>/post/thupc2023/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>图片挂了</tag></tags><content type="html"> 2023.2
+去考场前突然想上厕所，问了下工作人员给指了 …</content></entry><entry><title>那些你不要的模板</title><url>/post/template-practice/</url><categories><category>题解</category></categories><tags><tag>题解</tag><tag>做题记录</tag></tags><content type="html"> 打 qoj 板子赛打的。
+有的是会的，只是之前没写过。
+就题论题，所以写的不一定是正解。
+回文自动机
+题意 对于 $S$，记 $c_S(T)$ 表示 $T$ 在 $S$ 中的出现次数。对所有回文串 $T$，求 $\max_T(c_S(T) \cdot |T|^2)$。
+对于所有数据，$|S| \leq 10^6$。
+题解 经典结论：本质不同回文子串只有 $O(n)$ 个。
+Manachar 的同时动态维护一下字典树，使用树上倍增快速找 $k$ 级祖先，就好了。
+最后树上差分，枚举每个串，计算贡献即可。
+区间本质不同子串
+题意 给定字符串 $S$，$q$ 次询问，每次给出 $l,r(1 \leq l \leq r \leq |S|)$，你需要求出 $S[l:r]$ 本质不同的子串数量。
+对于所有数据，$1 \leq |S| \leq 2 \times 10^5, 1 \leq q \leq 2 \times 10^5$。
+题解 建出后缀树，对 $l$ 从大往小扫描线。
+动态维护一下每条边最新归属于哪个后缀，容易发现就是对一个点到根的路径染色，使用 LCT 的均摊即可维护。
+拿一个 BIT 计算一下贡献，总复杂度 $O(n\log^2n+q\log n)$。
+正则二分图匹配
+题意 给定一个正则二分图 $G=(X,Y,E)$，其中 $|X|=|Y|=n$ 且每个点的度数均为 $d$，请你求出一个其完美匹配。
+对于 $100%$ 的数据，保证 $n\times d\le 2\times 10^6$。
+题解 我们打乱所有左部点，然后逐个枚举左部点作为起点，每次步步随机走出一条增广路，消掉增广路的环之后直接增广这条增广路。
+可以证明复杂度期望是 $O(n\log n)$ 级别的。
+边三连通分量
+题意 给出 $N$ 个点 $M$ 条边的无向图，第 $i$ 边是 $(a_i,b_i)$。求出其所有边三连通分量。
+$1 \leq N \leq 2\times 10^5$，$1 \leq M \leq 2 \times 10^5$，$0 \leq a_i, b_i &amp;amp;lt; N$。
+题解 首先拉出一颗 Tarjan 生成树出来。我们给每条非树边一个 $2^{64}$ 范围内的随机哈希值，然后在树链上异或上这个哈希值。这样每条非树边的哈希值对应了一个集合。 …</content></entry><entry><title>THUPC2023 游记</title><url>/post/thupc2023/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>图片挂了</tag></tags><content type="html"> 2023.2
 THUPC 报名！
 和 unputdownable，猫猬兽组队，队名 XJ 五队。
 devin 让我们填毕业年份 2028。
