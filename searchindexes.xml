@@ -259,7 +259,117 @@ Manachar 的同时动态维护一下字典树，使用树上倍增快速找 $k$ 
 边三连通分量
 题意 给出 $N$ 个点 $M$ 条边的无向图，第 $i$ 边是 $(a_i,b_i)$。求出其所有边三连通分量。
 $1 \leq N \leq 2\times 10^5$，$1 \leq M \leq 2 \times 10^5$，$0 \leq a_i, b_i &amp;amp;lt; N$。
-题解 首先拉出一颗 Tarjan 生成树出来。我们给每条非树边一个 $2^{64}$ 范围内的随机哈希值，然后在树链上异或上这个哈希值。这样每条非树边的哈希值对应了一个集合。 …</content></entry><entry><title>THUPC2023 游记</title><url>/post/thupc2023/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>图片挂了</tag></tags><content type="html"> 2023.2
+题解 首先拉出一颗 Tarjan 生成树出来。我们给每条非树边一个 $2^{64}$ 范围内的随机哈希值，然后在树链上异或上这个哈希值。这样每条非树边的哈希值对应了一个集合。 …</content></entry><entry><title>UNR#7游记</title><url>/post/unr7/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>图片挂了</tag></tags><content type="html"> 考前两天是联考的 NOI 模拟赛。
+Day $-3$
+背笔试。
+https://duck.ac/beibishi
+。
+Day $-2$
+背笔试。
+VP 了 UNR#6 的笔试。第一题 AB 看反扣了 $1\rm pts$。
+Day $-1$
+联考模拟赛 Day $1$。
+开 T1。太困难，不会做。欸我会 $60\rm pts$ 暴力！
+开 T2。太困难，不会做。欸我会 $50\rm pts$ 暴力！
+开 T3。太困难，不会做。欸我会 $40\rm pts$ 暴力！
+写完三个暴力后无所事事，推了一下 T1 还是不会做。
+仔细看看 T3 的 $O(nq)$ 暴力，我去这不是 ddp 板子吗。火速写了个 ddp 就过了大样例。
+预估得分：$60 + 50 + 100$。
+最终得分：$60 + 50 + 100$。
+膜 sjy $100 + 100 + 100$。
+背笔试。
+Day $0$
+联考模拟赛 Day $2$。
+开 T1。太困难，不会做。欸我会 $O(2^n)$ 暴力！
+开 T3。太困难，不会做。欸我会 $O(n^2)$ 暴力！
+开 T2。这不是欧拉回路板子？
+手玩了一下。诶呀怎么有重边的。
+稍微分类讨论了一下，把重边去掉了，然后发明了一个欧拉回路，然后就过大样例了。
+大样例大小只有 $10$。很慌，写了个拍。（@_RSY_，你是懂 FJOI 的）
+没过拍。欸我怎么只处理了第一个联通块啊。修了下过拍了。
+给 T3 暴力卡了卡常。
+给 T1 拼了个乱搞。
+预估得分：$30 + 100 + 20$。
+最终得分：$50 + 100 + 40$。
+T1 数据水多拿了 $20\rm pts$，T3 没看到后面有个特殊性质可以保证 $n$ 很小，多拿了 $20\rm pts$。
+膜 zak、lhf $100 + 100 + 100$。Qiuly 怎么这么演。
+背笔试。
+开打 UNR 笔试。
+哇塞怎么这么牛的，不用手动提交答案了。
+今年题面怎么这么魔怔。
+很轻松 $100\rm pts$ 了。
+L 神没背到那个切换虚拟终端和桌面环境的两个快捷键，挂了 $2\rm pts$。（Ctrl+Alt+F(1-6) &amp;amp;amp; Alt+F2）
+很多人 NOI 中文含义没加青少年，挂了 $1\rm pts$。其实 NOI 官网
+标题就叫这个。。。
+晚上 sdsz 杂题选讲。只会其中没几题， …</content></entry><entry><title>loj3959</title><url>/post/loj3959/</url><categories><category>题解</category></categories><tags><tag>题解</tag><tag>loj</tag></tags><content type="html"> 惊奇地发现我的赛时做法也可以通过转化一下计算式优化到 $O(n+m)$。或许也算是一种另解？
+首先，我们考虑把后手的决策视为图上的一个自环或一条边。对于每条边，你要对其选择其连接的一个点，且使得其满足两两不同。
+对先手的决策，则意味着对这个点 / 边的额外代价，包括
+无额外代价。（$|S\cap T|=0$） 选其中一个点时会有 $1$ 的额外代价。（$|S\cap T|=1$） 选被先手钦定的点时有 $1$ 的额外代价。（$|S\cap T|=2$） 不妨考虑在建出那张图之后，对每个联通块分别处理。
+如果点数小于边数，则一定无解。
+如果点数等于边数，那么我们可以发现这总是一颗基环树，把环外部分贡献直接算出来，然后环上部分仅两种决策，我们直接统计有多少个左方向的额外代价、右方向的额外代价、任意方向的额外代价，设为 $a,b,c$，则答案为 $\min{a+c,b+c,\lfloor\frac{a+b+c}2\rfloor}$。自环的情况最好手动特判。
+对于剩下的情况，该联通块形如一颗树，考虑怎么解决。
+外面注意到恰好有一个点不会被任一条边所选择，考虑在那个点处计算答案。显然这样的贡献是以该点为根的叶向树与额外代价的实际选法相同的边的个数。
+对于无额外代价或者额外代价为选一个定点时才有的边，我们发现我们总可以把其额外代价通过一次换根 dp 直接传递到每个点 $p$ 上，作为点权 $a_p$。然后把其两端的点缩在一起，将点权取 $\min$，不影响答案。这样，剩下的边均为「被钦定的部分存在额外代价」的边，而对后手来说，其选择一个点为根的代价即为其 $a_p+\text{被钦定向外的边的数目}$。
+我们注意到，如果我们无根树转有根树，钦定一个整颗树的根 $r$，那么对于任意一条 $r$ 到叶子的路径，我们总可令上面若干条边向钦定为根向，下面若干条边钦定为叶向，由调整法这样总不劣。
+那么，钦定为根向的边一定和根联通，构成一个联通块。
+也就是说，钦定为叶向的边，总可以拆成若干组「子树内的边与子树向外的边」的无交并。
+而对于一个节点 $p$，考虑如果将根换为其，则我们总可以将 $r$ 到其的路径上的边的贡献翻转。于是其答案即为 $a_p+\text{树上叶向边数目}+p\text{ 到 }r\text{ 的根向边数目}-p\text{ 到 }r\text{ 的叶向边数目}$。
+…</content></entry><entry><title>uoj241</title><url>/post/uoj241/</url><categories><category>题解</category></categories><tags><tag>题解</tag><tag>uoj</tag></tags><content type="html"><![CDATA[  公式过长警告。
+考虑只有相邻不同怎么做。也就相当于是 $2\nmid n$ 的答案。
+这个是经典题。
+假设答案为 $f_n$，那么我们枚举第一个元素，有 $m$ 种选法，其余元素由于要和前一个元素不同，有 $m-1$ 种选法。这样可能会统计首尾元素相同的情况，而这种情况的数目为 $f_{n-1}$。
+于是我们有
+$$f_n=m(m-1)^{n-1}-f_{n-1}$$
+边界不妨为 $f_0=m,f_1=0$；容易发现这样恰好合法。
+也即
+$$f_n=[n=0]m+[n&gt;0]m(m-1)^{n-1}-f_{n-1}$$
+那么写成 GF 就有
+$$f=m+\frac{mz}{1-(m-1)z}-zf$$
+$$f=\frac{m-m(m-2)z}{(1+z)(1-(m-1)z)}$$
+随便写个常系数齐次线性递推就好啦。
+通项其实也可推出；即为
+$$f_n=(m-1)^n+(m-1)(-1)^n$$
+总复杂度 $O(\log n)$。
+然后由于本题要求相对的位置也要不同，我们考虑 $2|n$ 的情况怎么做。
+我们考虑容斥。
+我们设 $a_n$ 为满足首尾颜色确定且不同，且相邻元素不同的长度为 $n+1$ 的序列的数目；$b_n$ 为满足首尾颜色确定且相同，且相邻元素不同的长度为 $n+1$ 的序列的数目。规定 $a_0=b_0=0$。
+我们设 $a_n^2$ 与 $b_n^2$ 分别对应 GF $\check A$ 和 $\check B$。
+则钦定 $k$ 个对位必须相同的方案对答案的总贡献（$k&gt;0$）为
+$$(-1)^k\frac{n}{2k}[z^{n/2}]\sum_tf_t[u^t] (u\check A+\check B)^k\\=(-1)^k\frac{n}{2k}[z^{n/2}](((m-1)\check A+\check B)^k+(m-1)(-\check A+\check B)^k)$$ 设 $G=(m-1)\check A+\check B$，$H=-\check A+\check B$，我们按 $k$ 加和，则答案即为
+$$\frac n2[z^{n/2}]\sum_k\frac{(-1)^k(G^k+(m-1)H^k)}{k}=\frac n2[z^{n/2}] (\ln\frac{1}{1+G}+(m-1)\ln\frac{1}{1+H})=[z^{n/2-1}] (\frac{-G&rsquo;}{1+G}+\frac{(1-m)H&rsquo;}{1+H})$$
+是的，这仍然是一个线性递推！
+最后加回 $k=0$ 时的答案即可。
+然后问题来到如何计算 $G,H$ 这边。
+注意到 $[n&gt;0]f_n=mb_n$，于是我们有
+$$B(z)=\sum_nb_nz^n=\frac{(m-1)z^2}{1-(m-2)z-(m-1)z^2}$$
+而 $m(m-1)a_n=f_{n+1}$，于是
+$$A(z)=\sum_na_nz^n=\frac{z}{1-(m-2)z-(m-1)z^2}$$
+考虑怎么解决 $\check A$ 和 $\check B$。
+由于 $B=(m-1)zA$，故 $\check B=(m-1)^2z\check A$，我们接下来只考虑 $A$ 怎么解决。
+我们有
+$$a_n=\frac{(m-1)^n-(-1)^n}{m}$$
+从而
+$$a_n^2=\frac{(m-1)^{2n}-2(1-m)^n+1}{m^2}$$
+于是
+$$m^2\check A=\frac{1}{1-(m-1)^2z}-\frac{2}{1+(m-1)z}+\frac{1}{1-z}$$
+从而
+$$\check A=\frac{z-(m-1)z^2}{1-(m^2-3m+3)z-(m^2-3m+3)(m-1)z^2+(m-1)^3z^3}$$
+（不妨动手一试；这里消得很干净）
+接下来的内容比较混乱邪恶。由于太难算了所以使用了 https://zh.numberempire.com/expressioncalculator.php辅助计算。
+于是
+$$G=\frac{(m-1)z-(m-1)^3z^3}{1-(m^2-3m+3)z-(m^2-3m+3)(m-1)z^2+(m-1)^3z^3}$$
+$$1+G=\frac{1-(m^2-4m+4)z-(m^2-3m+3)(m-1)z^2}{1-(m^2-3m+3)z-(m^2-3m+3)(m-1)z^2+(m-1)^3z^3}$$
+$$G&rsquo;=\frac{(m^6-7m^5+21m^4-34m^3+31m^2-15m+3)z^4+(2m^5-14m^4+38m^3-50m^2+32m-8)z^3+(m^4-8m^3+19m^2-18m+6)z^2+m-1}{(1-(m^2-3m+3)z-(m^2-3m+3)(m-1)z^2+(m-1)^3z^3)^2}$$
+$$\frac{G&rsquo;}{1+G}=\frac{(m^6-7m^5+21m^4-34m^3+31m^2-15m+3)z^4+(2m^5-14m^4+38m^3-50m^2+32m-8)z^3+(m^4-8m^3+19m^2-18m+6)z^2+m-1}{(-m^6+7m^5-21m^4+34m^3-31m^2+15m-3)z^5+(m^6-9m^5+35m^4-73m^3+85m^2-52m+13)z^4+(2m^5-15m^4+48m^3-79m^2+66m-22)z^3+(m^4-9m^3+27m^3-36m+18)z^2+(-2m^2+7m-7)z+1}$$
+$$H=\frac{-z+(m^2-m)z^2-(m-1)^3z^3}{1-(m^2-3m+3)z-(m^2-3m+3)(m-1)z^2+(m-1)^3z^3}$$
+$$1+H=\frac{1-(m^2-3m+4)z-(m^2-4m+3)(m-1)z^2}{1-(m^2-3m+3)z-(m^2-3m+3)(m-1)z^2+(m-1)^3z^3}$$
+$$H&rsquo;=\frac{(m^6-8m^5+25m^4-40m^3+35m^2-16m+3)z^4+(2m^5-12m^4+32m^3-44m^2+30m-8)z^3+(-m^4+7m^2-12m+6)z^2+(2m^2-2m)z-1}{(1-(m^2-3m+3)z-(m^2-3m+3)(m-1)z^2+(m-1)^3z^3)^2}$$
+$$\frac{H&rsquo;}{1+H}=\frac{(m^6-8m^5+25m^4-40m^3+35m^2-16m+3)z^4+(2m^5-12m^4+32m^3-44m^2+30m-8)z^3+(-m^4+7m^2-12m+6)z^2+(2m^2-2m)z-1}{(-m^6+8m^5-25m^4+40m^3-35m^2+16m-3)z^5+(m^6-10m^5+39m^4-80m^3+91m^2-54m+13)z^4+(2m^5-15m^4+48m^3-79m^2+66m-22)z^3+(m^4-8m^3+25m^2-34m+18)z^2+(-2m^2+6m-7)z+1}$$
+只能说过于非人类了。
+然后最后写一个常系数齐次线性递推就完工啦。
+这整道题目的答案容易发现还是一个有理函数，所以直接上 BM 也是可以的。
+参考代码。
+  ]]></content></entry><entry><title>THUPC2023 游记</title><url>/post/thupc2023/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>图片挂了</tag></tags><content type="html"> 2023.2
 THUPC 报名！
 和 unputdownable，猫猬兽组队，队名 XJ 五队。
 devin 让我们填毕业年份 2028。
@@ -281,7 +391,63 @@ $3$ 月 $4$ 日 $13$ 点联络群消息：
 感觉是憨憨数位 dp，枚举取模后结果即做完。
 然后开始写，第一次交 MLE 了（开了 map），第二次交 TLE 了（递归大常数），最后卡了卡常才过。
 代码：
-1// 膜拜国际特级大师周康阳大佬，今天在 THUPC 测试赛首页称您为大夏尊贵的大名，一股敬佩之油生然而，您在 THUPC 测试赛为国争光，扬我华威名，向您献上最 …</content></entry><entry><title>UOJ随做</title><url>/post/uoj-record/</url><categories><category>题解</category></categories><tags><tag>题解</tag><tag>做题记录</tag></tags><content type="html"><![CDATA[  怎么都做过 uoj Round。
+1// 膜拜国际特级大师周康阳大佬，今天在 THUPC 测试赛首页称您为大夏尊贵的大名，一股敬佩之油生然而，您在 THUPC 测试赛为国争光，扬我华威名，向您献上最 …</content></entry><entry><title>APIO2023游记</title><url>/post/apio2023/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>做题记录</tag></tags><content type="html"> 没报名 APIO。
+Day $1$ 是 5.20。
+Day $-2$
+今天上午怎么有模拟赛。大为震撼。不过徐老师和我们说这场我们可以鸽掉。于是就鸽子了。
+就看了眼 T2，会了。听 zak 说这是
+不归之人与望眼欲穿的人们
+。
+应徐教练要求，上午我讲课，大概讲了一下【数据删除】，还拿了松松松的【数据删除】做例题，结果讲得太简单，被同学们打爆了！
+中午发现自己 QQ 被封七天了，怎么会是呢。原来是在 LA 群发了某些【数据删除】的东西啊。
+下午是【数据删除】和长沙一中的【数据删除】来讲课，前者介绍了好几个科技（【数据删除】，【数据删除】和【数据删除】），而后者介绍了三道神秘题。
+我讲的内容，直接，相形见绌啊！
+虽然课件做得不全（最后那道例题没加），但是还是挂一下吧：
+下载链接
+。解压密码是三个人的 id 字符串拼在一起，全小写。
+晚上带 cmll02 去了趟医院。
+一天下来只写了 $2$ 道水题。太颓了。太颓了！
+Day $-1$
+高一的同学们、高二的 sjy 还有长沙一中来集训的同学们都启程了。
+留校的只有我，L 神（SegmentTree），和外省来集训的同学。
+和 L 神一起 UER 竞速。（？）
+以为自己给【UER #3】开学前的涂鸦整了个很厉害的做法，结果 L 神说 hehezhou 博客里有
+？
+然后就给【UER #5】万圣节的糖果整了个
+更简单的做法
+？双射啥的还是太神秘了。
+然后写了道
+小模拟
+。
+Day $0$
+和 L 神一起做 UOJ。
+秒掉了
+【UR #10】世界线
+。
+L 神：你这做法这么这么怪啊。
+我：我过了。
+然后 L 神写了一遍，97pts。
+为什么呢。因为没有加随机化或者启发式。
+秒了两道清华集训 2015，写了一道，另一道没写。
+然后和 L 神竞速
+【清华集训2015】灯泡测试
+，我先 A 了然后拿了最优解，然后 L 神觉得我的做法不够优秀，写了个更厉害的做法怒拿最优解。
+然后写
+【清华集训2015】V
+，光荣被卡常，卡了一会才过，被 L 神暴打。
+写了一道玄学搜索题，然后猜了
+某道题目
+的结论，问了下 L 神，他说是对的。代码还没写。
+看了眼 APIO 的同学们发来的课件，感觉这些东西，对我，还是太困难了！
+开摆。
+Day $1$
+把昨天那题的代码补了。糊了一个匈牙利上去，拿了最优解，效率是第二名的三倍左右。
+怎么大家都写的网络流退流 …</content></entry><entry><title>uoj56</title><url>/post/uoj56/</url><categories><category>题解</category></categories><tags><tag>题解</tag><tag>uoj</tag></tags><content type="html"><![CDATA[  总览目前 $90$ 分，容易做到 $91$ 但是目前没必要。
+基本要求：$0\le n\le10000$，$0\le m\le20000$，$0\le w\le20000$。无重边，可以有自环。
+$10$ 个测试点的任务和更多限制：
+test 1：邻接矩阵。$k=0$，$n\le500$。 test 2：单源最短路。$k=10$。 test 3：全源最短路（似乎有锅）。$k=11$，$n\le100$。 test 4：单源次短路。$k=12$。 test 5：强连通分量。$k=20$。 test 6：集合划分哈希。$k=21$，$n\le10$ test 7：集合划分单调性哈希。$k=22$，$n\le20$。 test 8：二分图最大匹配。$k=30$，$n\le100$。 test 9：二分图最大匹配，某种实现的匈牙利算法构造。$k=31$，$n\le20$。 test 10：SPFA 过程中的队列。$k=13$，$n\le500$，$m\le3000$。 要对这些东西反推。$p$ 在大多数测试点表示边的数目，test 1,5,10 除外：test 1 中总有 $p=0$，test 5 中 $p=\text{强连通分量数目}$，test 10 中 $p=\text{队列长度}$。
+test 1显然。
+1int main() 2{ 3 freopen(&amp;#34;nm1.in&amp;#34;,&amp;#34;r&amp;#34;,stdin); 4 freopen(&amp;#34;nm1.out&amp;#34;,&amp;#34;w&amp;#34;,stdout); 5 uint n,k,p;scanf(&amp;#34;%u%u%u&amp;#34;,&amp;amp;n,&amp;amp;k,&amp;amp;p); 6 std::vector&amp;lt;std::pair&amp;lt;uint,uint&amp;gt; &amp;gt;V; 7 for(uint i=0;i&amp;lt;n;i++) 8 for(uint j=0,o;j&amp;lt;n;j++) 9 { 10 scanf(&amp;#34;%u&amp;#34;,&amp;amp;o); 11 if(o)V.push_back({i,j}); 12 } 13 printf(&amp;#34;%u %u %u\n&amp;#34;,n,(uint)V.size(),k); 14 for(auto s:V) 15 printf(&amp;#34;%u %u …  ]]></content></entry><entry><title>UOJ随做</title><url>/post/uoj-record/</url><categories><category>题解</category></categories><tags><tag>题解</tag><tag>做题记录</tag></tags><content type="html"><![CDATA[  怎么都做过 uoj Round。
 只收录 UOJ 自己的题目，一些官方比赛题就算了。部分 bzoj 等处收录的题目也放上来。
 没写题解不意味着没做，有的忘了写或者太草率了就算了。
 部分前言删了。
@@ -308,7 +474,29 @@ $$f_{j,v\bmod a_j}\leftarrow\frac{(n-i-1)!}{(n-j)!}f_{i,v}\quad(i&amp;lt;j)$$
 我们可以把每个 SCC 拆开来考虑。对每个 SCC 设其中一个点 $s$ 作为源点即可，容易发现此时不存在负环等价于不存在经过 $s$ 的负环。
 设 $f(p,j)$ 为从 $s$ 点到 $p$ 点经过 $j$ 个 $x$ 的情况下剩余部分的最小代价。
 如果 $f(s,0)=-\infty$，显然始终存在负环。
-否则如果 $f(s,0)=0$，假设 $f(s,a)$ 与 $f(s,b)$ 两项将导致 $\mathbb R$ 上 $x$ 解集为空（$a&amp;lt;0&amp;lt;b$），则有 $\min{f(s,a)+ax,f(s,b)+bx}&amp;lt;0,\forall x\in\mathbb R$， …  ]]></content></entry><entry><title>ZJOI2023 游记</title><url>/post/zjoi2023/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>图片挂了</tag></tags><content type="html"><![CDATA[  正赛在 2023.4.1 - 2023.4.2。
+否则如果 $f(s,0)=0$，假设 $f(s,a)$ 与 $f(s,b)$ 两项将导致 $\mathbb R$ 上 $x$ 解集为空（$a&amp;lt;0&amp;lt;b$），则有 $\min{f(s,a)+ax,f(s,b)+bx}&amp;lt;0,\forall x\in\mathbb R$， …  ]]></content></entry><entry><title>3-smooth 数相关</title><url>/post/3-smooth-number/</url><categories><category>学术</category></categories><tags><tag>学术</tag></tags><content type="html"><![CDATA[  算是 OI 弱相关的东西（？
+因为见到了好几个可以这么嗯搞的东西，所以发出来看看。
+3-smooth 数如果一个正整数的所有素因子均不大于 $3$，我们称之为 3-smooth 数。
+容易发现，3-smooth 数的一个等价定义就是能表示成 $2^x3^y$ 的数，其中 $x,y\in\mathbb N$。
+你可以在 OEIS A003586中看到若干 3-smooth 数，以及相关的近似级别等信息。这里摘录其的前若干项：$1,2,3,4,6,8,9,12,16,18,24,27,32,36,48,54,64,72,81,96$。
+对于任意一个正整数 $n$，其总可以分解成 $2^x3^yz$ 的形式，其中 $2\nmid z\land3\nmid z$，也即可以分解成一个 3-smooth 数乘上 $z$，其中 $z\bmod6\in{1,5}$。
+这样我们就可以以 $z$ 为代表元来划分等价类了。
+即，当我们要考察 $\le n$ 的所有正整数时，我们可以枚举 $z$，然后对剩余部分的 3-smooth 数进行考虑，容易发现也就是 $\lfloor n/z\rfloor$ 内的所有 3-smooth 数。
+当要考察 $\le n$ 的所有 3-smooth 数时，我们可以把其画成 Young 表的形式来考虑。
+即，注意到当 $y$ 增加 $1$ 时，可能最大的 $x$ 必定会恰好减少 $1$ 或者 $2$。
+譬如，如果我们要考察 $\le100$ 的所有 3-smooth 数，可以画成这样的形式：
+$$\begin{matrix}1&2&4&8&16&32&64\\3&6&12&24&48&96\\9&18&36&72\\27&54\\81\end{matrix}$$ 也就是前面所摘录的那些项。
+容易发现使用这个形式我们就可以估计 $\le n$ 的 3-smooth 数的数目级别了。毛估估大概就是 $\frac{\ln^2n}{2\ln2\ln3}+O(1)$ 的样子。
+例题因为实在没啥知识点，直接丢例题了。
+希尔排序使用 3-smooth 数的希尔排序是 $O(n\log^2n)$ 的。
+bzoj2734 [HNOI2012]集合选数枚举 $z$，直接对着 Young 表的一列状压就完了。
+复杂度是容易分析的。
+SPOJ SUMMING神秘题，可以看这篇题解。
+题解里给出了对第 $n$ 项求取的一个不错的近似。
+八校联考题 约树这道题目就把上面那个 Young 表的作用体现得淋漓尽致了。
+题解：【数据删除】
+啥时候那题公开了再补吧。
+  ]]></content></entry><entry><title>ZJOI2023 游记</title><url>/post/zjoi2023/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>图片挂了</tag></tags><content type="html"><![CDATA[  正赛在 2023.4.1 - 2023.4.2。
 愚人节省选。挨创。
 前情提要：$\rm NOIP$ $\rm297pts$ 苟上 ZJ 队线。
 其实前面一长串（Day $-25\sim-5$）是纪中集训游记，不过比较早的内容可能记不太起来了。
