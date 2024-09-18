@@ -496,7 +496,38 @@ SPOJ SUMMING神秘题，可以看这篇题解。
 八校联考题 约树这道题目就把上面那个 Young 表的作用体现得淋漓尽致了。
 题解：【数据删除】
 啥时候那题公开了再补吧。
-  ]]></content></entry><entry><title>ZJOI2023 游记</title><url>/post/zjoi2023/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>图片挂了</tag></tags><content type="html"><![CDATA[  正赛在 2023.4.1 - 2023.4.2。
+  ]]></content></entry><entry><title>当用 SA 来建后缀树</title><url>/post/when-building-st-with-sa/</url><categories><category>学术</category></categories><tags><tag>学术</tag></tags><content type="html"> 因为学不会什么串串技术，所以我只会 SA，至于 SAM 啥的我一窍不通，而后缀树也只知道定义！所以别和我说 Ukkonen 算法，因为我不会。
+以下假设原串 $\text{S}$ 长度为 $n$，我们在后缀数组 $\text{SA}$ 开头插入一个空串，用 $\text{H}$ 数组（好像通常叫做 $\text{height}$ 数组？）表示 $\text{SA}$ 上相邻两个串的 $\operatorname{lcp}$ 长度；即 $\text{SA}0=\varnothing$，$\text{H}{k}=\operatorname{len}(\operatorname{lcp}(\text{SA}{k-1},\text{SA}{k}))$。
+建立 $\text{SA}$ 的复杂度一般是 $O(n\log n)$ 或者 $\Theta(n)$ 的，建立 $\text{H}$ 的复杂度一般是 $\Theta(n)$ 的。我们以下就不妨认为该部分预处理的复杂度为 $O(n\log n)$ 的。通常来说，只要 SA 部分的常数实现得足够好，该部分就不会成为瓶颈。
+后缀树是由原串 $\text{S}$ 的每个后缀串所组成的 Trie。容易发现其节点个数是 $O(n^2)$ 的。
+后缀树的特殊之处在于，其仅仅只用记录 $\Theta(n)$ 个后缀的信息。
+因此，我们其实并不用建出后缀树作为 Trie 的本身，而只用建出其对应的压缩 Trie 即可。
+怎么办？
+注意到压缩 Trie 其实就是由各个后缀所对应的节点构成的一颗虚树，我们只用建出这颗虚树即可！
+容易发现，$\text{SA}$ 本身的顺序就是这些后缀树上关键点按 dfn 序排列所得结果，而 $\text{H}$ 数组标识着 $\text{SA}$ 序上相邻两个关键点的 $\text{lca}$ 深度。于是我们直接按 $\text{SA}$ 序插入节点即可建出虚树。
+这样我们就建出了一颗压缩后的后缀树。
+如果想要每个关键节点都是叶子节点从而来简化讨论，我们通常可以在原串 $\text{S}$ 的末尾添加一个特殊字符 $\tt$$，这样每个后缀都是互不包含的，并且 $\operatorname{lcp}$ 大小不会发生改变。
+例题 区间本质不同子串个数
+我们先建出一颗后缀树。
+对左端点从右往左作扫描线，每次加入一个后 …</content></entry><entry><title>飞机误点时胡的一个筛子</title><url>/post/sieve-back-hangzhou/</url><categories><category>学术</category></categories><tags><tag>学术</tag></tags><content type="html"> 回杭州的路上胡的。
+其实是模拟赛考了一个积性函数前缀和，然后我由于生病没打，所以只胡了，然后由于不想整洲阁筛，所以胡了一个筛子。
+应该比较简单，适用范围也较小，大致能搞 DIVCNTK 这种满足 $f(p)=C$ （常数）且 $f(p^a)$ 可以快速求的，不过复杂度不是很优，常数也不小。
+之前我只会 $O(Cn^{2/3})$ 的块筛，后来发现稍作改动即可做到 $O(n^{2/3}\log C)$。
+优点在于难度很小。仅涉及到 PN 筛和快速幂的倍增。不过由于比较简单，相信大家自己以前也发明过。
+我们构造 $h_C=1 * 1 * 1 * \dots * 1$（$C$ 个恒等函数 $1$，$* $ 表示狄利克雷卷积），容易发现 $h_C(p)=f(p)=C$。
+使用 PN 筛，
+$$\sum_{i=1}^nf(i)=\sum_{j\textrm{ is PN}}(f/h_C)(j)\sum_{k=1}^{\lfloor\frac nj\rfloor}h_C(k)$$
+线筛预处理出 $n^{2/3}$ 以内的部分，我们只用得到 $h_C$ 的块筛即可做到在 $O(n^{2/3})$ 内获得 $f$ 的块筛。
+当 $C\le1$ 时，$h_C$ 的块筛是平凡的。
+当 $2\nmid C$ 时，由于 $h_C=h_{C-1}* 1$，故
+$$\sum_{i=1}^nh_C(i)=\sum_{i=1}^{n}h_{C-1}(i)\left\lfloor\frac ni\right\rfloor$$
+当 $2|C$ 时，由于 $h_C=h_{C/2}* h_{C/2}$，故
+$$\sum_{i=1}^nh_C(i)=\sum_{i=1}^{n}h_{C/2}(i)\sum_{j=1}^{\left\lfloor\frac ni\right\rfloor}h_{C/2}(j)$$
+对 $n^{2/3}$ 以内进行线筛，更高部分进行数论分块，即可做到单行转移 $O(n^{2/3})$。
+由于中途一共会经过 $O(\log C)$ 层，总复杂度 $O(n^{2/3}\log C)$。
+upd：这个就是所谓
+冷群筛
+的一个特殊情形。</content></entry><entry><title>ZJOI2023 游记</title><url>/post/zjoi2023/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>图片挂了</tag></tags><content type="html"><![CDATA[  正赛在 2023.4.1 - 2023.4.2。
 愚人节省选。挨创。
 前情提要：$\rm NOIP$ $\rm297pts$ 苟上 ZJ 队线。
 其实前面一长串（Day $-25\sim-5$）是纪中集训游记，不过比较早的内容可能记不太起来了。
@@ -583,7 +614,29 @@ $1\le L\le R\le n(n+1)/2$，$R-L+1\le3\times10^5$。
 这个，是不是，可以加进 XJCS，作为单调栈基础练习题啊！@devinwang
 写个单调栈，建出笛卡尔树，我们就可以知道对于每个 $\min a$，其向左、向右扩展的距离。
 然后我们考虑二分答案，对每个值 $w$ 查询有多少对 $l,r$ 满足 $f_{l,r}&amp;amp;lt;w$；答案显然不超过 $O(nv)$ 级别，因此只用 $O(\log(nv))$ 轮二分即可解出第 $L$ 大的数对应的权值，以及有多少数小于之。
-然后我们考虑下一个数怎么求：我们先把相同的 $w$ 尽可能取空，这样我们下一个只用考虑 $&amp;amp;gt;w$ 的数。然后我们对每个 $\min a$ 开一个对应了元素的 …</content></entry><entry><title>USACO2023Feb 游记</title><url>/post/usaco2023feb/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>题解</tag><tag>做题记录</tag></tags><content type="html"><![CDATA[  由于学校要求，过来打 USACO。
+然后我们考虑下一个数怎么求：我们先把相同的 $w$ 尽可能取空，这样我们下一个只用考虑 $&amp;amp;gt;w$ 的数。然后我们对每个 $\min a$ 开一个对应了元素的 …</content></entry><entry><title>loj3076</title><url>/post/loj3076/</url><categories><category>题解</category></categories><tags><tag>题解</tag><tag>loj</tag></tags><content type="html"> 参照 E_Space 的候选队论文，我们建出广义串并联图进行「删一度点」「缩二度点」「叠合重边」操作合并信息的表达式树。
+我们把其描述成一颗 Leafy Tree。
+我们不妨在每个叶节点处存一个点或者边，非叶节点处存一个算符 $op$。
+每个非叶节点将根据其合并方式来决定其究竟表示一个点，还是表示一个边。
+对于表示边的节点，我们可以用一个四维向量 $(A,B,C,D)&amp;rsquo;$ 描述之，表示左右点分别取 $0/1$ 状态所对应的权值；注意左右不可交换。
+对于表示点的节点，我们可以用一个二维向量 $(b,w)&amp;rsquo;$ 描述之（或者直接拓宽成 $(b,w,-\infty,-\infty)&amp;rsquo;$ 四维向量），表示其取两种方案是分别最大权。
+合并操作不妨分为四种：「删一度点」「缩二度点」「叠合重边」「边序翻转」。
+其中「边序翻转」操作用于把 $(u,v)$ 当作 $(v,u)$ 处理的情境。
+建树过程可以通过 bfs 当前点类型实现。
+对于四种操作，我们分别计算合并方式。
+对当前 $f,p,e=(f,p)$ 进行「删一度点」操作，其将合并为 $f$。
+$$\begin{pmatrix}b_f\w_f\end{pmatrix}\leftarrow\begin{pmatrix}\max{b_f+b_p+A_e,b_f+w_p+B_e}\\max{w_f+b_p+C_e,w_f+w_p+D_e}\end{pmatrix}$$
+对当前 $p,e_1=(u,p),e_2=(p,v)$ 进行「缩二度点」操作，其将合并为 $e=(u,v)$。
+$$\begin{pmatrix}A_e\B_e\C_e\D_e\end{pmatrix}\leftarrow\begin{pmatrix}\max{A_{e_1}+b_p+A_{e_2},B_{e_1}+w_p+C_{e_2}}\\max{A_{e_1}+b_p+B_{e_2},B_{e_1}+w_p+D_{e_2}}\\max{C_{e_1}+b_p+A_{e_2},D_{e_1}+w_p+C_{e_2}}\\max{C_{e_1}+b_p+B_{e_2},D_{e_1}+w_p+D_{e_2}}\end{pmatrix}$$
+对当前 $e_1=(u,v),e_2=(u,v)$ 进行「叠合重边」操作，其将合并为 $e=(u,v)$。
+$$\begin{pmatrix}A_e\B_e\C_e\D_e\end{pmatrix}\leftarrow\begin{pmatrix}A_{e_1}+A_{e_2}\B_{e_1}+B_{e_2}\C_{e_1}+C_{e_2}\D_{e_1}+D_{e_2}\end{pmatrix}$$
+对当前 $e=(v,u)$ 进行「边序翻转」操作，其将变为 $e=(u,v)$。
+$$\begin{pmatrix}A_e\B_e\C_e\D_e\end{pmatrix}\leftarrow\begin{pmatrix}A_e\C_e\B_e\D_e\end{pmatrix}$$
+使用树剖，每次在矩阵中记录轻儿子的信息，进行重链信息合并，向链顶父亲传递信息。
+容易构造转移矩阵。
+这样子朴素实现单组询问是 $O(\log^2n)$ 的，使用 GBT 等可以做到 $O(\log n)$。
+代码实现
+。</content></entry><entry><title>USACO2023Feb 游记</title><url>/post/usaco2023feb/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>题解</tag><tag>做题记录</tag></tags><content type="html"><![CDATA[  由于学校要求，过来打 USACO。
 由于上次已经打到白金了，所以继续。
 然后还是 AK 了。
 感觉题意很迷惑，所以都翻译一下。
@@ -599,7 +652,58 @@ $1\le q\le10^5$，$1\le x\le10^{14}$，$0\le y\le10^9$。
 当填满左儿子空位时，就不用向左递归；否则，只用向左递归，右儿子结果和 $c=0$ 时的右儿子结果一致。
 总复杂度 $O(q\log^2v)$。
 核心代码：
-1const ullt Mod=1e9+7,inv2=5e8+4; 2typedef ConstMod::mod_ullt&amp;lt;Mod&amp;gt;modint; 3typedef std::vector&amp;lt;modint&amp;gt;modvec; 4inline modint sum(ullt l,ullt r){return modint(r-l)*(l+r-1)*inv2;} 5struct Seg{ 6 Seg*L,*R;ullt id,len,cnt,more;modint ans; 7 Seg(ullt l,ullt r):L(NULL),R(NULL),id(l),len(r-l),cnt(0),more(0),ans(){} 8 voi chg(ullt p,ullt v){ 9 if(len==1){ 10 if(v)cnt=1,more=v-1,ans=id;else cnt=more=0,ans=0; 11 return; 12 } 13 if(p&amp;lt;(len&amp;gt;&amp;gt;1)){ 14 …  ]]></content></entry><entry><title>ABC268 VP记</title><url>/post/abc268/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>题解</tag><tag>做题记录</tag></tags><content type="html"><![CDATA[  引言几天没比赛，手痒了，决定尝试 VP 一场 ABC，作为第一次 VP AT（
+1const ullt Mod=1e9+7,inv2=5e8+4; 2typedef ConstMod::mod_ullt&amp;lt;Mod&amp;gt;modint; 3typedef std::vector&amp;lt;modint&amp;gt;modvec; 4inline modint sum(ullt l,ullt r){return modint(r-l)*(l+r-1)*inv2;} 5struct Seg{ 6 Seg*L,*R;ullt id,len,cnt,more;modint ans; 7 Seg(ullt l,ullt r):L(NULL),R(NULL),id(l),len(r-l),cnt(0),more(0),ans(){} 8 voi chg(ullt p,ullt v){ 9 if(len==1){ 10 if(v)cnt=1,more=v-1,ans=id;else cnt=more=0,ans=0; 11 return; 12 } 13 if(p&amp;lt;(len&amp;gt;&amp;gt;1)){ 14 …  ]]></content></entry><entry><title>多叉分治半在线卷积</title><url>/post/multi-div-semi-relaxed-mul/</url><categories><category>学术</category></categories><tags><tag>学术</tag></tags><content type="html"><![CDATA[  唔，把以前一直口胡着的多叉分治半在线卷积实现了一下啊！
+这个算法的思想是，我们分治计算贡献时，设目前区间长度为 $n$，分成 $B$ 个部分，并且用 cdq 的方式计算贡献，其中 $B$ 是关于 $n$ 的一个函数。
+考虑平常 $B=2$ 时最优，是因为计算两两支之间的贡献均为 $O(n/B\log (n/B))$ 的，也即要进行 $B^2$ 轮长度为 $n/B$ 的 FFT，多叉没有优化效果。
+此时，我们注意到转移时的乘法中本质不同的 poly 只有 $O(B)$ 个，我们可以提前 DFT 算出各个多项式的点值，每次把点值对应做贡献，最后分别一轮 IDFT 插值计算即可。这样只用做大约 $3B-3$ 轮长度为 $2n/B$ 的 FFT（使用循环卷积！），以及计算点值间乘法贡献的 $\Theta(B^2)$ 对。
+从而单层的复杂度为 $\Theta(nB+n\log(n/B))$，取 $B=\log n$，即得单层复杂度为 $\Theta(n\log n)$ 的。
+可以证明递归层数是 $\Theta(\log n/\log\log n)$ 级别的，总复杂度即为 $\Theta(n\log^2n/\log\log n)$。
+按照 EI 论文，目前理论界存在一个神秘的 $O(n\log^{1+\epsilon}n)$ 的半在线卷积算法（$O(n\log ne^{2\sqrt{\log2\log\log n}})$），感觉估计在 OI 圈内没啥用，除了指出在线算法往往和迭代法有相近的复杂度以及更小的常数外。
+总不会这个东西是对那个 $O(B^2)$ 对点值转移的过程继续调用当前算法吧？反正我是不会的。。。
+2023.4.13 upd：这个东西的复杂度是 $O(n\log^{\log_23}n)$ 的。另一个更优的做法可以参见 EI 博客。（似乎就是把平衡的部分又细化了一下？）
+放一下不等关系的代码。
+封装版：
+1const ullt Mod=998244353,g=3; 2typedef ConstMod::mod_ullt&lt;Mod&gt;modint; 3typedef std::vector&lt;modint&gt;modvec; 4typedef NTT_POLY::poly_NTT&lt;Mod,g&gt;poly; 5typedef NTT_POLY::poly_eval&lt;Mod,g&gt;eval; 6typedef NTT_POLY::poly_inter&lt;Mod,g&gt;inter; 7typedef NTT_POLY::poly_cpd&lt;Mod,g&gt;cpd; 8typedef NTT_POLY::poly_nums&lt;Mod,g&gt;nums; 9typedef FWT_MODINT::FWT_Mod&lt;Mod&gt;FWT; 10modint P[200005],Q[200005],Dp[100005]; 11bol A[100005]; 12voi dfs(uint l,uint r){ 13 if(r-l&lt;=128){ 14 for(uint i=l;i&lt;r;i++){ 15 Dp[i]+=Q[i+1];if(A[i])for(uint j=1;i+j&lt;r;j++)Dp[i+j]-=Dp[i]*Q[j]; 16 } 17 return; 18 } 19 uint B=1; 20 if(r-l&lt;=256)B=32; 21 else if(r-l&lt;=512)B=64; 22 else if(r-l&lt;=1024)B=128; 23 else while(B*8&lt;r-l)B&lt;&lt;=1; 24 uint Cnt=(r-l+B-1)/B; 25 poly::DIFDIT s(B&lt;&lt;1); 26 modvec A[15],C[15]; 27 for(uint i=0;i&lt;Cnt;i++){ 28 uint L=l+i*B,R=std::min(r,l+(i+1)*B); 29 modvec User(B&lt;&lt;1); 30 for(uint j=0;j&lt;i;j++)for(uint k=0;k&lt;(B&lt;&lt;1);k++)User[k]+=A[j][k]*C[i-j-1][k]; 31 s.dit(User); 32 for(uint j=0;j&lt;R-L;j++)Dp[L+j]-=User[j+B]; 33 dfs(L,R); 34 if(i!=Cnt-1){ 35 A[i].resize(B&lt;&lt;1),C[i].resize(B&lt;&lt;1); 36 for(uint j=0;j&lt;(B&lt;&lt;1);j++)A[i][j]=Q[i*B+j]; 37 for(uint j=L;j&lt;R;j++)if(::A[j])C[i][j-L]=Dp[j]; 38 s.dif(A[i]),s.dif(C[i]); 39 } 40 } 41} 42chr C[100005]; 43int main() 44{ 45#ifdef MYEE 46 freopen(&#34;QAQ.in&#34;,&#34;r&#34;,stdin); 47 // freopen(&#34;QAQ.out&#34;,&#34;w&#34;,stdout); 48#endif 49 P[0]=1;for(uint i=1;i&lt;=100001;i++)P[i]=P[i-1]*i; 50 Q[100001]=P[100001].inv();for(uint i=100001;i;i--)Q[i-1]=Q[i]*i; 51 uint n=0;scanf(&#34;%s&#34;,C);while(C[n])n++; 52 uint cnt=0; 53 for(uint i=0;i&lt;n;i++)Dp[i]=0,A[i]=C[i]==&#39;&gt;&#39;,cnt+=A[i]; 54 dfs(0,n+1); 55 (cnt&amp;1?-Dp[n]*P[n+1]:Dp[n]*P[n+1]).println(); 56 return 0; 57} 散装版：
+1const uint Mod=998244353,g=3; 2inline uint chg(uint v){return v&lt;Mod?v:v-Mod;} 3class DIFDIT 4{ 5 private: 6 uint n;uint*G; 7 public: 8 DIFDIT():n(0),G(NULL){} 9 DIFDIT(uint len) 10 { 11 n=1;while(n&lt;len)n&lt;&lt;=1; 12 G=new uint[n],G[0]=1; 13 uint w=power&lt;ullt&gt;(g,(Mod-1)/n,Mod),*End=G+n; 14 for(uint*_G=G+1;_G&lt;End;_G++)*_G=(ullt)_G[-1]*w%Mod; 15 } 16 ~DIFDIT(){if(G!=NULL)delete[]G,G=NULL;} 17 inline uint size(){return n;} 18 voi dif(std::vector&lt;uint&gt;&amp;x) 19 { 20 if(x.size()&lt;n)x.resize(n); 21 for(uint i=n&gt;&gt;1;i;i&gt;&gt;=1)for(uint j=0;j&lt;n;j+=i&lt;&lt;1) 22 { 23 uint*w=G; 24 for(uint k=0;k&lt;i;k++,w+=n/(2*i)) 25 { 26 uint u=x[j|k],t=x[i|j|k]; 27 x[j|k]=chg(u+t),x[i|j|k]=(ullt)(u+Mod-t)*(*w)%Mod; 28 } 29 } 30 } 31 voi dit(std::vector&lt;uint&gt;&amp;x) 32 { 33 if(x.size()&lt;n)x.resize(n); 34 for(uint i=1;i&lt;n;i&lt;&lt;=1)for(uint j=0;j&lt;n;j+=i&lt;&lt;1) 35 { 36 uint*w=G; 37 for(uint k=0;k&lt;i;k++,w+=n/(2*i)) 38 { 39 uint t=(ullt)x[i|j|k]*(*w)%Mod; 40 x[i|j|k]=chg(x[j|k]+Mod-t),x[j|k]=chg(x[j|k]+t); 41 } 42 } 43 for(uint i=1;i*2&lt;n;i++)std::swap(x[i],x[n-i]); 44 uint t=power&lt;ullt&gt;(n,Mod-2,Mod);for(uint i=0;i&lt;n;i++)x[i]=(ullt)x[i]*t%Mod; 45 } 46}; 47uint Q[200005],Dp[100005]; 48bol A[100005]; 49voi dfs(uint l,uint r){ 50 if(r-l&lt;=64){ 51 for(uint i=l;i&lt;r;i++){ 52 Dp[i]=chg(Dp[i]+Q[i+1]); 53 if(A[i])for(uint j=1;i+j&lt;r;j++) 54 Dp[i+j]=chg(Dp[i+j]+Mod-(ullt)Dp[i]*Q[j]%Mod); 55 } 56 return; 57 } 58 uint B=1; 59 if(r-l&lt;=128)B=16; 60 else if(r-l&lt;=256)B=32; 61 else if(r-l&lt;=512)B=64; 62 else if(r-l&lt;=1024)B=128; 63 else while(B*8&lt;r-l)B&lt;&lt;=1; 64 uint Cnt=(r-l+B-1)/B; 65 DIFDIT s(B&lt;&lt;1); 66 std::vector&lt;uint&gt;A[7],C[7]; 67 for(uint i=0;i&lt;Cnt;i++){ 68 uint L=l+i*B,R=std::min(r,l+(i+1)*B); 69 std::vector&lt;uint&gt;User(B&lt;&lt;1); 70 for(uint j=0;j&lt;i;j++)for(uint k=0;k&lt;(B&lt;&lt;1);k++) 71 User[k]=(User[k]+(ullt)A[j][k]*C[i-j-1][k])%Mod; 72 s.dit(User); 73 for(uint j=0;j&lt;R-L;j++)Dp[L+j]=chg(Dp[L+j]+Mod-User[j+B]); 74 dfs(L,R); 75 if(i!=Cnt-1){ 76 A[i].resize(B&lt;&lt;1),C[i].resize(B&lt;&lt;1); 77 for(uint j=0;j&lt;(B&lt;&lt;1);j++)A[i][j]=Q[i*B+j]; 78 for(uint j=0;j&lt;B;j++)if(::A[j+L])C[i][j]=Dp[j+L]; 79 s.dif(A[i]),s.dif(C[i]); 80 } 81 } 82} 83chr C[100005]; 84int main() 85{ 86#ifdef MYEE 87 freopen(&#34;QAQ.in&#34;,&#34;r&#34;,stdin); 88 // freopen(&#34;QAQ.out&#34;,&#34;w&#34;,stdout); 89#endif 90 uint n=0,v=1,cnt=0;scanf(&#34;%s&#34;,C);while(C[n])n++; 91 for(uint i=2;i&lt;=n+1;i++)v=(ullt)v*i%Mod; 92 Q[n+1]=power&lt;ullt&gt;(v,Mod-2,Mod); 93 for(uint i=n+1;i;i--)Q[i-1]=(ullt)Q[i]*i%Mod; 94 for(uint i=0;i&lt;n;i++)cnt+=A[i]=C[i]==&#39;&gt;&#39;; 95 dfs(0,n+1); 96 printf(&#34;%llu\n&#34;,cnt&amp;1?chg(Mod-(ullt)Dp[n]*v%Mod):(ullt)Dp[n]*v%Mod); 97 return 0; 98} 目前 loj 最优解（301ms）：链接。
+Update：被 Alpha 重测无了。/kel
+  ]]></content></entry><entry><title>loj2839</title><url>/post/loj2839/</url><categories><category>题解</category></categories><tags><tag>题解</tag><tag>loj</tag></tags><content type="html"><![CDATA[  除了 L 神 txdy 我还能说啥呢。（L 神把这题搬模拟赛了。。。）
+即把每个 x 换成 ( 或 )，问是否能通过不多于一次区间反转（( 与 ) 交换）后合法。
+考虑怎样的括号串是合法的。
+假设左括号为 $a_p=0$，右括号为 $a_p=1$，标号 $0\sim n-1$。
+我们设 $S_r=\sum_{k&amp;lt;r}(-1)^{a_k}$，则一个串合法当且仅当
+$$S_p\ge0\land S_n=0$$
+容易发现只要 ${S_k}$ 不同则不同，我们构造了一个 $S$ 和括号串的双射。（折线法！）
+现在再考虑反转操作。
+假设反转 $[l,r)$。
+则
+$$S_p\ge0\quad(p\le l)$$
+$$S_l-(S_p-S_l)\ge0\quad(l&amp;lt;p\le r)$$
+$$S_l-(S_r-S_l)+(S_p-S_r)\ge0\quad(r&amp;lt;p)$$
+$$S_l-(S_r-S_l)+(S_n-S_r)=0$$
+化简代换一下，也即
+$$S_p\ge0\quad(p\le l)$$
+$$S_p\le2S_l\quad(l&amp;lt;p\le r)$$
+$$S_p\ge S_n\quad(r&amp;lt;p&amp;lt;n)$$
+$$S_n=2(S_r-S_l)$$
+考虑到直接 dp 可能会计重（合法的 $l,r$ 不唯一），考虑如何避免计重。
+一般来说，避免计重可以通过对条件的贪心化实现，也即对每种方案确定某种最优的 $(l,r)$ 对。
+假设 $l\sim r$ 间最大 $S$ 为 $S_{\max}$，容易发现 $S_{\max}\le2S_l$。
+考虑对 $S_n$ 分类讨论。
+当 $S_n&amp;gt;0$ 时，假设存在 $S_p&amp;lt;0$，取 $S_l=\lceil S_{\max}/2\rceil$ 总是不妨最优（顺带一提，$2\le S_n\le S_r=S_l+S_n/2\le S_{\max}\le2S_l$）；也即 $2S_l-1\le S_{\max}\le2S_l$。并且总是取最后一个可能的 $l$，因此下次枚举到一个 $S_p=S_l$ 时要查看 $S_l\sim S_p$ 区间内有无 $S&amp;lt;0$，倘没有则总是不得转移。可以证明这样的 $l$ 总是最优且唯一。
+区间合法遇到 $r$ 时， …  ]]></content></entry><entry><title>CF207C</title><url>/post/cf207c/</url><categories><category>题解</category></categories><tags><tag>题解</tag><tag>CF</tag><tag>图片挂了</tag></tags><content type="html"><![CDATA[  前言学习 zzd 博客（
+这题超级没有素质。
+连个题解都搜不到。
+好不容易搜到一个。
+看了一下是 pascal。
+不过还好我有办法。
+树剖做 $k$ 级祖先。
+十万的俩老哥飘过。
+三百毫秒优异成绩。
+哇哈哈哈哈哈哈哈。
+接下来该放代码了。
+做法描述在代码后。
+Code这个能做到 $n_1,n_2\le300000$ 的情况。
+1uint FathA[300005],FathB[300005],SA[300005],Rank[300005],tp1,tp2; 2chr C_A[300005],C_B[300005]; 3voi build(){ 4 static uint Fath[300005],Fath2[300005]; 5 uint n=tp2;for(uint i=0;i&amp;lt;n;i++)Fath[i]=FathB[i],SA[i]=i; 6 std::sort(SA,SA+n,[&amp;amp;](uint a,uint b){return C_B[a]&amp;lt;C_B[b];}); 7 for(uint i=0;i&amp;lt;n;i++)Rank[SA[i]]=i&amp;amp;&amp;amp;C_B[SA[i]]==C_B[SA[i-1]]?Rank[SA[i-1]]:i; 8 for(uint len=1;len&amp;lt;n;len&amp;lt;&amp;lt;=1){ 9 static std::pair&amp;lt;uint,uint&amp;gt;W[300005]; 10 bol ok=true; 11 for(uint i=0;i&amp;lt;n;i++){ 12 W[i]={Rank[i],~Fath[i]?Rank[Fath[i]]+1:0u}; 13 if(~Fath[i])Fath2[i]=Fath[Fath[i]],ok=false; 14 else Fath2[i]=Fath[i]; 15 } 16 for(uint i=0;i&amp;lt;n;i++)Fath[i]=Fath2[i]; 17 if(ok)break; 18 static uint Cnt[300005]; 19 for(uint i=0;i&amp;lt;=n;i++)Cnt[i]=0; 20 for(uint i=0;i&amp;lt;n;i++)Cnt[W[i].second]++; 21 for(uint …  ]]></content></entry><entry><title>ABC268 VP记</title><url>/post/abc268/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>题解</tag><tag>做题记录</tag></tags><content type="html"><![CDATA[  引言几天没比赛，手痒了，决定尝试 VP 一场 ABC，作为第一次 VP AT（
 下次可能就不挑这么简单的场了（
 VP 登顶留念。
 比赛从 19:30 开始。我一路正开，也没啥罚时。
@@ -675,7 +779,22 @@ devin 没来。/kel
 T1 大概先 bfs 一轮找到每个点距离那些点不超过 $k$？然后枚举似乎可以 meet in the middle？
 T2 似乎随便分类讨论一下 rmq 就完了。
 14:30 能开写了，先敲一个码头。以 T2 为例。（原来考场 VS Code 是有代码补全和语法高亮哒？）
-1// with code highlight and code completion, I&amp;#39;d fly. 2 3#include &amp;lt;algorithm&amp;gt; 4#include &amp;lt;stdio.h&amp;gt; 5#include &amp;lt;vector&amp;gt; 6typedef unsigned uint; 7typedef unsigned long long ullt;typedef long long llt; 8typedef bool bol;typedef char chr;typedef void voi; 9typedef double dbl; 10template&amp;lt;typename T&amp;gt;bol _min(T&amp;amp;a,T b){return b&amp;lt;a?(a=b,true):false;} 11template&amp;lt;typename …  ]]></content></entry><entry><title>HDU 多校 2022 游记</title><url>/post/hdu2022/</url><categories><category>游记</category></categories><tags><tag>游记</tag></tags><content type="html"> 在 XJ 501 机房打。
+1// with code highlight and code completion, I&amp;#39;d fly. 2 3#include &amp;lt;algorithm&amp;gt; 4#include &amp;lt;stdio.h&amp;gt; 5#include &amp;lt;vector&amp;gt; 6typedef unsigned uint; 7typedef unsigned long long ullt;typedef long long llt; 8typedef bool bol;typedef char chr;typedef void voi; 9typedef double dbl; 10template&amp;lt;typename T&amp;gt;bol _min(T&amp;amp;a,T b){return b&amp;lt;a?(a=b,true):false;} 11template&amp;lt;typename …  ]]></content></entry><entry><title>挂分记录</title><url>/post/losing-score/</url><categories><category>杂项</category></categories><tags><tag>做题记录</tag></tags><content type="html"><![CDATA[  记录各种考场犯浑现象。
+20221019线段树。
+正确写法：Seg(uint n):len(n),siz(0),L(NULL),R(NULL),v(0),tag(1){if(n&amp;gt;1)L=new Seg(n&amp;gt;&amp;gt;1),R=new Seg(n-(n&amp;gt;&amp;gt;1));}
+错误写法：Seg(uint n):len(n),siz(0),L(NULL),R(NULL),v(0),tag(1){if(n&amp;gt;1)L=new Seg(n&amp;gt;&amp;gt;1),R=new Seg(n&amp;gt;&amp;gt;1);}
+结果：$100\rightarrow20$。
+20221021树上倍增。
+没写 a=Fath[i][a]。
+结果：$100\rightarrow0$。
+20221022点分治。
+错误写法：
+1voi get(uint p,uint f,uint v){ 2 cnt[v]++; 3 for(auto q:Qid[p])if(p==V[q]){ 4 for(uint i=0;i&amp;lt;m;i++)Ans[q]+=Qcnt[q][(W[q]+m-i)%m]*cnt[i]; 5 } 6 Qid[p].clear(); 7 for(auto s:Way[p])if(!Gone[s.first]&amp;amp;&amp;amp;s.first!=f)insert(s.first,p,(v+s.second)%m); 8 cnt[v]--; 9} 正确写法：
+1voi get(uint p,uint f,uint v){ 2 cnt[v]++; 3 for(auto q:Qid[p])if(p==V[q]){ 4 for(uint i=0;i&amp;lt;m;i++)Ans[q]+=Qcnt[q][(W[q]+m-i)%m]*cnt[i]; 5 } 6 Qid[p].clear(); 7 for(auto s:Way[p])if(!Gone[s.first]&amp;amp;&amp;amp;s.first!=f)get(s.first,p,(v+s.second)%m); 8 cnt[v]--; 9} 结果：过了小样例，没过大样例，调试了 $2h$，没挂分。
+20221023伯努利数自然幂和。
+数据范围 $5000$。
+错误写法：
+1modint P[5005],Q[5005],B[5005]; …  ]]></content></entry><entry><title>HDU 多校 2022 游记</title><url>/post/hdu2022/</url><categories><category>游记</category></categories><tags><tag>游记</tag></tags><content type="html"> 在 XJ 501 机房打。
 队伍：
 team1093 学军中学二队
 为什么有二队而没有一队，这是一个问题。
@@ -715,7 +834,16 @@ sjy 打的神仙单 log 做法依赖于此。
 SegmentTree 说他有一个不依赖于此的 2log 做法，我觉得很厉害啊！
 队伍总排名第二十。
 大佬带我飞！
-Time Problem ACer(Luogu ID) 12:03 K rwalxfhg 12:09 L rwalxfhg 12:15 C realMatrixCascade 12:58 B …</content></entry><entry><title>行列式入门</title><url>/post/what-is-det/</url><categories><category>学术</category></categories><tags><tag>学术</tag></tags><content type="html"><![CDATA[  前言其实是惊奇地发现班上居然有一堆人还不知道行列式是什么……
+Time Problem ACer(Luogu ID) 12:03 K rwalxfhg 12:09 L rwalxfhg 12:15 C realMatrixCascade 12:58 B …</content></entry><entry><title>ZJOI2022 游记</title><url>/post/zjoi2022/</url><categories><category>游记</category></categories><tags><tag>游记</tag></tags><content type="html"> 由于 devin 说比赛结束前不能复盘，先咕着。
+考好后由于要文化课，还得继续咕。
+2022.5.3 记
+upd：喜报，2023 年省选完了我还在鸽！
+基本上是咕了。
+都垫底了还有啥好写的啊。
+2023.4.6 记
+突然发现 ZJOI2022 出题人真是 cjb
+。/fad
+2023.4.8 记</content></entry><entry><title>行列式入门</title><url>/post/what-is-det/</url><categories><category>学术</category></categories><tags><tag>学术</tag></tags><content type="html"><![CDATA[  前言其实是惊奇地发现班上居然有一堆人还不知道行列式是什么……
 然后为了方便其查阅，我把一堆东西整一块了。
 主要讲一下定义、性质啥的，顺带写几种手算求法以及相关定理。
 参考资料《高等代数（第二版）上册》（丘维声著） 高代上册着重讲解线性代数，其中第二章讲述行列式。
