@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>APIO 2024 试机赛 T1 题解</title><url>/post/apio2024-pre-t1-sol/</url><categories><category>题解</category></categories><tags><tag>题解</tag></tags><content type="html"> 反正是试机赛，早点发出来也不要紧，所以就先发出来了。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>算设 survey：多项式复合能做多快？</title><url>/post/algorithm-design-survey/</url><categories><category>学术</category></categories><tags><tag>学术</tag></tags><content type="html"> 突然诈尸。
+挂一下 PDF。英文水平有点差见谅。</content></entry><entry><title>APIO 2024 试机赛 T1 题解</title><url>/post/apio2024-pre-t1-sol/</url><categories><category>题解</category></categories><tags><tag>题解</tag></tags><content type="html"> 反正是试机赛，早点发出来也不要紧，所以就先发出来了。
 容易观察到，我们每步总是向右走到可达的最远点。
 然而，由于可能单步最优的解在区间外，因此不能直接倍增。
 观察到区间最值一定要被选，因此考虑由其分段，变为两个存在一个端点处为最值的子问题。
@@ -129,8 +130,8 @@ $$\begin{matrix}a&b\\c&d\end{matrix}$$ $$w^{(l)}_{ij} = w^{(l)}_{ij} - \eta\frac
 我说，$\{x^L|x^R\}$。
 1Hello World！ 2 3你好！ 4 5When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are: 6 7$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$ 8 9$$\begin{matrix}a&amp;b\\\\c&amp;d\end{matrix}$$ 10 11&lt;div&gt; 12$$\begin{matrix}a&amp;b\\c&amp;d\end{matrix}$$ 13&lt;/div&gt; 14 15&lt;div&gt; 16$$w^{(l)}_{ij} = w^{(l)}_{ij} - \eta\frac{\partial E(W, b)}{\partial w^{(l)}_{ij}}$$ 17&lt;/div&gt; 18 19（sample from &lt;https://adaning.github.io/posts/33457.html&gt; by AnNing） 20 21我说，`$\{x^L|x^R\}$`。 一二三四五六1 2 2.1 2.2 3 1#include &lt;stdio.h&gt; 2 3int main() 4{ 5 puts(&#34;Hello World!&#34;) 6 return 0; 7} qwqqwq
   ]]></content></entry><entry><title>Music</title><url>/music.html</url><categories/><tags/><content type="html"> 原本这里是有内容的，但是鸽子了。</content></entry><entry><title>关于我</title><url>/about.html</url><categories><category>杂项</category></categories><tags><tag>杂项</tag></tags><content type="html"> 你好。我是 myee。
-我的高中就读于杭州学军中学教育集团文渊中学。现在（$2023$ 年下半年）高三。
-我的 OI 获奖：
+我的高中就读于杭州学军中学教育集团文渊中学，大学就读于清华大学。现在（$2025$ 年 $1$ 月）大一。
+我的 OI 主要获奖：
 APIO2022 线上金牌。 WC2023 金牌。 NOI2023 金牌。 在使用 GitHub Pages 搭建博客前，我用过很长时间洛谷博客，也用过两年左右的 cnblogs（博客园）。
 当初使用洛谷博客主要是为了方便（以及洛谷题解需要用博客提交），而后来使用 cnblogs 则是因其高度的自定义以及设置加密文章很令人舒适。
 然而很不幸，cnblogs 运营困难，摇摇欲坠，有可能即将倒闭。因此我不得不防患于未然，搭建起这个博客。
@@ -690,7 +691,7 @@ $$S_n=2(S_r-S_l)$$
 假设 $l\sim r$ 间最大 $S$ 为 $S_{\max}$，容易发现 $S_{\max}\le2S_l$。
 考虑对 $S_n$ 分类讨论。
 当 $S_n&amp;gt;0$ 时，假设存在 $S_p&amp;lt;0$，取 $S_l=\lceil S_{\max}/2\rceil$ 总是不妨最优（顺带一提，$2\le S_n\le S_r=S_l+S_n/2\le S_{\max}\le2S_l$）；也即 $2S_l-1\le S_{\max}\le2S_l$。并且总是取最后一个可能的 $l$，因此下次枚举到一个 $S_p=S_l$ 时要查看 $S_l\sim S_p$ 区间内有无 $S&amp;lt;0$，倘没有则总是不得转移。可以证明这样的 $l$ 总是最优且唯一。
-区间合法遇到 $r$ 时， …  ]]></content></entry><entry><title>CF207C</title><url>/post/cf207c/</url><categories><category>题解</category></categories><tags><tag>题解</tag><tag>CF</tag><tag>图片挂了</tag></tags><content type="html"><![CDATA[  前言学习 zzd 博客（
+区间合法遇到 $r$ 时， …  ]]></content></entry><entry><title>CF207C</title><url>/post/cf207c/</url><categories><category>题解</category></categories><tags><tag>题解</tag><tag>CF</tag></tags><content type="html"><![CDATA[  前言学习 zzd 博客（
 这题超级没有素质。
 连个题解都搜不到。
 好不容易搜到一个。
@@ -703,7 +704,19 @@ $$S_n=2(S_r-S_l)$$
 接下来该放代码了。
 做法描述在代码后。
 Code这个能做到 $n_1,n_2\le300000$ 的情况。
-1uint FathA[300005],FathB[300005],SA[300005],Rank[300005],tp1,tp2; 2chr C_A[300005],C_B[300005]; 3voi build(){ 4 static uint Fath[300005],Fath2[300005]; 5 uint n=tp2;for(uint i=0;i&amp;lt;n;i++)Fath[i]=FathB[i],SA[i]=i; 6 std::sort(SA,SA+n,[&amp;amp;](uint a,uint b){return C_B[a]&amp;lt;C_B[b];}); 7 for(uint i=0;i&amp;lt;n;i++)Rank[SA[i]]=i&amp;amp;&amp;amp;C_B[SA[i]]==C_B[SA[i-1]]?Rank[SA[i-1]]:i; 8 for(uint len=1;len&amp;lt;n;len&amp;lt;&amp;lt;=1){ 9 static std::pair&amp;lt;uint,uint&amp;gt;W[300005]; 10 bol ok=true; 11 for(uint i=0;i&amp;lt;n;i++){ 12 W[i]={Rank[i],~Fath[i]?Rank[Fath[i]]+1:0u}; 13 if(~Fath[i])Fath2[i]=Fath[Fath[i]],ok=false; 14 else Fath2[i]=Fath[i]; 15 } 16 for(uint i=0;i&amp;lt;n;i++)Fath[i]=Fath2[i]; 17 if(ok)break; 18 static uint Cnt[300005]; 19 for(uint i=0;i&amp;lt;=n;i++)Cnt[i]=0; 20 for(uint i=0;i&amp;lt;n;i++)Cnt[W[i].second]++; 21 for(uint …  ]]></content></entry><entry><title>ABC268 VP记</title><url>/post/abc268/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>题解</tag><tag>做题记录</tag></tags><content type="html"><![CDATA[  引言几天没比赛，手痒了，决定尝试 VP 一场 ABC，作为第一次 VP AT（
+1uint FathA[300005],FathB[300005],SA[300005],Rank[300005],tp1,tp2; 2chr C_A[300005],C_B[300005]; 3voi build(){ 4 static uint Fath[300005],Fath2[300005]; 5 uint n=tp2;for(uint i=0;i&amp;lt;n;i++)Fath[i]=FathB[i],SA[i]=i; 6 std::sort(SA,SA+n,[&amp;amp;](uint a,uint b){return C_B[a]&amp;lt;C_B[b];}); 7 for(uint i=0;i&amp;lt;n;i++)Rank[SA[i]]=i&amp;amp;&amp;amp;C_B[SA[i]]==C_B[SA[i-1]]?Rank[SA[i-1]]:i; 8 for(uint len=1;len&amp;lt;n;len&amp;lt;&amp;lt;=1){ 9 static std::pair&amp;lt;uint,uint&amp;gt;W[300005]; 10 bol ok=true; 11 for(uint i=0;i&amp;lt;n;i++){ 12 W[i]={Rank[i],~Fath[i]?Rank[Fath[i]]+1:0u}; 13 if(~Fath[i])Fath2[i]=Fath[Fath[i]],ok=false; 14 else Fath2[i]=Fath[i]; 15 } 16 for(uint i=0;i&amp;lt;n;i++)Fath[i]=Fath2[i]; 17 if(ok)break; 18 static uint Cnt[300005]; 19 for(uint i=0;i&amp;lt;=n;i++)Cnt[i]=0; 20 for(uint i=0;i&amp;lt;n;i++)Cnt[W[i].second]++; 21 for(uint …  ]]></content></entry><entry><title>loj2511</title><url>/post/loj2511/</url><categories><category>题解</category></categories><tags><tag>题解</tag><tag>loj</tag></tags><content type="html"><![CDATA[  引言思维题。
+这个做法跑得飞快，还不用 dp，也不是爆搜！
+复杂度（可能）为 $O(s^2t)$ 或 $O(s^2)$，实际效率也是飞快。
+不过这题我直接提交答案了。
+思路考虑 $A=mn,B=m+n$。
+假设 $A$ 先手。
+从 $A$ 中枚举分解方案，假设有 $(m_1,n_1)(m_2,n_2)\cdots(m_k,n_k)$ 这些合法。
+如 $k&amp;gt;1$，会说不知道，称这样的 $A$ 构成集合 $A_{&amp;gt;0}$；否则知道，称这样的 $A$ 构成集合 $A_0$。
+对 $B$ 分解，其有 $(s,B-s)(s+1,B-s-1)\cdots(\lfloor B/2\rfloor,\lceil B/2\rceil)$ 这些合法。
+从中选出相乘为 $A_0$ 中元素的数对，若唯一，记这样的 $B$ 构成 $B_0&amp;rsquo;$，说明知道；若多于 $1$ 个，则无法计算；若不存在，若解集大小为 $1$，则构成集合 $B_0$，说明知道；若解集大小大于 $1$，构成集合 $B_{&amp;gt;0}$。
+对 $B_0$ 集合类似地反推 $A_1&amp;rsquo;$，对 $B_{&amp;gt;0}$ 反推出 $A_1,A_{&amp;gt;1}$。
+刚才的描述不够清晰，让我们形式化地说：
+$$ \def\defeq{\mathop{=}\limits^{\operatorname{def}}} \begin{array}{|l|} \hline X(A)\defeq{(m,n)|s\le m\le n,mn=A}\newline Y(B)\defeq{(m,n)|s\le m\le n,m+n=B}\newline A_{\ge0}\defeq{A|X(A)\neq\varnothing}\newline B_{\ge0}\defeq{B|Y(B)\neq\varnothing}\newline\hdashline A_0\defeq{A|A\in A_{\ge0},|X(A)|=1}\newline A_{\ge1}\defeq A_{\ge0}-A_0\newline\hdashline X_0\defeq\cup_{A\in A_0}X(A)\newline B_0&amp;rsquo;\defeq{B|B\in B_{\ge0},|Y(B)\cap X_0|=1}\newline …  ]]></content></entry><entry><title>ABC268 VP记</title><url>/post/abc268/</url><categories><category>游记</category></categories><tags><tag>游记</tag><tag>题解</tag><tag>做题记录</tag></tags><content type="html"><![CDATA[  引言几天没比赛，手痒了，决定尝试 VP 一场 ABC，作为第一次 VP AT（
 下次可能就不挑这么简单的场了（
 VP 登顶留念。
 比赛从 19:30 开始。我一路正开，也没啥罚时。
@@ -753,7 +766,27 @@ Day 1上午没啥意思，没听。
 晚上员交，直接爆炸。
 然后是一些乐子。
 乐子 嗯，暴戾语言复现。
-草，别让他们放PV了，把题目留着就行了。 警告一次，教室再出现不文明用语，全部踢出去，你们代表的是自己学校的形象。 PV 是咋样的呢？ CCF，以推动计算技术领域学术，技术，教育，应用和产业的发展，助力计算技术领域专业人士能力提升为使命，目前拥有超过10万名付费个人会员。 CCF，下设城市会员活动中心，学生分会，YOCSEF城市论坛，以及大数据，自然语言处理，和高性能计算等专业委员会。共近两百个会员服务机构，每年举办近千场专业活 …  ]]></content></entry><entry><title>CSP2022 游记</title><url>/post/csp2022/</url><categories><category>游记</category></categories><tags><tag>游记</tag></tags><content type="html"><![CDATA[  我还是写一下吧……
+草，别让他们放PV了，把题目留着就行了。 警告一次，教室再出现不文明用语，全部踢出去，你们代表的是自己学校的形象。 PV 是咋样的呢？ CCF，以推动计算技术领域学术，技术，教育，应用和产业的发展，助力计算技术领域专业人士能力提升为使命，目前拥有超过10万名付费个人会员。 CCF，下设城市会员活动中心，学生分会，YOCSEF城市论坛，以及大数据，自然语言处理，和高性能计算等专业委员会。共近两百个会员服务机构，每年举办近千场专业活 …  ]]></content></entry><entry><title>Dinic的几种复杂度</title><url>/post/dinic-complexity/</url><categories><category>学术</category></categories><tags><tag>学术</tag></tags><content type="html"> 学了那么久网络流才发现自己不知道 Dinic 算法的一个在各边容量均为 $1$ 的网络时复杂度上的结论。我说为啥学术社区那题优化建图复杂度是对的呢……
+以下均认为使用了当前弧优化与多路增广。
+以下认为 $n$ 为点数，$m$ 为边数，$n=O(m)$。
+以下考虑的复杂度均为 $O(\text{增广轮数}\times\text{单轮增广复杂度})$，这个显然是一个合法上界。
+一般网络：$O(n^2m)$
+对于一般网络，增广轮数显然为 $O(n)$，因为每轮终点层数递增。
+对于单轮增广复杂度，在不限制容量范围时，不会超过 $O(nm)$：对于每个状态的当前弧，只会消耗 $O(n)$ 的时间找到一组合法增广路；而当前弧状态数不会超过 $O(m)$。
+因此，对于一般网络，其复杂度为 $O(n^2m)$。
+关于值域的增广轮数上界：$O(\sqrt{\sum_p\min{d^{in}_p,d^{out}_p}})$
+假设每个点 $p$ 的出边容量和为 $d^{out}_p$，入边容量和为 $d^{in}_p$，定义
+$$S=\sum_p\min{d^{in}_p,d^{out}_p}$$
+则增广轮数不会超过 $\sqrt S$。
+如果在 $\sqrt S$ 轮内已经结束，显然就是 $O(\sqrt S)$ 的。
+假设已经经过了 $\sqrt S$ 轮，则到达汇点的增广路长度，也即在残量网络上的最短路长度，接下来不会低于 $\sqrt S$。
+假设接下来几轮中我们还要流 $d$ 条增广路，则由于除源汇外每个点最多属于 $\min{d^{in}_p,d^{out}_p}$ 条有流量的路径，在当前残量网络中存在一种取 $d$ 条路径（不是增广路）的方案。于是残量网络上起点到终点最短路为 $O(\frac Sd)$ 的。
+于是，$d=O(\sqrt S)$，所以最多再流 $O(\sqrt S)$ 轮，增广轮数即为 $O(\sqrt S)$ 的。
+因此增广轮数是 $O(\sqrt S)$ 的。
+各边容量均为 $1$ 的网络：$O(m\min{m^{\frac12},n^{\frac23}})$
+接下来我们考虑的是各边容量均为 $1$ 的网络。
+对于单轮增广复杂度，考虑到每条边会被访问不超过一次，单轮复杂度为 $O(m)$ 的。
+增广轮数是 $O(\sqrt m)$ 的：$S=O(m)$。 …</content></entry><entry><title>CSP2022 游记</title><url>/post/csp2022/</url><categories><category>游记</category></categories><tags><tag>游记</tag></tags><content type="html"><![CDATA[  我还是写一下吧……
 Day -1模拟赛。
 成为机房垫底人。
 Day 0上午补昨天模拟赛 T4。

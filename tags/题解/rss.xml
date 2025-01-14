@@ -17,7 +17,12 @@ DeepL
 &lt;/h3>&lt;p>学习
 &lt;a href="https://cmxrynp.blog.uoj.ac/blog/6233" title="zzd 博客" >
 zzd 博客
-&lt;/a>（&lt;/p></description></item><item><title>ABC268 VP记</title><link>https://myeeye.github.io/post/abc268/</link><pubDate>Tue, 31 Jan 2023 20:06:00 +0800</pubDate><guid>https://myeeye.github.io/post/abc268/</guid><description>&lt;h3 id="引言">引言
+&lt;/a>（&lt;/p></description></item><item><title>loj2511</title><link>https://myeeye.github.io/post/loj2511/</link><pubDate>Thu, 09 Feb 2023 18:10:00 +0800</pubDate><guid>https://myeeye.github.io/post/loj2511/</guid><description>&lt;h3 id="引言">引言
+&lt;a class="header-anchor" href="#%e5%bc%95%e8%a8%80">&lt;/a>
+&lt;/h3>&lt;p>思维题。&lt;/p>
+&lt;p>&lt;strong>这个做法跑得飞快，还不用 dp，也不是爆搜！&lt;/strong>&lt;/p>
+&lt;p>复杂度（可能）为 $O(s^2t)$ 或 $O(s^2)$，实际效率也是飞快。&lt;/p>
+&lt;p>&lt;del>不过这题我直接提交答案了。&lt;/del>&lt;/p></description></item><item><title>ABC268 VP记</title><link>https://myeeye.github.io/post/abc268/</link><pubDate>Tue, 31 Jan 2023 20:06:00 +0800</pubDate><guid>https://myeeye.github.io/post/abc268/</guid><description>&lt;h3 id="引言">引言
 &lt;a class="header-anchor" href="#%e5%bc%95%e8%a8%80">&lt;/a>
 &lt;/h3>&lt;p>几天没比赛，手痒了，决定尝试 VP 一场 ABC，作为第一次 VP AT（&lt;/p>
 &lt;p>下次可能就不挑这么简单的场了（&lt;/p>
