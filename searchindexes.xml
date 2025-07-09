@@ -1,4 +1,34 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>算设 survey：多项式复合能做多快？</title><url>/post/algorithm-design-survey/</url><categories><category>学术</category></categories><tags><tag>学术</tag></tags><content type="html"> 突然诈尸。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>uoj984</title><url>/post/uoj984/</url><categories><category>题解</category></categories><tags><tag>题解</tag><tag>uoj</tag></tags><content type="html"> 其实是 Welcome to the Front Line! 命题报告。私货满满.jpg
+直接把我自己写的题解扒一份下来了。
+idea, solution, data, code by myee
+嗯其实我不太清楚为啥正赛时会有一些奇怪的挂分……总之祝大家 NOI 好运吧。
+其实本题可以不绑包全多测塞一个点的，但是因为换成多测只是增加代码难度而不改变分数，没啥意义所以否决了。
+我们分做法来介绍吧。
+爆搜、状压等指数级做法
+估计最多能拿 $\rm14pts$ 吧。
+其实我不太确定 $n\le20$ 有没有啥独特的做法。
+动态规划
+为了方便考虑，我们对所有物件进行排序，把跳蚤设做红点，冰球设做蓝点，那么我们就是要选取若干对红蓝匹配，使得距离总和尽可能小。
+考虑 DP，设 $f(n,a,b,k)$ 表示 $[1,n]$ 区间内选择了 $a$ 个向右出去匹配的红点，$b$ 个向右出去匹配的蓝点，区间内已经匹配了 $k$ 次，此时的最小代价。（向外匹配的部分贡献提前计算）
+每次在右端加入一个点，可以选择是按照哪种方式进行匹配，或者不参与匹配。
+复杂度看起来是 $O(n^4)$ 的？
+注意到 $a,b$ 如果都不是 $0$，就意味着有红蓝同时向右匹配，这显然是不合理的：内部自我消化掉显然不劣。
+于是 $a,b$ 中至少有一个是 $0$，状态数大量减小。
+复杂度 $O(n^3)$。
+大概是不超过 $\rm38pts$。
+费用流
+这题题意都明摆着二分图匹配了，那肯定可以想到网络流！
+这个“最小费用 $k$ 次匹配”，那是不是直接跑个费用流就行了？
+点数 $n$，边数 $O(n^2)$，跑 $n$ 轮，每轮一步增广。
+复杂度看起来是 $O(n^4)$？写个原始对偶应该就是 $O(n^3)$ 左右了。
+大概和 DP 做法得分一个水平，实际由于常数说不定更快一点。
+通过合并重点，可能可以通过 $v\le200$？
+不过费用流模型提醒了我们一件事情：答案是凸的。
+（所以如果答案的值域很小可能只有根号答案值域段等差数列……不过这个性质没有啥用）
+模拟费用流
+考虑我们费用流的增广路在这里是什么情况：设跳蚤是 $R$，冰球是 $B$，那么增广路总是长成
+$$ R\sim B-R\sim B-R\sim\cdots\sim B-R\sim B $$
+其中 $B-R$ 表示之前的匹配，$R\sim …</content></entry><entry><title>算设 survey：多项式复合能做多快？</title><url>/post/algorithm-design-survey/</url><categories><category>学术</category></categories><tags><tag>学术</tag></tags><content type="html"> 突然诈尸。
 挂一下 PDF。英文水平有点差见谅。</content></entry><entry><title>APIO 2024 试机赛 T1 题解</title><url>/post/apio2024-pre-t1-sol/</url><categories><category>题解</category></categories><tags><tag>题解</tag></tags><content type="html"> 反正是试机赛，早点发出来也不要紧，所以就先发出来了。
 容易观察到，我们每步总是向右走到可达的最远点。
 然而，由于可能单步最优的解在区间外，因此不能直接倍增。
@@ -27,7 +57,14 @@
 2023.12.13
 把 MathJax 又换回了 3（渲染速度快太多了）并重新修了一下渲染方式。
 将可能发生问题的行间数学公式部分使用 &amp;lt;div&amp;gt; 标签包裹，行内则采用代码块的方式。
-关掉了文首 header 渲染的评论数目（太卡了，完全加载不出来）。</content></entry><entry><title>集训队胡策2023-2024补题记录</title><url>/post/huce2023-record/</url><categories><category>题解</category></categories><tags><tag>题解</tag><tag>做题记录</tag></tags><content type="html"> CTT 结束后发现自己胡策题都没咋补，这下尴尬了。主要原本胡策就打着玩的（
+关掉了文首 header 渲染的评论数目（太卡了，完全加载不出来）。
+2025.7.10
+修了一下 giscus 深色模式切换前初始状态颜色为 preferred_color_theme 的问题。（这是非预期的）
+本质上是修改了 giscus.js，使其强制读取当前的 data-theme。
+顺带小修了一下深色模式替换的一些问题。
+Aplayer 也正式入驻了。（之前隐藏页面那里是暂时入驻，现在修了一通后进入
+文章
+了）</content></entry><entry><title>集训队胡策2023-2024补题记录</title><url>/post/huce2023-record/</url><categories><category>题解</category></categories><tags><tag>题解</tag><tag>做题记录</tag></tags><content type="html"> CTT 结束后发现自己胡策题都没咋补，这下尴尬了。主要原本胡策就打着玩的（
 怎么 CTT 平均难度比胡策还要简单啊.jpg。
 还是随便写几篇题解吧。
 先来个补全进度表，根据胡策 OJ 或 qoj 通过情况来评判：
@@ -129,7 +166,8 @@ $$\begin{matrix}a&amp;b\\c&amp;d\end{matrix}$$
 $$\begin{matrix}a&b\\c&d\end{matrix}$$ $$w^{(l)}_{ij} = w^{(l)}_{ij} - \eta\frac{\partial E(W, b)}{\partial w^{(l)}_{ij}}$$ （sample from https://adaning.github.io/posts/33457.htmlby AnNing）
 我说，$\{x^L|x^R\}$。
 1Hello World！ 2 3你好！ 4 5When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are: 6 7$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$ 8 9$$\begin{matrix}a&amp;b\\\\c&amp;d\end{matrix}$$ 10 11&lt;div&gt; 12$$\begin{matrix}a&amp;b\\c&amp;d\end{matrix}$$ 13&lt;/div&gt; 14 15&lt;div&gt; 16$$w^{(l)}_{ij} = w^{(l)}_{ij} - \eta\frac{\partial E(W, b)}{\partial w^{(l)}_{ij}}$$ 17&lt;/div&gt; 18 19（sample from &lt;https://adaning.github.io/posts/33457.html&gt; by AnNing） 20 21我说，`$\{x^L|x^R\}$`。 一二三四五六1 2 2.1 2.2 3 1#include &lt;stdio.h&gt; 2 3int main() 4{ 5 puts(&#34;Hello World!&#34;) 6 return 0; 7} qwqqwq
-  ]]></content></entry><entry><title>Music</title><url>/music.html</url><categories/><tags/><content type="html"> 原本这里是有内容的，但是鸽子了。</content></entry><entry><title>关于我</title><url>/about.html</url><categories><category>杂项</category></categories><tags><tag>杂项</tag></tags><content type="html"> 你好。我是 myee。
+  ]]></content></entry><entry><title>Music</title><url>/music.html</url><categories/><tags/><content type="html"> 嗯这里之前是用于 Aplayer 测试的！现在大概搞明白怎么搞了，就弃用啦！
+之前放的歌可以翻一下 github 历史！</content></entry><entry><title>关于我</title><url>/about.html</url><categories><category>杂项</category></categories><tags><tag>杂项</tag></tags><content type="html"> 你好。我是 myee。
 我的高中就读于杭州学军中学教育集团文渊中学，大学就读于清华大学。现在（$2025$ 年 $1$ 月）大一。
 我的 OI 主要获奖：
 APIO2022 线上金牌。 WC2023 金牌。 NOI2023 金牌。 在使用 GitHub Pages 搭建博客前，我用过很长时间洛谷博客，也用过两年左右的 cnblogs（博客园）。
