@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>uoj984</title><url>/post/uoj984/</url><categories><category>题解</category></categories><tags><tag>题解</tag><tag>uoj</tag></tags><content type="html"> 其实是 Welcome to the Front Line! 命题报告。私货满满.jpg
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>JXCPC2025 J. 合唱队形</title><url>/post/jxcpc2025j/</url><categories><category>题解</category></categories><tags><tag>题解</tag></tags><content type="html"> 对的这题是我出的。包挨骂来的。
+本来是因为防 AK 题缺头所以才投的，结果没想到实际上有好几道防 AK……
+赛时我不在，所以请 fyy 来讲了，这里我直接挂一下我自己做的 pdf 吧。</content></entry><entry><title>uoj984</title><url>/post/uoj984/</url><categories><category>题解</category></categories><tags><tag>题解</tag><tag>uoj</tag></tags><content type="html"> 其实是 Welcome to the Front Line! 命题报告。私货满满.jpg
 直接把我自己写的题解扒一份下来了。
 idea, solution, data, code by myee
 嗯其实我不太清楚为啥正赛时会有一些奇怪的挂分……总之祝大家 NOI 好运吧。
@@ -28,7 +30,38 @@ idea, solution, data, code by myee
 模拟费用流
 考虑我们费用流的增广路在这里是什么情况：设跳蚤是 $R$，冰球是 $B$，那么增广路总是长成
 $$ R\sim B-R\sim B-R\sim\cdots\sim B-R\sim B $$
-其中 $B-R$ 表示之前的匹配，$R\sim …</content></entry><entry><title>算设 survey：多项式复合能做多快？</title><url>/post/algorithm-design-survey/</url><categories><category>学术</category></categories><tags><tag>学术</tag></tags><content type="html"> 突然诈尸。
+其中 $B-R$ 表示之前的匹配，$R\sim …</content></entry><entry><title>THUPC2025 志愿者游记</title><url>/post/thupc2025/</url><categories><category>游记</category></categories><tags><tag>游记</tag></tags><content type="html"> 把我的
+知乎回答
+转载过来。
+Day 0 是试机日 3.22 周六，Day 1 是正赛 3.23 周日。
+Day -32
+嗯从 2.18 晚上命题会开始说起来吧。
+当时刚刚开学没多久，我正好撞了一门课的时间，于是就退掉了那门课。（晚上三个课时的历史课，说实话挺阴间的，不退也要撞之后的习题课）
+我最初给 THUPC 投了俩题，一道 linesort，一道【数据删除】。
+命题会前一天给了我们一堆题目（大概 25 道的样子）让我们口胡，然后我发现没有【数据删除】，于是大概猜到被毙了。
+扫了一遍题目发现怎么大概 60% 是 counting 或者 math。那【数据删除】被毙掉看起来很正常。
+接下来就是命题会现场。
+当然命题会是有线上对接的。我们直接在大屏幕上共享的 excel 表格的题目清单后加了一列，来写题目是被毙了还是留着，非常刺激。
+因为一部分题目还投了致理杯，所以有的题我们这边用不了。然后很多题因为太 math 了说要扔到未来的 math round 去。七零八落最后剩下的题不多。
+最后终于轮到了 linesort（因为我投题文件开头加了中文所以刚好排到最后一个），然后大伙全票通过——因为这是唯一一道看起来可以用的 ds 题，再不用就没提了。
+哎哎 THUPC 严重缺头。这里展示了其中某个时刻的照片。
+我们惊奇的发现题目虽然差不多够，但是由于【数据删除】，以及初赛时出现了一个人出太多提导致数据来不及造完之类的现象，所以其实还是可能不够的。
+然后缺一个模拟。我想起来之前正好有个模拟提。于是就掏出来发进了群里。然后通过了，虽然比较简单。也就是 dining。
+线上的小 E：哎这个 myee 是我知道的那个 myee 吗。
+M 题还没出出来，大伙打算之后慢慢做。
+然后就是分配掩体人，我填了第 15 行这题的掩体。
+Day -31
+因为要办 cf 同步赛，所以传来了做英文题面的消息。
+然后因为选上的题中有一道是【数据删除】题，还需要适配一下新平台。出题人【数据删除】很急。
+Day -20
+CF 侧的 Proposal 整好了。对应的 co 是 FairyWinx。
+Day -13
+CF 侧选好了题，我的题都没有入选，但是我验的提入选了。
+Day -10
+因为各种鸽子原因，这个时候我才开始掩体没两天。
+然后就……
+于是 PC 喜提题数 -1。CF 侧也跟着爆了。
+Day …</content></entry><entry><title>算设 survey：多项式复合能做多快？</title><url>/post/algorithm-design-survey/</url><categories><category>学术</category></categories><tags><tag>学术</tag></tags><content type="html"> 突然诈尸。
 挂一下 PDF。英文水平有点差见谅。</content></entry><entry><title>APIO 2024 试机赛 T1 题解</title><url>/post/apio2024-pre-t1-sol/</url><categories><category>题解</category></categories><tags><tag>题解</tag></tags><content type="html"> 反正是试机赛，早点发出来也不要紧，所以就先发出来了。
 容易观察到，我们每步总是向右走到可达的最远点。
 然而，由于可能单步最优的解在区间外，因此不能直接倍增。
